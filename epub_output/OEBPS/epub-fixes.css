@@ -1,0 +1,60 @@
+/* EPUB Reading System Overrides */
+html {
+    writing-mode: horizontal-tb !important;
+    direction: ltr !important;
+}
+
+body {
+    writing-mode: horizontal-tb !important;
+    direction: ltr !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    column-width: auto !important;
+    column-count: auto !important;
+    column-gap: normal !important;
+    -webkit-column-width: auto !important;
+    -webkit-column-count: auto !important;
+    -webkit-column-gap: normal !important;
+}
+
+/* Force vertical layout for all content */
+main, .container, section, article {
+    writing-mode: horizontal-tb !important;
+    direction: ltr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    column-width: auto !important;
+    column-count: auto !important;
+}
+
+/* Ensure proper text flow */
+p, div, h1, h2, h3, h4, h5, h6 {
+    writing-mode: horizontal-tb !important;
+    direction: ltr !important;
+    break-inside: auto;
+    orphans: 2;
+    widows: 2;
+}
+
+/* Table fixes for vertical reading */
+table {
+    page-break-inside: auto;
+    break-inside: auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Audio button positioning */
+.audio-btn {
+    position: relative !important;
+    float: none !important;
+}
+
+/* iPad specific fixes */
+@media screen and (max-device-width: 1024px) {
+    body {
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+    }
+}

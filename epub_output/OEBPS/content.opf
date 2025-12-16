@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package version="3.0" xmlns="http://www.idpf.org/2007/opf" unique-identifier="BookID" prefix="cc: http://creativecommons.org/ns#">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+        <dc:title>VimAPP - Interactive German A1 Textbook</dc:title>
+        <dc:creator>VimAPP</dc:creator>
+        <dc:language>de</dc:language>
+        <dc:identifier id="BookID">urn:uuid:vimapp-german-a1-textbook</dc:identifier>
+        <dc:publisher>VimAPP</dc:publisher>
+        <dc:date>2025-12-16</dc:date>
+        <dc:description>Interactive German A1 textbook with audio for iPad</dc:description>
+        <meta property="dcterms:modified">2025-12-16T00:00:00Z</meta>
+        <meta property="media:active-class">-epub-media-overlay-active</meta>
+    </metadata>
+    
+    <manifest>
+        <!-- Navigation -->
+        <item id="nav" href="nav.html" media-type="application/xhtml+xml" properties="nav"/>
+        
+        <!-- Stylesheets -->
+        <item id="css" href="style.css" media-type="text/css"/>
+        
+        <!-- JavaScript -->
+        <item id="js" href="script.js" media-type="text/javascript"/>
+        
+        <!-- Content Files -->
+        <item id="cover" href="cover.html" media-type="application/xhtml+xml"/>
+        <item id="toc" href="table_of_contents.html" media-type="application/xhtml+xml"/>
+        <item id="unit00" href="chapter00.html" media-type="application/xhtml+xml" properties="scripted"/>
+        <item id="unit01" href="chapter01.html" media-type="application/xhtml+xml" properties="scripted"/>
+        <item id="unit02" href="chapter02.html" media-type="application/xhtml+xml" properties="scripted"/>
+        <item id="unit03" href="chapter03.html" media-type="application/xhtml+xml" properties="scripted"/>
+        <item id="unit04" href="chapter04.html" media-type="application/xhtml+xml" properties="scripted"/>
+        <item id="unit05" href="chapter05.html" media-type="application/xhtml+xml" properties="scripted"/>
+        <item id="unit06" href="chapter06.html" media-type="application/xhtml+xml" properties="scripted"/>
+        <item id="unit07" href="chapter07.html" media-type="application/xhtml+xml" properties="scripted"/>
+        <item id="unit08" href="chapter08.html" media-type="application/xhtml+xml" properties="scripted"/>
+        <item id="unit09" href="chapter09.html" media-type="application/xhtml+xml" properties="scripted"/>
+        <item id="unit10" href="chapter10.html" media-type="application/xhtml+xml" properties="scripted"/>
+        <item id="unit11" href="chapter11.html" media-type="application/xhtml+xml" properties="scripted"/>
+        <item id="unit12" href="chapter12.html" media-type="application/xhtml+xml" properties="scripted"/>
+        <item id="unit13" href="chapter13.html" media-type="application/xhtml+xml" properties="scripted"/>
+        <item id="unit14" href="chapter14.html" media-type="application/xhtml+xml" properties="scripted"/>
+        
+        <item id="audio_vocab_aerztin" href="audio/vocab/aerztin.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_anwalt" href="audio/vocab/anwalt.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_arbeiten" href="audio/vocab/arbeiten.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_arzt" href="audio/vocab/arzt.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_badezimmer" href="audio/vocab/badezimmer.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_balkon" href="audio/vocab/balkon.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_beruf" href="audio/vocab/beruf.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_bett" href="audio/vocab/bett.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_bin" href="audio/vocab/bin.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_bist" href="audio/vocab/bist.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_bruder" href="audio/vocab/bruder.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_buero" href="audio/vocab/buero.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_du" href="audio/vocab/du.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_eltern" href="audio/vocab/eltern.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_er" href="audio/vocab/er.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_es" href="audio/vocab/es.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_familie" href="audio/vocab/familie.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_fenster" href="audio/vocab/fenster.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_firma" href="audio/vocab/firma.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_frau" href="audio/vocab/frau.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_freund" href="audio/vocab/freund.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_freundin" href="audio/vocab/freundin.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_friseur" href="audio/vocab/friseur.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_garten" href="audio/vocab/garten.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_geschieden" href="audio/vocab/geschieden.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_geschwister" href="audio/vocab/geschwister.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_grossmutter" href="audio/vocab/grossmutter.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_grossvater" href="audio/vocab/grossvater.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_haus" href="audio/vocab/haus.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_herd" href="audio/vocab/herd.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_ich" href="audio/vocab/ich.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_ihr" href="audio/vocab/ihr.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_ingenieur" href="audio/vocab/ingenieur.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_ist" href="audio/vocab/ist.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_kellner" href="audio/vocab/kellner.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_kind" href="audio/vocab/kind.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_kinder" href="audio/vocab/kinder.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_koch" href="audio/vocab/koch.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_krankenschwester" href="audio/vocab/krankenschwester.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_kueche" href="audio/vocab/kueche.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_kuehlschrank" href="audio/vocab/kuehlschrank.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_lampe" href="audio/vocab/lampe.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_ledig" href="audio/vocab/ledig.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_lehrer" href="audio/vocab/lehrer.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_lehrerin" href="audio/vocab/lehrerin.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_lernen" href="audio/vocab/lernen.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_mann" href="audio/vocab/mann.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_mechaniker" href="audio/vocab/mechaniker.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_miete" href="audio/vocab/miete.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_mutter" href="audio/vocab/mutter.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_polizist" href="audio/vocab/polizist.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_programmierer" href="audio/vocab/programmierer.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_schlafzimmer" href="audio/vocab/schlafzimmer.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_schrank" href="audio/vocab/schrank.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_schwester" href="audio/vocab/schwester.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_seid" href="audio/vocab/seid.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_sie" href="audio/vocab/sie.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_sind" href="audio/vocab/sind.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_sofa" href="audio/vocab/sofa.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_sohn" href="audio/vocab/sohn.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_student" href="audio/vocab/student.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_studentin" href="audio/vocab/studentin.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_studieren" href="audio/vocab/studieren.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_stuhl" href="audio/vocab/stuhl.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_tisch" href="audio/vocab/tisch.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_tochter" href="audio/vocab/tochter.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_tuer" href="audio/vocab/tuer.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_apfel" href="audio/vocab/unit05_apfel.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_banane" href="audio/vocab/unit05_banane.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_bier" href="audio/vocab/unit05_bier.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_brot" href="audio/vocab/unit05_brot.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_ei" href="audio/vocab/unit05_ei.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_essen" href="audio/vocab/unit05_essen.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_fisch" href="audio/vocab/unit05_fisch.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_fleisch" href="audio/vocab/unit05_fleisch.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_gemuese" href="audio/vocab/unit05_gemuese.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_kaese" href="audio/vocab/unit05_kaese.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_kaffee" href="audio/vocab/unit05_kaffee.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_kartoffel" href="audio/vocab/unit05_kartoffel.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_milch" href="audio/vocab/unit05_milch.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_moegen" href="audio/vocab/unit05_moegen.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_nudeln" href="audio/vocab/unit05_nudeln.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_obst" href="audio/vocab/unit05_obst.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_pizza" href="audio/vocab/unit05_pizza.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_reis" href="audio/vocab/unit05_reis.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_saft" href="audio/vocab/unit05_saft.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_salat" href="audio/vocab/unit05_salat.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_salz" href="audio/vocab/unit05_salz.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_schmecken" href="audio/vocab/unit05_schmecken.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_suppe" href="audio/vocab/unit05_suppe.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_tee" href="audio/vocab/unit05_tee.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_tomate" href="audio/vocab/unit05_tomate.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_trinken" href="audio/vocab/unit05_trinken.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_wasser" href="audio/vocab/unit05_wasser.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_wein" href="audio/vocab/unit05_wein.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_wurst" href="audio/vocab/unit05_wurst.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit05_zucker" href="audio/vocab/unit05_zucker.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_acht" href="audio/vocab/unit06_acht.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_bezahlen" href="audio/vocab/unit06_bezahlen.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_cent" href="audio/vocab/unit06_cent.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_drei" href="audio/vocab/unit06_drei.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_dreissig" href="audio/vocab/unit06_dreissig.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_eins" href="audio/vocab/unit06_eins.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_elf" href="audio/vocab/unit06_elf.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_euro" href="audio/vocab/unit06_euro.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_fuenf" href="audio/vocab/unit06_fuenf.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_fuenfzig" href="audio/vocab/unit06_fuenfzig.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_geschaeft" href="audio/vocab/unit06_geschaeft.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_hemd" href="audio/vocab/unit06_hemd.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_hose" href="audio/vocab/unit06_hose.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_hundert" href="audio/vocab/unit06_hundert.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_kaufen" href="audio/vocab/unit06_kaufen.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_kleid" href="audio/vocab/unit06_kleid.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_kosten" href="audio/vocab/unit06_kosten.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_neun" href="audio/vocab/unit06_neun.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_preis" href="audio/vocab/unit06_preis.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_rock" href="audio/vocab/unit06_rock.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_sechs" href="audio/vocab/unit06_sechs.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_sieben" href="audio/vocab/unit06_sieben.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_supermarkt" href="audio/vocab/unit06_supermarkt.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_verkaufen" href="audio/vocab/unit06_verkaufen.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_vier" href="audio/vocab/unit06_vier.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_vierzig" href="audio/vocab/unit06_vierzig.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_zehn" href="audio/vocab/unit06_zehn.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_zwanzig" href="audio/vocab/unit06_zwanzig.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_zwei" href="audio/vocab/unit06_zwei.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit06_zwoelf" href="audio/vocab/unit06_zwoelf.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_fotografieren" href="audio/vocab/unit07_fotografieren.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_freizeit" href="audio/vocab/unit07_freizeit.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_fussball_spielen" href="audio/vocab/unit07_fussball_spielen.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_gehen" href="audio/vocab/unit07_gehen.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_haben" href="audio/vocab/unit07_haben.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_hobby" href="audio/vocab/unit07_hobby.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_kino" href="audio/vocab/unit07_kino.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_kochen" href="audio/vocab/unit07_kochen.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_laufen" href="audio/vocab/unit07_laufen.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_lesen" href="audio/vocab/unit07_lesen.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_malen" href="audio/vocab/unit07_malen.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_moegen" href="audio/vocab/unit07_moegen.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_museum" href="audio/vocab/unit07_museum.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_musik_hoeren" href="audio/vocab/unit07_musik_hoeren.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_park" href="audio/vocab/unit07_park.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_rad_fahren" href="audio/vocab/unit07_rad_fahren.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_schwimmbad" href="audio/vocab/unit07_schwimmbad.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_schwimmen" href="audio/vocab/unit07_schwimmen.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_singen" href="audio/vocab/unit07_singen.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_sport" href="audio/vocab/unit07_sport.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_tanzen" href="audio/vocab/unit07_tanzen.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_tennis_spielen" href="audio/vocab/unit07_tennis_spielen.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_theater" href="audio/vocab/unit07_theater.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_wandern" href="audio/vocab/unit07_wandern.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit07_zeit" href="audio/vocab/unit07_zeit.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_aerztin" href="audio/vocab/unit08_aerztin.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_apotheke" href="audio/vocab/unit08_apotheke.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_arm" href="audio/vocab/unit08_arm.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_arzt" href="audio/vocab/unit08_arzt.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_auge" href="audio/vocab/unit08_auge.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_bauch" href="audio/vocab/unit08_bauch.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_bein" href="audio/vocab/unit08_bein.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_erkaeltung" href="audio/vocab/unit08_erkaeltung.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_fieber" href="audio/vocab/unit08_fieber.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_finger" href="audio/vocab/unit08_finger.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_fuss" href="audio/vocab/unit08_fuss.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_gesund" href="audio/vocab/unit08_gesund.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_hals" href="audio/vocab/unit08_hals.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_hand" href="audio/vocab/unit08_hand.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_kopf" href="audio/vocab/unit08_kopf.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_krank" href="audio/vocab/unit08_krank.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_medikament" href="audio/vocab/unit08_medikament.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_mund" href="audio/vocab/unit08_mund.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_nase" href="audio/vocab/unit08_nase.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_ohr" href="audio/vocab/unit08_ohr.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_ruecken" href="audio/vocab/unit08_ruecken.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_schlafen" href="audio/vocab/unit08_schlafen.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_schmerzen" href="audio/vocab/unit08_schmerzen.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_sich_fuehlen" href="audio/vocab/unit08_sich_fuehlen.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit08_wehtun" href="audio/vocab/unit08_wehtun.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_april" href="audio/vocab/unit09_april.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_august" href="audio/vocab/unit09_august.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_bewoelkt" href="audio/vocab/unit09_bewoelkt.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_dezember" href="audio/vocab/unit09_dezember.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_februar" href="audio/vocab/unit09_februar.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_fruehling" href="audio/vocab/unit09_fruehling.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_heiss" href="audio/vocab/unit09_heiss.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_herbst" href="audio/vocab/unit09_herbst.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_januar" href="audio/vocab/unit09_januar.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_juli" href="audio/vocab/unit09_juli.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_juni" href="audio/vocab/unit09_juni.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_kalt" href="audio/vocab/unit09_kalt.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_kuehl" href="audio/vocab/unit09_kuehl.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_maerz" href="audio/vocab/unit09_maerz.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_mai" href="audio/vocab/unit09_mai.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_november" href="audio/vocab/unit09_november.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_oktober" href="audio/vocab/unit09_oktober.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_regen" href="audio/vocab/unit09_regen.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_regnerisch" href="audio/vocab/unit09_regnerisch.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_regnet" href="audio/vocab/unit09_regnet.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_scheint" href="audio/vocab/unit09_scheint.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_schnee" href="audio/vocab/unit09_schnee.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_schneit" href="audio/vocab/unit09_schneit.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_september" href="audio/vocab/unit09_september.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_sommer" href="audio/vocab/unit09_sommer.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_sonne" href="audio/vocab/unit09_sonne.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_sonnig" href="audio/vocab/unit09_sonnig.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_warm" href="audio/vocab/unit09_warm.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_wetter" href="audio/vocab/unit09_wetter.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_wind" href="audio/vocab/unit09_wind.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_winter" href="audio/vocab/unit09_winter.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_unit09_wolke" href="audio/vocab/unit09_wolke.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_vater" href="audio/vocab/vater.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_verdienen" href="audio/vocab/verdienen.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_verheiratet" href="audio/vocab/verheiratet.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_verkaeufer" href="audio/vocab/verkaeufer.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_wir" href="audio/vocab/wir.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_wohnung" href="audio/vocab/wohnung.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_wohnzimmer" href="audio/vocab/wohnzimmer.mp3" media-type="audio/mpeg"/>
+        <item id="audio_vocab_zimmer" href="audio/vocab/zimmer.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_das_ist_meine_familie" href="audio/sentences/das_ist_meine_familie.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_dein_vater_nett" href="audio/sentences/dein_vater_nett.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_du_bist_freund" href="audio/sentences/du_bist_freund.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_er_ist_student" href="audio/sentences/er_ist_student.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_er_studiert_medizin" href="audio/sentences/er_studiert_medizin.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_es_ist_buch" href="audio/sentences/es_ist_buch.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_freundin_anna" href="audio/sentences/freundin_anna.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_grosseltern_hamburg" href="audio/sentences/grosseltern_hamburg.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_haben_balkon" href="audio/sentences/haben_balkon.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_haus_garten" href="audio/sentences/haus_garten.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_ich_arbeite_firma" href="audio/sentences/ich_arbeite_firma.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_ich_bin_lehrer" href="audio/sentences/ich_bin_lehrer.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_ich_bin_lehrerin" href="audio/sentences/ich_bin_lehrerin.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_ich_bin_soldat" href="audio/sentences/ich_bin_soldat.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_ich_bin_student" href="audio/sentences/ich_bin_student.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_ich_habe_bruder_schwester" href="audio/sentences/ich_habe_bruder_schwester.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_ihre_schwester_lehrerin" href="audio/sentences/ihre_schwester_lehrerin.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_ihr_seid_lehrer" href="audio/sentences/ihr_seid_lehrer.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_krankenschwester" href="audio/sentences/krankenschwester.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_kueche_klein_modern" href="audio/sentences/kueche_klein_modern.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_ledig_keine_kinder" href="audio/sentences/ledig_keine_kinder.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_lerne_deutsch" href="audio/sentences/lerne_deutsch.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_meine_mutter_ist_45" href="audio/sentences/meine_mutter_ist_45.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_mein_vater_heisst_thomas" href="audio/sentences/mein_vater_heisst_thomas.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_miete_800_euro" href="audio/sentences/miete_800_euro.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_schlafzimmer_bett" href="audio/sentences/schlafzimmer_bett.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_sein_bruder_wohnt_berlin" href="audio/sentences/sein_bruder_wohnt_berlin.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_sie_ist_aerztin" href="audio/sentences/sie_ist_aerztin.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_sie_sind_aerzte" href="audio/sentences/sie_sind_aerzte.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_sie_sind_arzt" href="audio/sentences/sie_sind_arzt.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_studiere_informatik" href="audio/sentences/studiere_informatik.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit05_sent01" href="audio/sentences/unit05_sent01.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit05_sent02" href="audio/sentences/unit05_sent02.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit05_sent03" href="audio/sentences/unit05_sent03.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit05_sent04" href="audio/sentences/unit05_sent04.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit05_sent05" href="audio/sentences/unit05_sent05.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit05_sent06" href="audio/sentences/unit05_sent06.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit05_sent07" href="audio/sentences/unit05_sent07.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit05_sent08" href="audio/sentences/unit05_sent08.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit05_sent09" href="audio/sentences/unit05_sent09.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit05_sent10" href="audio/sentences/unit05_sent10.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit06_sent01" href="audio/sentences/unit06_sent01.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit06_sent02" href="audio/sentences/unit06_sent02.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit06_sent03" href="audio/sentences/unit06_sent03.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit06_sent04" href="audio/sentences/unit06_sent04.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit06_sent05" href="audio/sentences/unit06_sent05.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit06_sent06" href="audio/sentences/unit06_sent06.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit06_sent07" href="audio/sentences/unit06_sent07.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit06_sent08" href="audio/sentences/unit06_sent08.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit06_sent09" href="audio/sentences/unit06_sent09.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit06_sent10" href="audio/sentences/unit06_sent10.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit07_sent01" href="audio/sentences/unit07_sent01.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit07_sent02" href="audio/sentences/unit07_sent02.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit07_sent03" href="audio/sentences/unit07_sent03.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit07_sent04" href="audio/sentences/unit07_sent04.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit07_sent05" href="audio/sentences/unit07_sent05.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit07_sent06" href="audio/sentences/unit07_sent06.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit07_sent07" href="audio/sentences/unit07_sent07.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit07_sent08" href="audio/sentences/unit07_sent08.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit07_sent09" href="audio/sentences/unit07_sent09.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit07_sent10" href="audio/sentences/unit07_sent10.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit08_sent01" href="audio/sentences/unit08_sent01.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit08_sent02" href="audio/sentences/unit08_sent02.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit08_sent03" href="audio/sentences/unit08_sent03.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit08_sent04" href="audio/sentences/unit08_sent04.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit08_sent05" href="audio/sentences/unit08_sent05.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit08_sent06" href="audio/sentences/unit08_sent06.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit08_sent07" href="audio/sentences/unit08_sent07.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit08_sent08" href="audio/sentences/unit08_sent08.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit08_sent09" href="audio/sentences/unit08_sent09.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit08_sent10" href="audio/sentences/unit08_sent10.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit09_sent01" href="audio/sentences/unit09_sent01.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit09_sent02" href="audio/sentences/unit09_sent02.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit09_sent03" href="audio/sentences/unit09_sent03.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit09_sent04" href="audio/sentences/unit09_sent04.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit09_sent05" href="audio/sentences/unit09_sent05.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit09_sent06" href="audio/sentences/unit09_sent06.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit09_sent07" href="audio/sentences/unit09_sent07.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit09_sent08" href="audio/sentences/unit09_sent08.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit09_sent09" href="audio/sentences/unit09_sent09.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit09_sent10" href="audio/sentences/unit09_sent10.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit09_sent11" href="audio/sentences/unit09_sent11.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unit09_sent12" href="audio/sentences/unit09_sent12.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_unsere_kinder_5_8" href="audio/sentences/unsere_kinder_5_8.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_vater_ingenieur" href="audio/sentences/vater_ingenieur.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_verdient_geld" href="audio/sentences/verdient_geld.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_verheiratet_zwei_kinder" href="audio/sentences/verheiratet_zwei_kinder.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_was_bist_du_beruf" href="audio/sentences/was_bist_du_beruf.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_was_machst_beruflich" href="audio/sentences/was_machst_beruflich.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_wir_arbeiten_buero" href="audio/sentences/wir_arbeiten_buero.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_wir_sind_studenten" href="audio/sentences/wir_sind_studenten.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_wohne_wohnung" href="audio/sentences/wohne_wohnung.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_wohnung_drei_zimmer" href="audio/sentences/wohnung_drei_zimmer.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_wohnzimmer_gross" href="audio/sentences/wohnzimmer_gross.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_wohnzimmer_sofa" href="audio/sentences/wohnzimmer_sofa.mp3" media-type="audio/mpeg"/>
+        <item id="audio_sentences_wo_wohnst_du" href="audio/sentences/wo_wohnst_du.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d1_line1" href="audio/dialogues/d1_line1.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d1_line2" href="audio/dialogues/d1_line2.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d1_line3" href="audio/dialogues/d1_line3.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d1_line4" href="audio/dialogues/d1_line4.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d1_line5" href="audio/dialogues/d1_line5.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d2_01" href="audio/dialogues/d2_01.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d2_02" href="audio/dialogues/d2_02.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d2_03" href="audio/dialogues/d2_03.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d2_04" href="audio/dialogues/d2_04.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d2_05" href="audio/dialogues/d2_05.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d2_06" href="audio/dialogues/d2_06.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d2_07" href="audio/dialogues/d2_07.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d2_08" href="audio/dialogues/d2_08.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d2_09" href="audio/dialogues/d2_09.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d2_10" href="audio/dialogues/d2_10.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d2_11" href="audio/dialogues/d2_11.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d2_12" href="audio/dialogues/d2_12.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d2_13" href="audio/dialogues/d2_13.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d2_14" href="audio/dialogues/d2_14.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d2_15" href="audio/dialogues/d2_15.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d2_16" href="audio/dialogues/d2_16.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d2_17" href="audio/dialogues/d2_17.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d2_line1" href="audio/dialogues/d2_line1.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d2_line2" href="audio/dialogues/d2_line2.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d2_line3" href="audio/dialogues/d2_line3.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d2_line4" href="audio/dialogues/d2_line4.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d2_line5" href="audio/dialogues/d2_line5.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d2_line6" href="audio/dialogues/d2_line6.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d3_01" href="audio/dialogues/d3_01.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d3_02" href="audio/dialogues/d3_02.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d3_03" href="audio/dialogues/d3_03.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d3_04" href="audio/dialogues/d3_04.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d3_05" href="audio/dialogues/d3_05.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d3_06" href="audio/dialogues/d3_06.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d3_07" href="audio/dialogues/d3_07.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d3_08" href="audio/dialogues/d3_08.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d3_09" href="audio/dialogues/d3_09.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d3_10" href="audio/dialogues/d3_10.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d3_11" href="audio/dialogues/d3_11.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d3_12" href="audio/dialogues/d3_12.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d3_13" href="audio/dialogues/d3_13.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d3_14" href="audio/dialogues/d3_14.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d3_15" href="audio/dialogues/d3_15.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d3_16" href="audio/dialogues/d3_16.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d3_line1" href="audio/dialogues/d3_line1.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d3_line2" href="audio/dialogues/d3_line2.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d3_line3" href="audio/dialogues/d3_line3.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d3_line4" href="audio/dialogues/d3_line4.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d4_01" href="audio/dialogues/d4_01.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d4_02" href="audio/dialogues/d4_02.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d4_03" href="audio/dialogues/d4_03.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d4_04" href="audio/dialogues/d4_04.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d4_05" href="audio/dialogues/d4_05.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d4_06" href="audio/dialogues/d4_06.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d4_07" href="audio/dialogues/d4_07.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d4_08" href="audio/dialogues/d4_08.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d4_09" href="audio/dialogues/d4_09.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d4_10" href="audio/dialogues/d4_10.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d4_11" href="audio/dialogues/d4_11.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_d4_12" href="audio/dialogues/d4_12.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_unit05_dialog01" href="audio/dialogues/unit05_dialog01.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_unit05_dialog02" href="audio/dialogues/unit05_dialog02.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_unit05_dialog03" href="audio/dialogues/unit05_dialog03.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_unit06_dialog01" href="audio/dialogues/unit06_dialog01.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_unit06_dialog02" href="audio/dialogues/unit06_dialog02.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_unit06_dialog03" href="audio/dialogues/unit06_dialog03.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_unit07_dialog01" href="audio/dialogues/unit07_dialog01.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_unit07_dialog02" href="audio/dialogues/unit07_dialog02.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_unit07_dialog03" href="audio/dialogues/unit07_dialog03.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_unit08_dialog01" href="audio/dialogues/unit08_dialog01.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_unit08_dialog02" href="audio/dialogues/unit08_dialog02.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_unit08_dialog03" href="audio/dialogues/unit08_dialog03.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_unit09_dialog01" href="audio/dialogues/unit09_dialog01.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_unit09_dialog02" href="audio/dialogues/unit09_dialog02.mp3" media-type="audio/mpeg"/>
+        <item id="audio_dialogues_unit09_dialog03" href="audio/dialogues/unit09_dialog03.mp3" media-type="audio/mpeg"/>
+    </manifest>
+    
+    <spine>
+        <itemref idref="cover"/>
+        <itemref idref="toc"/>
+        <itemref idref="unit00"/>
+        <itemref idref="unit01"/>
+        <itemref idref="unit02"/>
+        <itemref idref="unit03"/>
+        <itemref idref="unit04"/>
+        <itemref idref="unit05"/>
+        <itemref idref="unit06"/>
+        <itemref idref="unit07"/>
+        <itemref idref="unit08"/>
+        <itemref idref="unit09"/>
+        <itemref idref="unit10"/>
+        <itemref idref="unit11"/>
+        <itemref idref="unit12"/>
+        <itemref idref="unit13"/>
+        <itemref idref="unit14"/>
+    </spine>
+</package>

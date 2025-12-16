@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unit 0 - Aussprache und Alphabet | การออกเสียงและอักษร</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="script.js"></script>
+</head>
+<body>
+<header>
+        <h1>Unit 0: Aussprache und Alphabet</h1>
+        <p class="subtitle">การออกเสียงและอักษรภาษาเยอรมัน</p>
+    </header>
+
+    <main>
+        <div class="grammar-explanation">
+            <h2>🎯 จุดประสงค์ของบทนี้</h2>
+            <p>บทนี้เป็นพื้นฐานสำคัญที่สุด! คุณจะได้เรียนรู้:</p>
+            <ul>
+                <li><strong>อักษรเยอรมันทั้ง 30 ตัว</strong> (26 ตัวพื้นฐาน + 4 ตัวพิเศษ: ä, ö, ü, ß)</li>
+                <li><strong>การออกเสียงแต่ละตัวอักษร</strong> พร้อม IPA และเสียงประกอบ</li>
+                <li><strong>เสียงที่ไม่มีในภาษาไทย</strong> และวิธีออกเสียงให้ถูกต้อง</li>
+                <li><strong>กฎการเน้นเสียง</strong> ในคำเยอรมัน</li>
+            </ul>
+        </div>
+
+        <!-- ALPHABET SECTION -->
+        <section>
+            <h2>🔤 Das Alphabet - อักษรเยอรมัน</h2>
+            
+            <div class="note-box">
+                <p><strong>💡 เคล็ดลับ:</strong> อักษรเยอรมันมี 26 ตัวเหมือนอังกฤษ แต่มี <strong>อักษรพิเศษ 4 ตัว</strong> คือ Ä, Ö, Ü (เรียกว่า Umlaute) และ ß (เรียกว่า scharfes S หรือ Eszett)</p>
+            </div>
+
+            <h3 style="margin-top: 2rem;">A - Z (อักษรพื้นฐาน)</h3>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>ตัวอักษร</th>
+                        <th>ชื่ออักษร (เยอรมัน)</th>
+                        <th>IPA</th>
+                        <th>การออกเสียง (ไทย)</th>
+                        <th>ตัวอย่างคำ</th>
+                        <th>Audio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="big-letter">A a</td>
+                        <td>a</td>
+                        <td>[aː]</td>
+                        <td>อา (ยาว)</td>
+                        <td>Auto (อาวโต้)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/a.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">B b</td>
+                        <td>be</td>
+                        <td>[beː]</td>
+                        <td>เบ</td>
+                        <td>Buch (บุค)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/b.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">C c</td>
+                        <td>ce</td>
+                        <td>[tseː]</td>
+                        <td>เช (ต+เซ)</td>
+                        <td>Café (กาเฟ่)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/c.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">D d</td>
+                        <td>de</td>
+                        <td>[deː]</td>
+                        <td>เด</td>
+                        <td>Danke (ดังเคอ)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/d.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">E e</td>
+                        <td>e</td>
+                        <td>[eː]</td>
+                        <td>เอ (ยาว)</td>
+                        <td>Essen (เอสเซิน)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/e.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">F f</td>
+                        <td>ef</td>
+                        <td>[ɛf]</td>
+                        <td>เอฟ</td>
+                        <td>Fenster (เฟนสเทอร์)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/f.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">G g</td>
+                        <td>ge</td>
+                        <td>[ɡeː]</td>
+                        <td>เก</td>
+                        <td>Guten Tag (กูเทิน ทาก)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/g.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">H h</td>
+                        <td>ha</td>
+                        <td>[haː]</td>
+                        <td>ฮา</td>
+                        <td>Haus (เฮาส์)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/h.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">I i</td>
+                        <td>i</td>
+                        <td>[iː]</td>
+                        <td>อี (ยาว)</td>
+                        <td>Ich (อิช)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/i.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">J j</td>
+                        <td>jot</td>
+                        <td>[jɔt]</td>
+                        <td>โย็ท</td>
+                        <td>Ja (ยา)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/j.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">K k</td>
+                        <td>ka</td>
+                        <td>[kaː]</td>
+                        <td>คา</td>
+                        <td>Kind (คินท์)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/k.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">L l</td>
+                        <td>el</td>
+                        <td>[ɛl]</td>
+                        <td>เอล</td>
+                        <td>Lampe (ลัมเพอ)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/l.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">M m</td>
+                        <td>em</td>
+                        <td>[ɛm]</td>
+                        <td>เอ็ม</td>
+                        <td>Mutter (มุทเทอร์)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/m.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">N n</td>
+                        <td>en</td>
+                        <td>[ɛn]</td>
+                        <td>เอ็น</td>
+                        <td>Name (นาเมอ)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/n.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">O o</td>
+                        <td>o</td>
+                        <td>[oː]</td>
+                        <td>โอ (ยาว)</td>
+                        <td>Obst (โอปสท์)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/o.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">P p</td>
+                        <td>pe</td>
+                        <td>[peː]</td>
+                        <td>เพ</td>
+                        <td>Post (โพสท์)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/p.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">Q q</td>
+                        <td>qu</td>
+                        <td>[kuː]</td>
+                        <td>คู</td>
+                        <td>Qualität (กวาลิเทท)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/q.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">R r</td>
+                        <td>er</td>
+                        <td>[ɛʁ]</td>
+                        <td>แอร์ (เสียงกรอ)</td>
+                        <td>Rot (โรท)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/r.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">S s</td>
+                        <td>es</td>
+                        <td>[ɛs]</td>
+                        <td>เอส</td>
+                        <td>Sonne (ซอนเนอ)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/s.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">T t</td>
+                        <td>te</td>
+                        <td>[teː]</td>
+                        <td>เท</td>
+                        <td>Tisch (ทิช)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/t.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">U u</td>
+                        <td>u</td>
+                        <td>[uː]</td>
+                        <td>อู (ยาว)</td>
+                        <td>Uhr (อูร์)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/u.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">V v</td>
+                        <td>vau</td>
+                        <td>[faʊ]</td>
+                        <td>เฟา</td>
+                        <td>Vater (ฟาเทอร์)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/v.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">W w</td>
+                        <td>we</td>
+                        <td>[veː]</td>
+                        <td>เว</td>
+                        <td>Wasser (วัสเซอร์)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/w.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">X x</td>
+                        <td>ix</td>
+                        <td>[ɪks]</td>
+                        <td>อิกส์</td>
+                        <td>Taxi (ทักซี่)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/x.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">Y y</td>
+                        <td>ypsilon</td>
+                        <td>[ˈʏpsilɔn]</td>
+                        <td>อึพซีลอน</td>
+                        <td>Yoga (โยกา)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/y.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">Z z</td>
+                        <td>zet</td>
+                        <td>[tsɛt]</td>
+                        <td>เชท</td>
+                        <td>Zeit (ไชท์)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/z.mp3')">🔊</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- UMLAUTE SECTION -->
+        <section style="margin-top: 3rem;">
+            <h2>🎨 Umlaute - อักษรพิเศษ (เสียงวิสรรชนีย์)</h2>
+            
+            <div class="grammar-explanation">
+                <p><strong>Umlaute</strong> คือเสียงพยัญชนะที่มีจุดสองจุด (¨) เหนือตัวอักษร ทำให้เสียงเปลี่ยนไป</p>
+                <ul>
+                    <li>เกิดจากการผสมเสียงสระ a, o, u กับเสียง e</li>
+                    <li><strong>ä</strong> = a + e</li>
+                    <li><strong>ö</strong> = o + e</li>
+                    <li><strong>ü</strong> = u + e</li>
+                </ul>
+            </div>
+
+            <table style="margin-top: 1rem;">
+                <thead>
+                    <tr>
+                        <th>ตัวอักษร</th>
+                        <th>ชื่ออักษร</th>
+                        <th>IPA</th>
+                        <th>คำอธิบายการออกเสียง</th>
+                        <th>ตัวอย่าง</th>
+                        <th>Audio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="big-letter">Ä ä</td>
+                        <td>ä (a-Umlaut)</td>
+                        <td>[ɛː]</td>
+                        <td>เสียงใกล้เคียง "แอ" ในภาษาไทย แต่ปากแบนกว่า</td>
+                        <td>Käse [ˈkɛːzə] (แคเซอ - ชีส)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/ae.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">Ö ö</td>
+                        <td>ö (o-Umlaut)</td>
+                        <td>[øː]</td>
+                        <td>ปากทำเหมือนจะออกเสียง "โอ" แต่ปล่อยเสียง "เออ" (ไม่มีในไทย)</td>
+                        <td>schön [ʃøːn] (เชิน - สวย)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/oe.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">Ü ü</td>
+                        <td>ü (u-Umlaut)</td>
+                        <td>[yː]</td>
+                        <td>ปากทำเหมือนจะออกเสียง "อู" แต่ปล่อยเสียง "อี" (คล้ายฝรั่งเศส "u")</td>
+                        <td>Tür [tyːɐ̯] (เทือร์ - ประตู)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/ue.mp3')">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td class="big-letter">ß</td>
+                        <td>ß (Eszett/scharfes S)</td>
+                        <td>[s]</td>
+                        <td>เสียง "ซ" ยาว (ใช้แทน ss)</td>
+                        <td>Straße [ˈʃtʁaːsə] (ชทราเซอ - ถนน)</td>
+                        <td><button class="audio-btn" onclick="play('../audio/alphabet/ss.mp3')">🔊</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="note-box" style="margin-top: 1rem;">
+                <p><strong>⚠️ หมายเหตุสำคัญ:</strong></p>
+                <ul>
+                    <li><strong>ß</strong> ใช้หลังสระยาว: Straße, groß, weiß</li>
+                    <li><strong>ss</strong> ใช้หลังสระสั้น: Wasser, essen, Kasse</li>
+                    <li>ในสวิตเซอร์แลนด์ไม่ใช้ ß เขียนเป็น ss ทั้งหมด</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PRONUNCIATION TIPS -->
+        <section style="margin-top: 3rem;">
+            <h2>🎯 เสียงที่ต้องระวัง (สำหรับคนไทย)</h2>
+            
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h3>1. R (เสียงกรอคอ)</h3>
+                    <p><strong>IPA:</strong> [ʁ] หรือ [r]</p>
+                    <p><strong>วิธีออกเสียง:</strong> กรอที่ลำคอ (ไม่ใช่ปลายลิ้นเหมือนไทย)</p>
+                    <div class="example">
+                        <p>Rot [ʁoːt] - สีแดง</p>
+                        <p>Ruhe [ˈʁuːə] - ความเงียบ</p>
+                        <button class="audio-btn" onclick="play('../audio/pronunciation/r_sound.mp3')">🔊 ฟังตัวอย่าง</button>
+                    </div>
+                </div>
+
+                <div class="comparison-card">
+                    <h3>2. CH (เสียงฮึ่ม)</h3>
+                    <p><strong>IPA:</strong> [ç] หรือ [x]</p>
+                    <p><strong>วิธีออกเสียง:</strong></p>
+                    <ul>
+                        <li><strong>[ç]</strong> หลัง e, i, ä, ö, ü → เสียงเบา (ich [ɪç])</li>
+                        <li><strong>[x]</strong> หลัง a, o, u → เสียงแข็ง (Bach [bax])</li>
+                    </ul>
+                    <div class="example">
+                        <p>ich [ɪç] - ฉัน</p>
+                        <p>Buch [buːx] - หนังสือ</p>
+                        <button class="audio-btn" onclick="play('../audio/pronunciation/ch_sound.mp3')">🔊 ฟังตัวอย่าง</button>
+                    </div>
+                </div>
+
+                <div class="comparison-card">
+                    <h3>3. Ö [øː] และ Ü [yː]</h3>
+                    <p><strong>เสียงที่ไม่มีในภาษาไทย!</strong></p>
+                    <p><strong>วิธีฝึก Ö:</strong></p>
+                    <ol>
+                        <li>ทำปากเหมือนจะพูด "โอ"</li>
+                        <li>แต่ปล่อยเสียง "เอ"</li>
+                    </ol>
+                    <p><strong>วิธีฝึก Ü:</strong></p>
+                    <ol>
+                        <li>ทำปากเหมือนจะพูด "อู"</li>
+                        <li>แต่ปล่อยเสียง "อี"</li>
+                    </ol>
+                    <div class="example">
+                        <p>schön [ʃøːn] - สวย</p>
+                        <p>über [ˈyːbɐ] - เหนือ/เกี่ยวกับ</p>
+                        <button class="audio-btn" onclick="play('../audio/pronunciation/umlaut_practice.mp3')">🔊 ฟังตัวอย่าง</button>
+                    </div>
+                </div>
+
+                <div class="comparison-card">
+                    <h3>4. Z [ts] และ S [z/s]</h3>
+                    <p><strong>ความแตกต่างสำคัญ:</strong></p>
+                    <ul>
+                        <li><strong>Z</strong> → เสียง [ts] เหมือน "ซ+เ" ติดกัน (Zeit [tsaɪt])</li>
+                        <li><strong>S</strong> ต้นคำ → เสียง [z] (Sonne [ˈzɔnə])</li>
+                        <li><strong>S</strong> ท้ายคำ → เสียง [s] (Haus [haʊs])</li>
+                    </ul>
+                    <div class="example">
+                        <p>Zeit [tsaɪt] - เวลา</p>
+                        <p>Sonne [ˈzɔnə] - ดวงอาทิตย์</p>
+                        <button class="audio-btn" onclick="play('../audio/pronunciation/z_s_sound.mp3')">🔊 ฟังตัวอย่าง</button>
+                    </div>
+                </div>
+
+                <div class="comparison-card">
+                    <h3>5. V [f/v] และ W [v]</h3>
+                    <p><strong>⚠️ ตรงข้ามกับอังกฤษ!</strong></p>
+                    <ul>
+                        <li><strong>V</strong> → อ่าน [f] เหมือน "ฟ" (Vater [ˈfaːtɐ])</li>
+                        <li><strong>W</strong> → อ่าน [v] เหมือน "ว" (Wasser [ˈvasɐ])</li>
+                    </ul>
+                    <div class="example">
+                        <p>Vater [ˈfaːtɐ] - พ่อ</p>
+                        <p>Wasser [ˈvasɐ] - น้ำ</p>
+                        <button class="audio-btn" onclick="play('../audio/pronunciation/v_w_sound.mp3')">🔊 ฟังตัวอย่าง</button>
+                    </div>
+                </div>
+
+                <div class="comparison-card">
+                    <h3>6. สระยาว vs สระสั้น</h3>
+                    <p><strong>สำคัญมาก!</strong> เสียงยาว-สั้นทำให้ความหมายเปลี่ยน</p>
+                    <ul>
+                        <li><strong>สระยาว:</strong> สะกด 1 ตัวอักษร หรือมี h (Bahn, Sohn)</li>
+                        <li><strong>สระสั้น:</strong> สะกด 2 ตัวขึ้นไป (Mann, Tisch)</li>
+                    </ul>
+                    <div class="example">
+                        <p>Stadt [ʃtat] (สั้น) - เมือง</p>
+                        <p>Staat [ʃtaːt] (ยาว) - รัฐ</p>
+                        <button class="audio-btn" onclick="play('../audio/pronunciation/vowel_length.mp3')">🔊 ฟังตัวอย่าง</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STRESS RULES -->
+        <section style="margin-top: 3rem;">
+            <h2>📍 กฎการเน้นเสียง (Wortakzent)</h2>
+            
+            <div class="grammar-explanation">
+                <h3>กฎพื้นฐาน: เน้นพยางค์แรก (70% ของคำเยอรมัน)</h3>
+                <p>ตัวอย่าง:</p>
+                <ul>
+                    <li><strong>Arbeit</strong> [ˈaʁbaɪt] - งาน (เน้น Ar-)</li>
+                    <li><strong>Deutschland</strong> [ˈdɔʏtʃlant] - เยอรมนี (เน้น Deutsch-)</li>
+                    <li><strong>lernen</strong> [ˈlɛʁnən] - เรียน (เน้น ler-)</li>
+                </ul>
+            </div>
+
+            <div class="example-box" style="margin-top: 1.5rem;">
+                <h4>ข้อยกเว้น: เน้นพยางค์ท้าย</h4>
+                <ol>
+                    <li><strong>คำที่มีคำนำหน้าแยกไม่ได้ (untrennbare Präfixe):</strong>
+                        <ul>
+                            <li>be-, emp-, ent-, er-, ge-, miss-, ver-, zer-</li>
+                            <li>ตัวอย่าง: ver<strong>stehen</strong> [fɛɐ̯ˈʃteːən] (เข้าใจ)</li>
+                        </ul>
+                    </li>
+                    <li><strong>คำยืมจากภาษาอื่น:</strong>
+                        <ul>
+                            <li>-ion: Informa<strong>tion</strong> [ɪnfɔʁmaˈtsi̯oːn]</li>
+                            <li>-ieren: studie<strong>ren</strong> [ʃtuˈdiːʁən]</li>
+                            <li>-ität: Unive ersität [univɛʁziˈtɛːt]</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- PRACTICE EXERCISES -->
+        <section style="margin-top: 3rem;">
+            <h2>✏️ แบบฝึกหัด - Übungen</h2>
+            
+            <div class="exercise-box">
+                <h3>Übung 1: อ่านและฟัง (Lesen und Hören)</h3>
+                <p>ฟังและลองอ่านตาม:</p>
+                <ol class="practice-list">
+                    <li>
+                        <span class="german-text">Guten Tag! Wie heißen Sie?</span>
+                        <p class="ipa">[ˈɡuːtn̩ taːk viː ˈhaɪsn̩ ziː]</p>
+                        <p class="thai-meaning">สวัสดี! คุณชื่ออะไรครับ/คะ?</p>
+                        <button class="audio-btn" onclick="play('../audio/pronunciation/ex1_1.mp3')">🔊</button>
+                    </li>
+                    <li>
+                        <span class="german-text">Ich heiße Anna. Ich komme aus Deutschland.</span>
+                        <p class="ipa">[ɪç ˈhaɪsə ˈana ɪç ˈkɔmə aʊs ˈdɔʏtʃlant]</p>
+                        <p class="thai-meaning">ฉันชื่อแอนนา ฉันมาจากเยอรมนี</p>
+                        <button class="audio-btn" onclick="play('../audio/pronunciation/ex1_2.mp3')">🔊</button>
+                    </li>
+                    <li>
+                        <span class="german-text">Sprechen Sie Englisch?</span>
+                        <p class="ipa">[ˈʃpʁɛçn̩ ziː ˈɛŋlɪʃ]</p>
+                        <p class="thai-meaning">คุณพูดภาษาอังกฤษได้ไหม?</p>
+                        <button class="audio-btn" onclick="play('../audio/pronunciation/ex1_3.mp3')">🔊</button>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="exercise-box" style="margin-top: 2rem;">
+                <h3>Übung 2: แยกความแตกต่างเสียง</h3>
+                <p>ฟังและเลือกคำที่ได้ยิน:</p>
+                <ol>
+                    <li>
+                        <button class="audio-btn" onclick="play('../audio/pronunciation/ex2_1.mp3')">🔊</button>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a" /> a) Buch</label>
+                            <label><input type="radio" name="q1" value="b" /> b) Puch</label>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="audio-btn" onclick="play('../audio/pronunciation/ex2_2.mp3')">🔊</button>
+                        <div class="options">
+                            <label><input type="radio" name="q2" value="a" /> a) Vater</label>
+                            <label><input type="radio" name="q2" value="b" /> b) Wasser</label>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="audio-btn" onclick="play('../audio/pronunciation/ex2_3.mp3')">🔊</button>
+                        <div class="options">
+                            <label><input type="radio" name="q3" value="a" /> a) schön</label>
+                            <label><input type="radio" name="q3" value="b" /> b) schon</label>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="exercise-box" style="margin-top: 2rem;">
+                <h3>Übung 3: สะกดคำ (Buchstabieren)</h3>
+                <p>ฝึกสะกดชื่อของคุณเป็นภาษาเยอรมัน:</p>
+                <div class="example">
+                    <p><strong>ตัวอย่าง:</strong> ชื่อ "Anna"</p>
+                    <p>A [aː] - N [ɛn] - N [ɛn] - A [aː]</p>
+                    <button class="audio-btn" onclick="play('../audio/pronunciation/spell_anna.mp3')">🔊 ฟังตัวอย่าง</button>
+                </div>
+                <p style="margin-top: 1rem;"><strong>ลองสะกดชื่อของคุณ:</strong></p>
+                <textarea style="width: 100%; padding: 0.75rem; border: 1px solid #e5e7eb; border-radius: 0.5rem; font-family: inherit;" rows="3" placeholder="เช่น: M-A-R-Y = em [ɛm] - a [aː] - er [ɛʁ] - ypsilon [ˈʏpsilɔn]"></textarea>
+            </div>
+        </section>
+
+        <!-- ANSWER KEY -->
+        <section style="margin-top: 3rem;">
+            <h2>📋 เฉลยแบบฝึกหัด</h2>
+            
+            <div class="answer-box">
+                <h3>Übung 2 - เฉลย:</h3>
+                <ol>
+                    <li><strong>1. a) Buch</strong> [buːx] (หนังสือ) - เสียง CH [x] กรอคอหลัง u</li>
+                    <li><strong>2. a) Vater</strong> [ˈfaːtɐ] (พ่อ) - V อ่านเป็น [f]</li>
+                    <li><strong>3. a) schön</strong> [ʃøːn] (สวย) - มี Umlaut ö</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- SUMMARY -->
+        <div class="summary-box" style="margin-top: 3rem;">
+            <h3>📌 สรุปสำคัญ Unit 0</h3>
+            <ul>
+                <li>✅ อักษรเยอรมันมี <strong>26 ตัวพื้นฐาน + 4 ตัวพิเศษ</strong> (ä, ö, ü, ß)</li>
+                <li>✅ เสียง <strong>R, CH, Ö, Ü</strong> ไม่มีในภาษาไทย ต้องฝึกพิเศษ</li>
+                <li>✅ <strong>V อ่าน [f]</strong> และ <strong>W อ่าน [v]</strong> (ตรงข้ามอังกฤษ)</li>
+                <li>✅ เน้นเสียงพยางค์แรกเป็นส่วนใหญ่</li>
+                <li>✅ สระยาว-สั้นสำคัญมาก! ทำให้ความหมายเปลี่ยน</li>
+            </ul>
+            <p style="margin-top: 1rem;"><strong>💪 คำแนะนำ:</strong> ฟังเสียงซ้ำๆ และลองอ่านตามทุกวัน การออกเสียงจะดีขึ้นเรื่อยๆ!</p>
+        </div>
+
+        <nav style="margin-top: 3rem; display: flex; justify-content: space-between;">
+            <a href="../index.html" class="nav-button">← กลับหน้าหลัก</a>
+            <a href="chapter01.html" class="nav-button">Unit 1: Personalpronomen →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>Unit 0: Aussprache und Alphabet | German A1 for Thai Learners</p>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
