@@ -7,18 +7,24 @@
     <title>Unit 1 - VimAPP German A1</title>
     <link rel="stylesheet" href="../style.css">
     <style>
-        /* PWA Chapter Styles */
+        /* Standard Navigation Header */
         .chapter-nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: var(--primary);
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
             color: white;
-            padding: 10px 20px;
+            padding: 15px 20px;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             display: flex;
             justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            display: flex;
             align-items: center;
         }
         
@@ -26,30 +32,68 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .nav-home:hover {
+            opacity: 0.8;
+        }
+        
+        .home-icon {
+            font-size: 20px;
+        }
+        
+        .nav-title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .nav-title-mobile {
+            font-size: 16px;
+            font-weight: 500;
+            display: none;
         }
         
         .nav-controls {
             display: flex;
             gap: 10px;
+            align-items: center;
         }
         
         .nav-btn {
             background: rgba(255,255,255,0.2);
             color: white;
             border: none;
-            padding: 5px 15px;
-            border-radius: 3px;
+            padding: 8px 16px;
+            border-radius: 6px;
             cursor: pointer;
             text-decoration: none;
             font-size: 14px;
+            transition: background 0.2s;
         }
         
         .nav-btn:hover {
             background: rgba(255,255,255,0.3);
         }
         
+        @media (max-width: 768px) {
+            .nav-title {
+                display: none;
+            }
+            
+            .nav-title-mobile {
+                display: block;
+            }
+            
+            .chapter-nav {
+                padding: 12px 15px;
+            }
+        }
+        
         .content-wrapper {
-            margin-top: 60px;
+            margin-top: 80px;
             padding: 20px;
         }
         
@@ -101,9 +145,15 @@
 </head>
 <body>
     <nav class="chapter-nav">
-        <a href="../index.html" class="nav-home">🏠 VimAPP German A1</a>
+        <div class="nav-brand">
+            <a href="../index.html" class="nav-home">
+                <span class="home-icon">🏠</span>
+                <span class="nav-title">VimAPP German A1</span>
+            </a>
+        </div>
         <div class="nav-controls">
             <a href="chapter00.html" class="nav-btn">← ก่อนหน้า</a>
+            <span class="nav-title-mobile">Unit 1: Personal Pronouns</span>
             <a href="chapter02.html" class="nav-btn">ถัดไป →</a>
         </div>
     </nav>
