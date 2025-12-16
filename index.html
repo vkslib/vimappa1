@@ -3,451 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2563eb">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="VimAPP German A1">
-    
-    <title>VimAPP German A1 - Interactive Learning</title>
-    <meta name="description" content="Learn German A1 level with interactive lessons, audio pronunciation, and exercises. Perfect for beginners!">
-    
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="./manifest.json">
-    
-    <!-- Icons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="./icons/icon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./icons/icon-16x16.png">
-    <link rel="apple-touch-icon" href="./icons/icon-152x152.png">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="./style.css">
-    
-    <style>
-        /* PWA specific styles */
-        .pwa-install {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--primary);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            cursor: pointer;
-            display: none;
-            z-index: 1000;
-            border: none;
-            font-size: 14px;
-        }
-        
-        .pwa-install:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-        }
-        
-        .offline-indicator {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: #f59e0b;
-            color: white;
-            text-align: center;
-            padding: 8px;
-            display: none;
-            z-index: 2000;
-        }
-        
-        .chapter-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .chapter-card {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .chapter-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-        
-        .chapter-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-        
-        .chapter-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--gray-800);
-        }
-        
-        .chapter-description {
-            color: var(--gray-600);
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-        
-        .progress-bar {
-            width: 100%;
-            height: 6px;
-            background: var(--gray-200);
-            border-radius: 3px;
-            margin-top: 15px;
-            overflow: hidden;
-        }
-        
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            border-radius: 3px;
-            transition: width 0.3s ease;
-        }
-        
-        /* Standard Navigation Header */
-        .chapter-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
-            color: white;
-            padding: 15px 20px;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .nav-brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .home-icon {
-            font-size: 20px;
-        }
-        
-        .nav-title {
-            margin: 0;
-            font-size: 20px;
-            font-weight: 600;
-        }
-        
-        .nav-subtitle {
-            margin: 0;
-        }
-        
-        .nav-subtitle p {
-            margin: 0;
-            font-size: 14px;
-            opacity: 0.9;
-        }
-        
-        .nav-home {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .nav-home:hover {
-            opacity: 0.8;
-        }
-        
-        .nav-controls {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .nav-btn {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 14px;
-            transition: background 0.2s;
-        }
-        
-        .nav-btn:hover {
-            background: rgba(255,255,255,0.3);
-        }
-        
-        /* Adjust main content for fixed header */
-        main {
-            margin-top: 80px;
-        }
-        
-        @media (max-width: 768px) {
-            .chapter-nav {
-                padding: 12px 15px;
-                flex-direction: column;
-                gap: 8px;
-            }
-            
-            .nav-title {
-                font-size: 18px;
-            }
-            
-            .nav-subtitle p {
-                font-size: 12px;
-            }
-            
-            main {
-                margin-top: 100px;
-            }
-            
-            .chapter-grid {
-                grid-template-columns: 1fr;
-                padding: 10px;
-                gap: 15px;
-            }
-        }
-    </style>
+    <title>หนังสือเรียนภาษาเยอรมัน A1</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Offline Indicator -->
-    <div class="offline-indicator" id="offline-indicator">
-        📶 คุณอยู่ในโหมดออฟไลน์ - บางฟีเจอร์อาจไม่ทำงาน
-    </div>
-
-    <!-- PWA Install Button -->
-    <button class="pwa-install" id="pwa-install-btn">
-        📱 เพิ่มไปหน้าจอหลัก
-    </button>
-
-    <!-- Standard Navigation Header -->
-    <nav class="chapter-nav">
-        <div class="nav-brand">
-            <span class="home-icon">🏠</span>
-            <h1 class="nav-title">VimAPP German A1</h1>
-        </div>
-        <div class="nav-subtitle">
-            <p>Interactive German Learning Experience</p>
-        </div>
-    </nav>
-
+    <header>
+        <h1>📚 VimAPP</h1>
+        <p class="subtitle">Interactive Learning Experience</p>
+    </header>
+    
     <main>
-        <div class="chapter-grid" id="chapter-grid">
-            <!-- Chapters will be loaded here -->
+        <div class="toc-intro">
+            <h2>🎯 เรียนรู้ภาษาเยอรมันอย่างมีประสิทธิภาพ</h2>
+            <p>หนังสือเล่มนี้ออกแบบมาเป็นพิเศษสำหรับผู้เรียนชาวไทย ครอบคลุมทุกทักษะที่จำเป็นสำหรับการสอบ <strong>Goethe-Zertifikat A1</strong></p>
+            
+            <div style="display: grid; gap: 1rem; margin-top: 1.5rem;">
+                <div style="background: white; padding: 1rem; border-radius: 0.75rem; border-left: 4px solid #2563eb;">
+                    <strong>✓ คำอธิบายเป็นภาษาไทยทั้งหมด</strong> - เข้าใจง่าย ไม่งง
+                </div>
+                <div style="background: white; padding: 1rem; border-radius: 0.75rem; border-left: 4px solid #10b981;">
+                    <strong>✓ เสียงประกอบทุกคำ</strong> - ฝึกการออกเสียงอย่างถูกต้อง
+                </div>
+                <div style="background: white; padding: 1rem; border-radius: 0.75rem; border-left: 4px solid #f59e0b;">
+                    <strong>✓ แบบฝึกหัดครบชุด</strong> - พร้อมเฉลยและคำอธิบาย
+                </div>
+                <div style="background: white; padding: 1rem; border-radius: 0.75rem; border-left: 4px solid #ec4899;">
+                    <strong>✓ ข้อสอบจำลอง Goethe A1</strong> - เตรียมพร้อมสอบจริง
+                </div>
+            </div>
+        </div>
+
+        <nav style="margin-top: 3rem;">
+            <h2>🚀 เริ่มต้นเรียน</h2>
+            <ul>
+                <li><a href="content/table_of_contents.html">📖 สารบัญหนังสือเต็ม (Table of Contents)</a></li>
+                <li><a href="content/chapter00.html">🔤 Unit 0 - ออกเสียงและอักษร (Pronunciation)</a></li>
+                <li><a href="content/chapter01.html">📘 Unit 1 - Personalpronomen (สรรพนาม)</a></li>
+                <li><a href="content/chapter02.html">📘 Unit 2 - Familie und Freunde (ครอบครัวและเพื่อน)</a></li>
+                <li><a href="content/chapter03.html">📘 Unit 3 - Berufe und Arbeit (อาชีพและการทำงาน)</a></li>
+                <li><a href="content/chapter04.html">📘 Unit 4 - Wohnen (ที่อยู่อาศัย)</a></li>
+                <li><a href="content/chapter05.html">📘 Unit 5 - Essen und Trinken (อาหารและเครื่องดื่ม)</a></li>
+                <li><a href="content/chapter06.html">📘 Unit 6 - Einkaufen (การช้อปปิ้ง)</a></li>
+                <li><a href="content/chapter07.html">📘 Unit 7 - Freizeit und Hobbys (เวลาว่างและงานอดิเรก)</a></li>
+                <li><a href="content/chapter08.html">📘 Unit 8 - Gesundheit (สุขภาพ)</a></li>
+                <li><a href="content/chapter09.html">📘 Unit 9 - Wetter und Jahreszeiten (อากาศและฤดูกาล)</a></li>
+                <li><a href="content/chapter10.html">📘 Unit 10 - Reisen und Verkehr (การเดินทางและการจราจร)</a></li>
+                <li><a href="content/chapter11.html">📘 Unit 11 - Schule und Lernen (โรงเรียนและการเรียน)</a></li>
+                <li><a href="content/chapter12.html">📘 Unit 12 - Medien und Kommunikation (สื่อและการสื่อสาร)</a></li>
+                <li><a href="content/chapter13.html">📘 Unit 13 - Kultur und Feste (วัฒนธรรมและเทศกาล)</a></li>
+                <li><a href="content/chapter14.html">🎓 Unit 14 - Prüfungsvorbereitung (การเตรียมสอบ)</a></li>
+            </ul>
+        </nav>
+
+        <div class="summary-box" style="margin-top: 3rem;">
+            <h3>💡 วิธีใช้หนังสือเล่มนี้</h3>
+            <ol style="margin-left: 2rem; margin-top: 1rem; line-height: 2;">
+                <li><strong>เริ่มจากการฝึกออกเสียง</strong> ใน Unit 0 (อักษรเยอรมันและการออกเสียง)</li>
+                <li><strong>เรียนตามลำดับ</strong> Unit 1-14 (อย่าข้าม เพราะแต่ละบทต่อเนื่องกัน)</li>
+                <li><strong>กดปุ่ม 🔊</strong> เพื่อฟังเสียงทุกคำ ฝึกออกเสียงตาม</li>
+                <li><strong>ทำแบบฝึกหัด</strong> หลังเรียนแต่ละ Unit แล้วเช็คเฉลย</li>
+                <li><strong>ทบทวนด้วยข้อสอบจำลอง</strong> ก่อนสอบจริง</li>
+            </ol>
+        </div>
+
+        <div class="note-box" style="margin-top: 2rem;">
+            <h4>📌 หมายเหตุสำคัญ</h4>
+            <ul>
+                <li>การออกเสียงใช้สัญลักษณ์ <strong>IPA (International Phonetic Alphabet)</strong> มาตรฐานสากล</li>
+                <li>เสียงที่บันทึกเป็น <strong>เจ้าของภาษาชาวเยอรมัน</strong> พูดช้าลง 20% เพื่อผู้เริ่มต้น</li>
+                <li>คำศัพท์และไวยากรณ์ครอบคลุม <strong>800-1000 คำ</strong> ที่จำเป็นสำหรับ A1</li>
+            </ul>
         </div>
     </main>
+    
+    <footer>
+        <p>© 2025 German A1 Interactive Textbook | Made with ❤️ for Thai Learners</p>
+        <p style="margin-top: 0.5rem; font-size: 0.875rem; opacity: 0.7;">Based on Hueber Standards & Goethe-Institut A1 Curriculum</p>
+    </footer>
 
-    <script>
-        // Chapter data
-        const chapters = [
-            {
-                id: 'chapter00',
-                number: '0',
-                title: 'Einführung (Introduction)',
-                description: 'German alphabet, pronunciation, and basic sounds',
-                file: './chapters/chapter00.html'
-            },
-            {
-                id: 'chapter01', 
-                number: '1',
-                title: 'Sich vorstellen (Introducing Yourself)',
-                description: 'Personal pronouns, verb "sein", basic introductions',
-                file: './chapters/chapter01.html'
-            },
-            {
-                id: 'chapter02',
-                number: '2', 
-                title: 'Familie und Freunde (Family and Friends)',
-                description: 'Family members, possessive pronouns, relationships',
-                file: './chapters/chapter02.html'
-            },
-            {
-                id: 'chapter03',
-                number: '3',
-                title: 'Berufe (Professions)', 
-                description: 'Jobs, professions, work vocabulary',
-                file: './chapters/chapter03.html'
-            },
-            {
-                id: 'chapter04',
-                number: '4',
-                title: 'Wohnen (Living)',
-                description: 'Home, rooms, furniture, living situations',
-                file: './chapters/chapter04.html'
-            },
-            {
-                id: 'chapter05',
-                number: '5',
-                title: 'Essen und Trinken (Food and Drink)',
-                description: 'Food vocabulary, meals, restaurants',
-                file: './chapters/chapter05.html'
-            },
-            {
-                id: 'chapter06',
-                number: '6',
-                title: 'Einkaufen (Shopping)',
-                description: 'Shopping, prices, clothing, stores',
-                file: './chapters/chapter06.html'
-            },
-            {
-                id: 'chapter07',
-                number: '7',
-                title: 'Freizeit (Leisure Time)',
-                description: 'Hobbies, sports, free time activities',
-                file: './chapters/chapter07.html'
-            },
-            {
-                id: 'chapter08',
-                number: '8',
-                title: 'Gesundheit (Health)',
-                description: 'Body parts, health problems, doctor visits',
-                file: './chapters/chapter08.html'
-            },
-            {
-                id: 'chapter09',
-                number: '9',
-                title: 'Reisen (Travel)',
-                description: 'Transportation, travel vocabulary, directions',
-                file: './chapters/chapter09.html'
-            },
-            {
-                id: 'chapter10',
-                number: '10',
-                title: 'Wetter (Weather)',
-                description: 'Weather conditions, seasons, temperature',
-                file: './chapters/chapter10.html'
-            },
-            {
-                id: 'chapter11',
-                number: '11',
-                title: 'Zeit und Termine (Time and Appointments)',
-                description: 'Time, dates, making appointments',
-                file: './chapters/chapter11.html'
-            },
-            {
-                id: 'chapter12',
-                number: '12',
-                title: 'Arbeit (Work)',
-                description: 'Work environment, job interviews, workplace',
-                file: './chapters/chapter12.html'
-            },
-            {
-                id: 'chapter13',
-                number: '13',
-                title: 'Schule und Bildung (School and Education)',
-                description: 'Education system, school subjects, learning',
-                file: './chapters/chapter13.html'
-            },
-            {
-                id: 'chapter14',
-                number: '14',
-                title: 'Prüfungsvorbereitung (Exam Preparation)',
-                description: 'A1 exam preparation, review, practice tests',
-                file: './chapters/chapter14.html'
-            }
-        ];
-
-        // Render chapters
-        function renderChapters() {
-            const grid = document.getElementById('chapter-grid');
-            
-            chapters.forEach((chapter, index) => {
-                const progress = getChapterProgress(chapter.id);
-                
-                const card = document.createElement('a');
-                card.href = chapter.file;
-                card.className = 'chapter-card';
-                card.innerHTML = `
-                    <div class="chapter-number">${chapter.number}</div>
-                    <div class="chapter-title">${chapter.title}</div>
-                    <div class="chapter-description">${chapter.description}</div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: ${progress}%"></div>
-                    </div>
-                `;
-                
-                grid.appendChild(card);
-            });
-        }
-
-        // Get chapter progress (from localStorage)
-        function getChapterProgress(chapterId) {
-            const progress = localStorage.getItem(`progress_${chapterId}`);
-            return progress ? parseInt(progress) : 0;
-        }
-
-        // PWA Installation
-        let deferredPrompt;
-        
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            
-            const installBtn = document.getElementById('pwa-install-btn');
-            installBtn.style.display = 'block';
-            
-            installBtn.addEventListener('click', () => {
-                installBtn.style.display = 'none';
-                deferredPrompt.prompt();
-                
-                deferredPrompt.userChoice.then((choiceResult) => {
-                    if (choiceResult.outcome === 'accepted') {
-                        console.log('User accepted PWA installation');
-                    }
-                    deferredPrompt = null;
-                });
-            });
-        });
-
-        // Service Worker Registration
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js')
-                    .then((registration) => {
-                        console.log('SW registered: ', registration);
-                    })
-                    .catch((registrationError) => {
-                        console.log('SW registration failed: ', registrationError);
-                    });
-            });
-        }
-
-        // Online/Offline Detection
-        function updateOnlineStatus() {
-            const indicator = document.getElementById('offline-indicator');
-            if (navigator.onLine) {
-                indicator.style.display = 'none';
-            } else {
-                indicator.style.display = 'block';
-            }
-        }
-
-        window.addEventListener('online', updateOnlineStatus);
-        window.addEventListener('offline', updateOnlineStatus);
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            renderChapters();
-            updateOnlineStatus();
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

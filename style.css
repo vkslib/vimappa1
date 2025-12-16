@@ -45,6 +45,67 @@
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
+/* ========== Chapter Navigation ========== */
+.chapter-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    margin-bottom: var(--space-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-sm) var(--space-lg);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius-lg);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    min-width: 100px;
+    backdrop-filter: blur(10px);
+}
+
+.nav-btn:hover:not(.disabled) {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-btn.home {
+    background: rgba(255, 255, 255, 0.15);
+    font-weight: 600;
+}
+
+.nav-btn.home:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.nav-btn.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .chapter-nav {
+        padding: var(--space-sm);
+    }
+    
+    .nav-btn {
+        font-size: 0.8rem;
+        padding: var(--space-xs) var(--space-md);
+        min-width: 80px;
+    }
+}
+
 /* ========== EPUB3 & Cover Styles ========== */
 .cover {
     display: flex;
