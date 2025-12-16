@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2563eb">
+    <title>Unit 8 - VimAPP German A1</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* PWA Chapter Styles */
+        .chapter-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-home {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .nav-controls {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .nav-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .content-wrapper {
+            margin-top: 60px;
+            padding: 20px;
+        }
+        
+        /* Notes feature */
+        .notes-panel {
+            position: fixed;
+            right: -300px;
+            top: 60px;
+            bottom: 0;
+            width: 300px;
+            background: white;
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .notes-panel.open {
+            right: 0;
+        }
+        
+        .notes-toggle {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1001;
+        }
+        
+        @media (max-width: 768px) {
+            .notes-panel {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .content-wrapper {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="chapter-nav">
+        <a href="../index.html" class="nav-home">🏠 VimAPP German A1</a>
+        <div class="nav-controls">
+            <a href="chapter07.html" class="nav-btn">← ก่อนหน้า</a>
+            <a href="chapter09.html" class="nav-btn">ถัดไป →</a>
+        </div>
+    </nav>
+    
+    <div class="content-wrapper"><div class="container">
+    <header class="unit-header">
+      <h1>Unit 8: Gesundheit</h1>
+      <p class="subtitle">สุขภาพ - Health</p>
+      <p class="description">เรียนรู้เกี่ยวกับร่างกาย อาการเจ็บป่วย และการไปหาหมอ</p>
+    </header>
+
+    <section class="grammar-section">
+      <h2>📚 ไวยากรณ์: Modalverb müssen (ต้อง)</h2>
+      
+      <div class="grammar-box">
+        <h3>müssen (จำเป็นต้อง, ต้อง)</h3>
+        <p>ใช้แสดงความจำเป็นหรือข้อบังคับ</p>
+      </div>
+
+      <div class="table-container">
+        <table class="grammar-table">
+          <thead>
+            <tr>
+              <th>คำสรรพนาม</th>
+              <th>müssen</th>
+              <th>ตัวอย่าง</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ich</td>
+              <td>muss</td>
+              <td>Ich muss zum Arzt gehen.</td>
+            </tr>
+            <tr>
+              <td>du</td>
+              <td>musst</td>
+              <td>Du musst Medikamente nehmen.</td>
+            </tr>
+            <tr>
+              <td>er/sie/es</td>
+              <td>muss</td>
+              <td>Sie muss im Bett bleiben.</td>
+            </tr>
+            <tr>
+              <td>wir</td>
+              <td>müssen</td>
+              <td>Wir müssen gesund essen.</td>
+            </tr>
+            <tr>
+              <td>ihr</td>
+              <td>müsst</td>
+              <td>Ihr müsst viel trinken.</td>
+            </tr>
+            <tr>
+              <td>sie/Sie</td>
+              <td>müssen</td>
+              <td>Sie müssen sich ausruhen.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box warning">
+        <h4>⚠️ ความแตกต่าง:</h4>
+        <ul>
+          <li><strong>müssen</strong> = ต้อง (จำเป็น, บังคับ)</li>
+          <li><strong>sollen</strong> = ควรจะ (คำแนะนำ)</li>
+          <li><strong>können</strong> = สามารถ</li>
+        </ul>
+      </div>
+
+      <div class="grammar-box">
+        <h3>คำถามเกี่ยวกับอาการ</h3>
+      </div>
+
+      <div class="table-container">
+        <table class="grammar-table">
+          <thead>
+            <tr>
+              <th>ภาษาเยอรมัน</th>
+              <th>ความหมาย</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Was fehlt Ihnen?</td>
+              <td>คุณเป็นอะไร? (สุภาพ)</td>
+            </tr>
+            <tr>
+              <td>Was ist los?</td>
+              <td>เป็นอะไร?</td>
+            </tr>
+            <tr>
+              <td>Wie geht es dir?</td>
+              <td>เป็นอย่างไรบ้าง?</td>
+            </tr>
+            <tr>
+              <td>Wo tut es weh?</td>
+              <td>เจ็บตรงไหน?</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="vocabulary-section">
+      <h2>📖 คำศัพท์: ร่างกายและสุขภาพ</h2>
+      
+      <h3>👤 อวัยวะร่างกาย (Körperteile)</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="german">der Kopf</div>
+          <div class="ipa">[kɔpf]</div>
+          <div class="thai-reading">คอพฟ์</div>
+          <div class="meaning">ศีรษะ, หัว</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/kopf.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">der Bauch</div>
+          <div class="ipa">[baʊ̯x]</div>
+          <div class="thai-reading">เบาช์</div>
+          <div class="meaning">ท้อง</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/bauch.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">der Rücken</div>
+          <div class="ipa">[ˈʁʏkn̩]</div>
+          <div class="thai-reading">รึคเคิน</div>
+          <div class="meaning">หลัง</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/ruecken.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">das Bein</div>
+          <div class="ipa">[baɪ̯n]</div>
+          <div class="thai-reading">ไบน์</div>
+          <div class="meaning">ขา</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/bein.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">der Arm</div>
+          <div class="ipa">[aʁm]</div>
+          <div class="thai-reading">อาร์ม</div>
+          <div class="meaning">แขน</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/arm.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">die Hand</div>
+          <div class="ipa">[hant]</div>
+          <div class="thai-reading">ฮันท์</div>
+          <div class="meaning">มือ</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/hand.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">der Fuß</div>
+          <div class="ipa">[fuːs]</div>
+          <div class="thai-reading">ฟูส</div>
+          <div class="meaning">เท้า</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/fuss.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">das Auge</div>
+          <div class="ipa">[ˈaʊ̯ɡə]</div>
+          <div class="thai-reading">เอาเกอ</div>
+          <div class="meaning">ตา</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/auge.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">das Ohr</div>
+          <div class="ipa">[oːɐ̯]</div>
+          <div class="thai-reading">โอร์</div>
+          <div class="meaning">หู</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/ohr.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">die Nase</div>
+          <div class="ipa">[ˈnaːzə]</div>
+          <div class="thai-reading">นาเซอ</div>
+          <div class="meaning">จมูก</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/nase.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">der Mund</div>
+          <div class="ipa">[mʊnt]</div>
+          <div class="thai-reading">มุนท์</div>
+          <div class="meaning">ปาก</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/mund.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">der Zahn</div>
+          <div class="ipa">[t͡saːn]</div>
+          <div class="thai-reading">ทซาน</div>
+          <div class="meaning">ฟัน</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/zahn.mp3')">🔊 ฟัง</button>
+        </div>
+      </div>
+
+      <h3>🤒 อาการเจ็บป่วย (Krankheiten)</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="german">das Fieber</div>
+          <div class="ipa">[ˈfiːbɐ]</div>
+          <div class="thai-reading">ฟีเบอร์</div>
+          <div class="meaning">ไข้</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/fieber.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">der Husten</div>
+          <div class="ipa">[ˈhuːstn̩]</div>
+          <div class="thai-reading">ฮูสเทิน</div>
+          <div class="meaning">ไอ</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/husten.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">der Schnupfen</div>
+          <div class="ipa">[ˈʃnʊpfn̩]</div>
+          <div class="thai-reading">ชนุพเฟิน</div>
+          <div class="meaning">น้ำมูกไหล</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/schnupfen.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">die Grippe</div>
+          <div class="ipa">[ˈɡʁɪpə]</div>
+          <div class="thai-reading">กริพเพอ</div>
+          <div class="meaning">ไข้หวัด</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/grippe.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">die Erkältung</div>
+          <div class="ipa">[ɛɐ̯ˈkɛltʊŋ]</div>
+          <div class="thai-reading">แอร์เคลทุง</div>
+          <div class="meaning">หวัด, เป็นหวัด</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/erkaeltung.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">die Kopfschmerzen</div>
+          <div class="ipa">[ˈkɔpfˌʃmɛʁt͡sn̩]</div>
+          <div class="thai-reading">คอพฟ์ชเมร์ทเซิน</div>
+          <div class="meaning">ปวดหัว</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/kopfschmerzen.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">die Bauchschmerzen</div>
+          <div class="ipa">[ˈbaʊ̯xˌʃmɛʁt͡sn̩]</div>
+          <div class="thai-reading">เบาช์ชเมร์ทเซิน</div>
+          <div class="meaning">ปวดท้อง</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/bauchschmerzen.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">die Halsschmerzen</div>
+          <div class="ipa">[ˈhalsˌʃmɛʁt͡sn̩]</div>
+          <div class="thai-reading">ฮัลส์ชเมร์ทเซิน</div>
+          <div class="meaning">เจ็บคอ</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/halsschmerzen.mp3')">🔊 ฟัง</button>
+        </div>
+      </div>
+
+      <h3>💊 การรักษาและยา</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="german">der Arzt</div>
+          <div class="ipa">[aʁt͡st]</div>
+          <div class="thai-reading">อาร์ทสท์</div>
+          <div class="meaning">หมอ (ผู้ชาย)</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/arzt.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">die Ärztin</div>
+          <div class="ipa">[ˈɛʁt͡stɪn]</div>
+          <div class="thai-reading">แอร์ทสทิน</div>
+          <div class="meaning">หมอ (ผู้หญิง)</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/aerztin.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">das Krankenhaus</div>
+          <div class="ipa">[ˈkʁaŋkn̩ˌhaʊ̯s]</div>
+          <div class="thai-reading">คร้างเคินเฮาส์</div>
+          <div class="meaning">โรงพยาบาล</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/krankenhaus.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">die Apotheke</div>
+          <div class="ipa">[apoˈteːkə]</div>
+          <div class="thai-reading">อาโปเทเคอ</div>
+          <div class="meaning">ร้านขายยา</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/apotheke.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">das Medikament</div>
+          <div class="ipa">[medikaˈmɛnt]</div>
+          <div class="thai-reading">เมดิกาเมนท์</div>
+          <div class="meaning">ยา</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/medikament.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">die Tablette</div>
+          <div class="ipa">[taˈblɛtə]</div>
+          <div class="thai-reading">ทาเบล็ตเทอ</div>
+          <div class="meaning">ยาเม็ด</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/tablette.mp3')">🔊 ฟัง</button>
+        </div>
+      </div>
+
+      <h3>🏥 กริยาเกี่ยวกับสุขภาพ</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="german">wehtun</div>
+          <div class="ipa">[ˈveːˌtuːn]</div>
+          <div class="thai-reading">เวทูน</div>
+          <div class="meaning">เจ็บ</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/wehtun.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">krank sein</div>
+          <div class="ipa">[kʁaŋk zaɪ̯n]</div>
+          <div class="thai-reading">คร้างค์ ไซน์</div>
+          <div class="meaning">ป่วย</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/krank_sein.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">gesund sein</div>
+          <div class="ipa">[ɡəˈzʊnt zaɪ̯n]</div>
+          <div class="thai-reading">เกอซุนท์ ไซน์</div>
+          <div class="meaning">สุขภาพดี</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/gesund_sein.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">sich ausruhen</div>
+          <div class="ipa">[zɪç ˈaʊ̯sˌʁuːən]</div>
+          <div class="thai-reading">ซิช เอาส์รูเอิน</div>
+          <div class="meaning">พักผ่อน</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/ausruhen.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">untersuchen</div>
+          <div class="ipa">[ʊntɐˈzuːxn̩]</div>
+          <div class="thai-reading">อุนเทอร์ซูเชิน</div>
+          <div class="meaning">ตรวจ</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/untersuchen.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">helfen</div>
+          <div class="ipa">[ˈhɛlfn̩]</div>
+          <div class="thai-reading">เฮลเฟิน</div>
+          <div class="meaning">ช่วย</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/helfen.mp3')">🔊 ฟัง</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="examples-section">
+      <h2>💡 ตัวอย่างประโยค</h2>
+
+      <div class="sentence-card">
+        <div class="german">Ich habe Kopfschmerzen.</div>
+        <div class="ipa">[ɪç ˈhaːbə ˈkɔpfˌʃmɛʁt͡sn̩]</div>
+        <div class="thai-reading">อิช ฮาเบอ คอพฟ์ชเมร์ทเซิน</div>
+        <div class="meaning">ฉันปวดหัว</div>
+        <button class="audio-btn" onclick="play('../audio/sentences/kopfschmerzen.mp3')">🔊 ฟัง</button>
+      </div>
+
+      <div class="sentence-card">
+        <div class="german">Mir tut der Bauch weh.</div>
+        <div class="ipa">[miːɐ̯ tuːt deːɐ̯ baʊ̯x veː]</div>
+        <div class="thai-reading">มีร์ ทูท แดร์ เบาช์ เว</div>
+        <div class="meaning">ท้องฉันเจ็บ</div>
+        <button class="audio-btn" onclick="play('../audio/sentences/bauch_weh.mp3')">🔊 ฟัง</button>
+      </div>
+
+      <div class="sentence-card">
+        <div class="german">Ich bin krank.</div>
+        <div class="ipa">[ɪç bɪn kʁaŋk]</div>
+        <div class="thai-reading">อิช บิน คร้างค์</div>
+        <div class="meaning">ฉันป่วย</div>
+        <button class="audio-btn" onclick="play('../audio/sentences/bin_krank.mp3')">🔊 ฟัง</button>
+      </div>
+
+      <div class="sentence-card">
+        <div class="german">Ich muss zum Arzt gehen.</div>
+        <div class="ipa">[ɪç mʊs t͡sʊm aʁt͡st ˈɡeːən]</div>
+        <div class="thai-reading">อิช มุส ทซุม อาร์ทสท์ เกเอิน</div>
+        <div class="meaning">ฉันต้องไปหาหมอ</div>
+        <button class="audio-btn" onclick="play('../audio/sentences/zum_arzt.mp3')">🔊 ฟัง</button>
+      </div>
+
+      <div class="sentence-card">
+        <div class="german">Sie hat Fieber.</div>
+        <div class="ipa">[ziː hat ˈfiːbɐ]</div>
+        <div class="thai-reading">ซี ฮัท ฟีเบอร์</div>
+        <div class="meaning">เธอมีไข้</div>
+        <button class="audio-btn" onclick="play('../audio/sentences/hat_fieber.mp3')">🔊 ฟัง</button>
+      </div>
+
+      <div class="sentence-card">
+        <div class="german">Du musst Medikamente nehmen.</div>
+        <div class="ipa">[duː mʊst medikaˈmɛntə ˈneːmən]</div>
+        <div class="thai-reading">ดู มุสท์ เมดิกาเมนเทอ เนเมิน</div>
+        <div class="meaning">คุณต้องกินยา</div>
+        <button class="audio-btn" onclick="play('../audio/sentences/medikamente_nehmen.mp3')">🔊 ฟัง</button>
+      </div>
+
+      <div class="sentence-card">
+        <div class="german">Ich habe eine Erkältung.</div>
+        <div class="ipa">[ɪç ˈhaːbə ˈaɪ̯nə ɛɐ̯ˈkɛltʊŋ]</div>
+        <div class="thai-reading">อิช ฮาเบอ ไอเนอ แอร์เคลทุง</div>
+        <div class="meaning">ฉันเป็นหวัด</div>
+        <button class="audio-btn" onclick="play('../audio/sentences/erkaeltung.mp3')">🔊 ฟัง</button>
+      </div>
+
+      <div class="sentence-card">
+        <div class="german">Sie müssen sich ausruhen.</div>
+        <div class="ipa">[ziː ˈmʏsn̩ zɪç ˈaʊ̯sˌʁuːən]</div>
+        <div class="thai-reading">ซี มึสเซิน ซิช เอาส์รูเอิน</div>
+        <div class="meaning">คุณต้องพักผ่อน</div>
+        <button class="audio-btn" onclick="play('../audio/sentences/ausruhen.mp3')">🔊 ฟัง</button>
+      </div>
+
+      <div class="sentence-card">
+        <div class="german">Gute Besserung!</div>
+        <div class="ipa">[ˈɡuːtə ˈbɛsəʁʊŋ]</div>
+        <div class="thai-reading">กูเทอ เบสเซอรุง!</div>
+        <div class="meaning">หายเร็วๆ นะ!</div>
+        <button class="audio-btn" onclick="play('../audio/sentences/gute_besserung.mp3')">🔊 ฟัง</button>
+      </div>
+
+      <div class="sentence-card">
+        <div class="german">Wo ist die Apotheke?</div>
+        <div class="ipa">[voː ɪst diː apoˈteːkə]</div>
+        <div class="thai-reading">โว อิสท์ ดี อาโปเทเคอ?</div>
+        <div class="meaning">ร้านขายยาอยู่ที่ไหน?</div>
+        <button class="audio-btn" onclick="play('../audio/sentences/apotheke_wo.mp3')">🔊 ฟัง</button>
+      </div>
+    </section>
+
+    <section class="dialogue-section">
+      <h2>💬 บทสนทนา</h2>
+
+      <h3>Dialogue 1: Beim Arzt (ที่คลินิกหมอ)</h3>
+      <div class="dialogue-box">
+        <div class="dialogue-line">
+          <span class="speaker">Ärztin:</span>
+          <div class="content">
+            <div class="german">Guten Tag! Was fehlt Ihnen?</div>
+            <div class="ipa">[ˈɡuːtn̩ taːk vas feːlt ˈiːnən]</div>
+            <div class="thai-reading">กูเทิน ทาค! วาส เฟลท์ อีเนิน?</div>
+            <div class="meaning">สวัสดีค่ะ! คุณเป็นอะไรคะ?</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d8_01.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Patient:</span>
+          <div class="content">
+            <div class="german">Ich habe Kopfschmerzen und Fieber.</div>
+            <div class="ipa">[ɪç ˈhaːbə ˈkɔpfˌʃmɛʁt͡sn̩ ʊnt ˈfiːbɐ]</div>
+            <div class="thai-reading">อิช ฮาเบอ คอพฟ์ชเมร์ทเซิน อุนด์ ฟีเบอร์</div>
+            <div class="meaning">ผมปวดหัวและมีไข้ครับ</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d8_02.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Ärztin:</span>
+          <div class="content">
+            <div class="german">Seit wann haben Sie diese Symptome?</div>
+            <div class="ipa">[zaɪ̯t van ˈhaːbn̩ ziː ˈdiːzə zʏmpˈtoːmə]</div>
+            <div class="thai-reading">ไซท์ วัน ฮาเบิน ซี ดีเซอ ซึมพ์โทเมอ?</div>
+            <div class="meaning">คุณมีอาการนี้ตั้งแต่เมื่อไหร่คะ?</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d8_03.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Patient:</span>
+          <div class="content">
+            <div class="german">Seit gestern Abend.</div>
+            <div class="ipa">[zaɪ̯t ˈɡɛstɐn ˈaːbm̩t]</div>
+            <div class="thai-reading">ไซท์ เกสเทิน อาเบินท์</div>
+            <div class="meaning">ตั้งแต่เมื่อคืนครับ</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d8_04.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Ärztin:</span>
+          <div class="content">
+            <div class="german">Sie haben eine Grippe. Nehmen Sie diese Tabletten.</div>
+            <div class="ipa">[ziː ˈhaːbn̩ ˈaɪ̯nə ˈɡʁɪpə ˈneːmən ziː ˈdiːzə taˈblɛtn̩]</div>
+            <div class="thai-reading">ซี ฮาเบิน ไอเนอ กริพเพอ. เนเมิน ซี ดีเซอ ทาเบล็ตเทิน</div>
+            <div class="meaning">คุณเป็นไข้หวัดค่ะ กินยาเม็ดนี้นะคะ</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d8_05.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Patient:</span>
+          <div class="content">
+            <div class="german">Wie oft muss ich die Tabletten nehmen?</div>
+            <div class="ipa">[viː ɔft mʊs ɪç diː taˈblɛtn̩ ˈneːmən]</div>
+            <div class="thai-reading">วี ออฟท์ มุส อิช ดี ทาเบล็ตเทิน เนเมิน?</div>
+            <div class="meaning">ผมต้องกินยาบ่อยแค่ไหนครับ?</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d8_06.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Ärztin:</span>
+          <div class="content">
+            <div class="german">Dreimal täglich. Und trinken Sie viel Wasser!</div>
+            <div class="ipa">[ˈdʁaɪ̯maːl ˈtɛːklɪç ʊnt ˈtʁɪŋkən ziː fiːl ˈvasɐ]</div>
+            <div class="thai-reading">ดไรมาล เทคลิช. อุนด์ ทริงเคิน ซี ฟีล วาสเซอร์!</div>
+            <div class="meaning">วันละ 3 ครั้งค่ะ และดื่มน้ำเยอะๆ นะคะ!</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d8_07.mp3')">🔊</button>
+          </div>
+        </div>
+      </div>
+
+      <h3>Dialogue 2: Krankmeldung (แจ้งลาป่วย)</h3>
+      <div class="dialogue-box">
+        <div class="dialogue-line">
+          <span class="speaker">Anna:</span>
+          <div class="content">
+            <div class="german">Hallo Chef, ich kann heute nicht kommen.</div>
+            <div class="ipa">[ˈhalo ʃɛf ɪç kan ˈhɔʏ̯tə nɪçt ˈkɔmən]</div>
+            <div class="thai-reading">ฮาโล เชฟ, อิช คัน ฮอยเทอ นิชท์ คอเมิน</div>
+            <div class="meaning">สวัสดีค่ะคุณหัวหน้า ฉันไม่สามารถมาวันนี้ได้ค่ะ</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d8_08.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Chef:</span>
+          <div class="content">
+            <div class="german">Oh, was ist los? Sind Sie krank?</div>
+            <div class="ipa">[oː vas ɪst loːs zɪnt ziː kʁaŋk]</div>
+            <div class="thai-reading">โอ วาส อิสท์ ลอส? ซินท์ ซี คร้างค์?</div>
+            <div class="meaning">โอ้ เป็นอะไรครับ? คุณป่วยหรือครับ?</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d8_09.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Anna:</span>
+          <div class="content">
+            <div class="german">Ja, ich habe eine starke Erkältung.</div>
+            <div class="ipa">[jaː ɪç ˈhaːbə ˈaɪ̯nə ˈʃtaʁkə ɛɐ̯ˈkɛltʊŋ]</div>
+            <div class="thai-reading">ยา, อิช ฮาเบอ ไอเนอ ชตาร์เคอ แอร์เคลทุง</div>
+            <div class="meaning">ค่ะ ฉันเป็นหวัดหนักค่ะ</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d8_10.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Chef:</span>
+          <div class="content">
+            <div class="german">Das tut mir leid. Gute Besserung!</div>
+            <div class="ipa">[das tuːt miːɐ̯ laɪ̯t ˈɡuːtə ˈbɛsəʁʊŋ]</div>
+            <div class="thai-reading">ดาส ทูท มีร์ ไลท์. กูเทอ เบสเซอรุง!</div>
+            <div class="meaning">เสียใจด้วยครับ หายเร็วๆ นะครับ!</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d8_11.mp3')">🔊</button>
+          </div>
+        </div>
+      </div>
+
+      <h3>Dialogue 3: In der Apotheke (ที่ร้านขายยา)</h3>
+      <div class="dialogue-box">
+        <div class="dialogue-line">
+          <span class="speaker">Kunde:</span>
+          <div class="content">
+            <div class="german">Guten Tag! Ich brauche etwas gegen Kopfschmerzen.</div>
+            <div class="ipa">[ˈɡuːtn̩ taːk ɪç ˈbʁaʊ̯xə ˈɛtvas ˈɡeːɡn̩ ˈkɔpfˌʃmɛʁt͡sn̩]</div>
+            <div class="thai-reading">กูเทิน ทาค! อิช เบราวเชอ เอทวาส เกเกิน คอพฟ์ชเมร์ทเซิน</div>
+            <div class="meaning">สวัสดีครับ! ผมต้องการยาแก้ปวดหัวครับ</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d8_12.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Apotheker:</span>
+          <div class="content">
+            <div class="german">Ich empfehle Ihnen diese Tabletten.</div>
+            <div class="ipa">[ɪç ɛmˈpfeːlə ˈiːnən ˈdiːzə taˈblɛtn̩]</div>
+            <div class="thai-reading">อิช เอ็มพ์เฟเลอ อีเนิน ดีเซอ ทาเบล็ตเทิน</div>
+            <div class="meaning">ผมแนะนำยาเม็ดนี้ครับ</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d8_13.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Kunde:</span>
+          <div class="content">
+            <div class="german">Wie viel kosten die?</div>
+            <div class="ipa">[viː fiːl ˈkɔstn̩ diː]</div>
+            <div class="thai-reading">วี ฟีล คอสเทิน ดี?</div>
+            <div class="meaning">ราคาเท่าไหร่ครับ?</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d8_14.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Apotheker:</span>
+          <div class="content">
+            <div class="german">8 Euro 50. Nehmen Sie maximal drei pro Tag.</div>
+            <div class="ipa">[axt ˈɔʏ̯ʁo fʏnft͡sɪç ˈneːmən ziː maksiˈmaːl dʁaɪ̯ pʁoː taːk]</div>
+            <div class="thai-reading">อัคท์ ออยโร ฟึนฟ์ทสิช. เนเมิน ซี มักซีมาล ดไร โปร ทาค</div>
+            <div class="meaning">8 ยูโร 50 ครับ กินไม่เกินวันละ 3 เม็ดนะครับ</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d8_15.mp3')">🔊</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="exercises-section">
+      <h2>✍️ แบบฝึกหัด</h2>
+
+      <div class="exercise-block">
+        <h3>Exercise 1: ผันกริยา müssen</h3>
+        <ol class="exercise-list">
+          <li>Ich ______ zum Arzt gehen.</li>
+          <li>Du ______ Medikamente nehmen.</li>
+          <li>Er ______ im Bett bleiben.</li>
+          <li>Wir ______ viel trinken.</li>
+          <li>Ihr ______ euch ausruhen.</li>
+          <li>Sie ______ zum Krankenhaus fahren.</li>
+        </ol>
+      </div>
+
+      <div class="exercise-block">
+        <h3>Exercise 2: แปลเป็นภาษาเยอรมัน</h3>
+        <ol class="exercise-list">
+          <li>ฉันปวดหัว</li>
+          <li>เธอมีไข้</li>
+          <li>ฉันต้องไปหาหมอ</li>
+          <li>ท้องเจ็บ</li>
+          <li>ฉันเป็นหวัด</li>
+          <li>หายเร็วๆ นะ!</li>
+          <li>ร้านขายยาอยู่ที่ไหน?</li>
+          <li>คุณต้องพักผ่อน</li>
+        </ol>
+      </div>
+
+      <div class="exercise-block">
+        <h3>Exercise 3: เติมคำศัพท์ร่างกาย</h3>
+        <ol class="exercise-list">
+          <li>Ich habe Kopf______. (ปวดหัว)</li>
+          <li>Mir tut der ______ weh. (เจ็บท้อง)</li>
+          <li>Meine ______ sind müde. (เท้าเหนื่อย)</li>
+          <li>Die ______ tut weh. (มือเจ็บ)</li>
+          <li>Ich habe Hals______. (เจ็บคอ)</li>
+        </ol>
+      </div>
+
+      <div class="exercise-block">
+        <h3>Exercise 4: จับคู่อาการกับคำแนะนำ</h3>
+        <p class="instruction">จับคู่อาการกับการรักษา:</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <div>
+            <strong>อาการ:</strong>
+            <ol>
+              <li>Fieber</li>
+              <li>Kopfschmerzen</li>
+              <li>Erkältung</li>
+              <li>Bauchschmerzen</li>
+            </ol>
+          </div>
+          <div>
+            <strong>การรักษา:</strong>
+            <ul style="list-style: none;">
+              <li>A. Tabletten nehmen</li>
+              <li>B. viel trinken</li>
+              <li>C. sich ausruhen</li>
+              <li>D. zum Arzt gehen</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="exercise-block">
+        <h3>Exercise 5: สร้างบทสนทนา</h3>
+        <p class="instruction">เติมคำในบทสนทนาให้สมบูรณ์:</p>
+        <div class="dialogue-box">
+          <p>Arzt: Was ______ Ihnen?</p>
+          <p>Patient: Ich habe ______ und Husten.</p>
+          <p>Arzt: Sie müssen diese ______ nehmen.</p>
+          <p>Patient: Wie ______ muss ich sie nehmen?</p>
+          <p>Arzt: Dreimal ______.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="answers-section">
+      <h2>✅ เฉลยแบบฝึกหัด</h2>
+
+      <div class="answer-block">
+        <h3>เฉลย Exercise 1:</h3>
+        <ol class="answer-list">
+          <li>Ich <strong>muss</strong> zum Arzt gehen.</li>
+          <li>Du <strong>musst</strong> Medikamente nehmen.</li>
+          <li>Er <strong>muss</strong> im Bett bleiben.</li>
+          <li>Wir <strong>müssen</strong> viel trinken.</li>
+          <li>Ihr <strong>müsst</strong> euch ausruhen.</li>
+          <li>Sie <strong>müssen</strong> zum Krankenhaus fahren.</li>
+        </ol>
+      </div>
+
+      <div class="answer-block">
+        <h3>เฉลย Exercise 2:</h3>
+        <ol class="answer-list">
+          <li>Ich habe Kopfschmerzen.</li>
+          <li>Sie hat Fieber.</li>
+          <li>Ich muss zum Arzt gehen.</li>
+          <li>Mir tut der Bauch weh. / Ich habe Bauchschmerzen.</li>
+          <li>Ich habe eine Erkältung.</li>
+          <li>Gute Besserung!</li>
+          <li>Wo ist die Apotheke?</li>
+          <li>Sie müssen sich ausruhen.</li>
+        </ol>
+      </div>
+
+      <div class="answer-block">
+        <h3>เฉลย Exercise 3:</h3>
+        <ol class="answer-list">
+          <li>Ich habe Kopf<strong>schmerzen</strong>.</li>
+          <li>Mir tut der <strong>Bauch</strong> weh.</li>
+          <li>Meine <strong>Füße</strong> sind müde.</li>
+          <li>Die <strong>Hand</strong> tut weh.</li>
+          <li>Ich habe Hals<strong>schmerzen</strong>.</li>
+        </ol>
+      </div>
+
+      <div class="answer-block">
+        <h3>เฉลย Exercise 4:</h3>
+        <p>คำตอบที่เหมาะสม (หลายคำตอบเป็นไปได้):</p>
+        <ol class="answer-list">
+          <li>Fieber → <strong>B, C, D</strong> (ดื่มน้ำเยอะ, พักผ่อน, ไปหาหมอ)</li>
+          <li>Kopfschmerzen → <strong>A, C</strong> (กินยา, พักผ่อน)</li>
+          <li>Erkältung → <strong>B, C, D</strong> (ดื่มน้ำ, พักผ่อน, ไปหาหมอ)</li>
+          <li>Bauchschmerzen → <strong>C, D</strong> (พักผ่อน, ไปหาหมอ)</li>
+        </ol>
+      </div>
+
+      <div class="answer-block">
+        <h3>เฉลย Exercise 5:</h3>
+        <div class="dialogue-box">
+          <p>Arzt: Was <strong>fehlt</strong> Ihnen?</p>
+          <p>Patient: Ich habe <strong>Fieber</strong> und Husten.</p>
+          <p>Arzt: Sie müssen diese <strong>Tabletten</strong> nehmen.</p>
+          <p>Patient: Wie <strong>oft</strong> muss ich sie nehmen?</p>
+          <p>Arzt: Dreimal <strong>täglich</strong>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="summary-section">
+      <h2>📌 สรุปบทเรียน</h2>
+      <div class="summary-box">
+        <h3>สิ่งที่เรียนรู้ในบทนี้:</h3>
+        <ul class="summary-list">
+          <li>กริยาช่วย <strong>müssen</strong> (ต้อง) - แสดงความจำเป็น</li>
+          <li>อวัยวะร่างกาย: Kopf, Bauch, Arm, Bein, Hand, Fuß, Auge, Ohr</li>
+          <li>อาการเจ็บป่วย: Fieber, Husten, Schnupfen, Grippe, Erkältung</li>
+          <li>ความเจ็บปวด: Kopfschmerzen, Bauchschmerzen, Halsschmerzen</li>
+          <li>การรักษา: Arzt, Krankenhaus, Apotheke, Medikament, Tablette</li>
+          <li>คำถาม: <strong>Was fehlt Ihnen?</strong> (คุณเป็นอะไร?)</li>
+          <li>ประโยคสำคัญ: <strong>Mir tut ... weh.</strong> (... เจ็บ)</li>
+        </ul>
+      </div>
+
+      <div class="tips-box">
+        <h3>💡 เคล็ดลับ</h3>
+        <ul class="tips-list">
+          <li><strong>Ich habe Kopfschmerzen.</strong> = ฉันปวดหัว (ใช้ haben)</li>
+          <li><strong>Mir tut der Kopf weh.</strong> = หัวฉันเจ็บ (ใช้ wehtun)</li>
+          <li>คำที่ลงท้ายด้วย <strong>-schmerzen</strong> มักเป็นพหูพจน์</li>
+          <li><strong>Gute Besserung!</strong> = หายเร็วๆ นะ! (สำนวนสำคัญ)</li>
+          <li><strong>zum Arzt</strong> = zu + dem = ไปหาหมอ</li>
+          <li><strong>müssen</strong> แปลว่า "ต้อง" (บังคับ, จำเป็น)</li>
+          <li><strong>dreimal täglich</strong> = วันละ 3 ครั้ง</li>
+        </ul>
+      </div>
+    </section>
+
+    <nav class="chapter-navigation">
+      <a href="chapter07.html" class="nav-btn prev">← Unit 7: Freizeit</a>
+      <a href="table_of_contents.html" class="nav-btn toc">📚 สารบัญ</a>
+      <a href="chapter09.html" class="nav-btn next">Unit 9: Wetter →</a>
+    </nav>
+  </div>
+
+  <script src="../script.js"></script>
+    </div>
+    
+    <!-- Notes Panel -->
+    <div class="notes-panel" id="notes-panel">
+        <h3>📝 บันทึกของฉัน</h3>
+        <textarea id="notes-content" placeholder="เขียนบันทึกที่นี่..." 
+                  style="width: 100%; height: 200px; border: 1px solid #ddd; border-radius: 5px; padding: 10px;">
+        </textarea>
+        <button onclick="saveNotes()" style="margin-top: 10px; padding: 8px 16px; background: var(--primary); color: white; border: none; border-radius: 4px;">💾 บันทึก</button>
+        <button onclick="clearNotes()" style="margin-top: 10px; margin-left: 10px; padding: 8px 16px; background: var(--warning); color: white; border: none; border-radius: 4px;">🗑️ ลบ</button>
+    </div>
+    
+    <button class="notes-toggle" onclick="toggleNotes()" title="เปิด/ปิดบันทึก">
+        📝
+    </button>
+    
+    <script src="../script.js"></script>
+    <script>
+        // Notes functionality
+        function toggleNotes() {
+            const panel = document.getElementById('notes-panel');
+            panel.classList.toggle('open');
+            loadNotes();
+        }
+        
+        function saveNotes() {
+            const content = document.getElementById('notes-content').value;
+            localStorage.setItem('notes_chapter08', content);
+            alert('✅ บันทึกแล้ว!');
+        }
+        
+        function loadNotes() {
+            const saved = localStorage.getItem('notes_chapter08');
+            if (saved) {
+                document.getElementById('notes-content').value = saved;
+            }
+        }
+        
+        function clearNotes() {
+            if (confirm('คุณต้องการลบบันทึกใช่หรือไม่?')) {
+                document.getElementById('notes-content').value = '';
+                localStorage.removeItem('notes_chapter08');
+                alert('🗑️ ลบแล้ว!');
+            }
+        }
+        
+        // Update progress
+        function updateProgress() {
+            localStorage.setItem('progress_chapter08', '100');
+        }
+        
+        // Auto-load notes on page load
+        document.addEventListener('DOMContentLoaded', loadNotes);
+        
+        // Mark as visited
+        setTimeout(updateProgress, 5000);
+    </script>
+</body>
+</html>

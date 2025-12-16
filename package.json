@@ -1,0 +1,17 @@
+{
+  "name": "vimapp-german-a1",
+  "version": "1.0.0",
+  "description": "Interactive German A1 Learning PWA",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "build": "echo 'Building PWA...'",
+    "deploy": "gh-pages -d ."
+  },
+  "keywords": ["german", "language", "learning", "pwa", "education"],
+  "author": "VimAPP",
+  "license": "MIT",
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  }
+}

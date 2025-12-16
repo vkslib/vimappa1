@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2563eb">
+    <title>Unit 6 - VimAPP German A1</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* PWA Chapter Styles */
+        .chapter-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-home {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .nav-controls {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .nav-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .content-wrapper {
+            margin-top: 60px;
+            padding: 20px;
+        }
+        
+        /* Notes feature */
+        .notes-panel {
+            position: fixed;
+            right: -300px;
+            top: 60px;
+            bottom: 0;
+            width: 300px;
+            background: white;
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .notes-panel.open {
+            right: 0;
+        }
+        
+        .notes-toggle {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1001;
+        }
+        
+        @media (max-width: 768px) {
+            .notes-panel {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .content-wrapper {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="chapter-nav">
+        <a href="../index.html" class="nav-home">🏠 VimAPP German A1</a>
+        <div class="nav-controls">
+            <a href="chapter05.html" class="nav-btn">← ก่อนหน้า</a>
+            <a href="chapter07.html" class="nav-btn">ถัดไป →</a>
+        </div>
+    </nav>
+    
+    <div class="content-wrapper"><div class="container">
+    <header class="unit-header">
+      <h1>Unit 6: Einkaufen</h1>
+      <p class="subtitle">การช้อปปิ้ง - Shopping</p>
+      <p class="description">เรียนรู้ตัวเลข ราคา และการซื้อของในร้านค้า</p>
+    </header>
+
+    <section class="grammar-section">
+      <h2>📚 ตัวเลขภาษาเยอรมัน (Zahlen)</h2>
+      
+      <div class="grammar-box">
+        <h3>เลข 0-20</h3>
+      </div>
+
+      <div class="table-container">
+        <table class="grammar-table">
+          <thead>
+            <tr>
+              <th>ตัวเลข</th>
+              <th>ภาษาเยอรมัน</th>
+              <th>IPA</th>
+              <th>อ่านว่า</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>0</td><td>null</td><td>[nʊl]</td><td>นุล</td></tr>
+            <tr><td>1</td><td>eins</td><td>[aɪ̯ns]</td><td>ไอน์ส</td></tr>
+            <tr><td>2</td><td>zwei</td><td>[t͡svaɪ̯]</td><td>ทสไว</td></tr>
+            <tr><td>3</td><td>drei</td><td>[dʁaɪ̯]</td><td>ดไร</td></tr>
+            <tr><td>4</td><td>vier</td><td>[fiːɐ̯]</td><td>เฟียร์</td></tr>
+            <tr><td>5</td><td>fünf</td><td>[fʏnf]</td><td>ฟึนฟ์</td></tr>
+            <tr><td>6</td><td>sechs</td><td>[zɛks]</td><td>เซ็คส์</td></tr>
+            <tr><td>7</td><td>sieben</td><td>[ˈziːbn̩]</td><td>ซีเบิน</td></tr>
+            <tr><td>8</td><td>acht</td><td>[axt]</td><td>อัคท์</td></tr>
+            <tr><td>9</td><td>neun</td><td>[nɔʏ̯n]</td><td>นอยน์</td></tr>
+            <tr><td>10</td><td>zehn</td><td>[t͡seːn]</td><td>เทซน์</td></tr>
+            <tr><td>11</td><td>elf</td><td>[ɛlf]</td><td>เอลฟ์</td></tr>
+            <tr><td>12</td><td>zwölf</td><td>[t͡svœlf]</td><td>ทสเวิลฟ์</td></tr>
+            <tr><td>13</td><td>dreizehn</td><td>[ˈdʁaɪ̯t͡seːn]</td><td>ดไรเทซน์</td></tr>
+            <tr><td>14</td><td>vierzehn</td><td>[ˈfiːɐ̯t͡seːn]</td><td>เฟียร์เทซน์</td></tr>
+            <tr><td>15</td><td>fünfzehn</td><td>[ˈfʏnft͡seːn]</td><td>ฟึนฟ์เทซน์</td></tr>
+            <tr><td>16</td><td>sechzehn</td><td>[ˈzɛçt͡seːn]</td><td>เซ็คซ์เทซน์</td></tr>
+            <tr><td>17</td><td>siebzehn</td><td>[ˈziːpt͡seːn]</td><td>ซีปเทซน์</td></tr>
+            <tr><td>18</td><td>achtzehn</td><td>[ˈaxt͡seːn]</td><td>อัคซ์เทซน์</td></tr>
+            <tr><td>19</td><td>neunzehn</td><td>[ˈnɔʏ̯nt͡seːn]</td><td>นอยน์เทซน์</td></tr>
+            <tr><td>20</td><td>zwanzig</td><td>[ˈt͡svant͡sɪç]</td><td>ทสวันทสิช</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grammar-box">
+        <h3>เลข 21-100</h3>
+        <p><strong>หลักการ:</strong> เลขหน่วย + und + เลขสิบ</p>
+        <p>เช่น: 21 = einundzwanzig (หนึ่ง-และ-ยี่สิบ)</p>
+      </div>
+
+      <div class="table-container">
+        <table class="grammar-table">
+          <thead>
+            <tr>
+              <th>ตัวเลข</th>
+              <th>ภาษาเยอรมัน</th>
+              <th>อ่านว่า</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>21</td><td>einundzwanzig</td><td>ไอน์อุนด์ทสวันทสิช</td></tr>
+            <tr><td>22</td><td>zweiundzwanzig</td><td>ทสไวอุนด์ทสวันทสิช</td></tr>
+            <tr><td>30</td><td>dreißig</td><td>ดไรซิช</td></tr>
+            <tr><td>40</td><td>vierzig</td><td>เฟียร์ทสิช</td></tr>
+            <tr><td>50</td><td>fünfzig</td><td>ฟึนฟ์ทสิช</td></tr>
+            <tr><td>60</td><td>sechzig</td><td>เซ็คซิช</td></tr>
+            <tr><td>70</td><td>siebzig</td><td>ซีปทสิช</td></tr>
+            <tr><td>80</td><td>achtzig</td><td>อัคทสิช</td></tr>
+            <tr><td>90</td><td>neunzig</td><td>นอยน์ทสิช</td></tr>
+            <tr><td>100</td><td>(ein)hundert</td><td>ไฮน์ฮุนเดิร์ท</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note-box warning">
+        <h4>⚠️ สังเกต:</h4>
+        <ul>
+          <li>เลข 21-99: เลข<strong>หน่วย</strong>มาก่อน แล้วตามด้วย <strong>und</strong> (และ) แล้วจึงเป็นเลขสิบ</li>
+          <li>30 = drei<strong>ß</strong>ig (ไม่ใช่ dreizehn)</li>
+          <li>60 = sech<strong>zig</strong> (ไม่มี s ตัวสุดท้าย)</li>
+          <li>70 = sieb<strong>zig</strong> (ไม่ใช่ sieben)</li>
+        </ul>
+      </div>
+
+      <div class="grammar-box">
+        <h3>การพูดราคา</h3>
+        <p><strong>Wie viel kostet das?</strong> = อันนี้ราคาเท่าไหร่?</p>
+        <p><strong>Das kostet...</strong> = ราคา... (ใช้กับสิ่งของเพศกลาง)</p>
+        <p>เงินยูโร: <strong>Euro</strong> (ไม่เติม -s พหูพจน์)</p>
+        <p>เซนต์: <strong>Cent</strong></p>
+        <p>ตัวอย่าง: <strong>Das kostet 5 Euro 50.</strong> = ราคา 5 ยูโร 50 เซนต์</p>
+      </div>
+    </section>
+
+    <section class="vocabulary-section">
+      <h2>📖 คำศัพท์การช้อปปิ้ง</h2>
+      
+      <h3>🏪 ร้านค้าและสถานที่</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="german">der Supermarkt</div>
+          <div class="ipa">[ˈzuːpɐˌmaʁkt]</div>
+          <div class="thai-reading">ซูเปอร์มาร์คท์</div>
+          <div class="meaning">ซูเปอร์มาร์เก็ต</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/supermarkt.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">das Geschäft</div>
+          <div class="ipa">[ɡəˈʃɛft]</div>
+          <div class="thai-reading">เกอเชฟท์</div>
+          <div class="meaning">ร้านค้า</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/geschaeft.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">der Markt</div>
+          <div class="ipa">[maʁkt]</div>
+          <div class="thai-reading">มาร์คท์</div>
+          <div class="meaning">ตลาด</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/markt.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">die Bäckerei</div>
+          <div class="ipa">[bɛkəˈʁaɪ̯]</div>
+          <div class="thai-reading">เบ็คเคอไร</div>
+          <div class="meaning">ร้านขนมปัง</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/baeckerei.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">die Apotheke</div>
+          <div class="ipa">[apoˈteːkə]</div>
+          <div class="thai-reading">อาโปเทเคอ</div>
+          <div class="meaning">ร้านขายยา</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/apotheke.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">die Buchhandlung</div>
+          <div class="ipa">[ˈbuːxˌhandlʊŋ]</div>
+          <div class="thai-reading">บุคฮันด์ลุง</div>
+          <div class="meaning">ร้านหนังสือ</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/buchhandlung.mp3')">🔊 ฟัง</button>
+        </div>
+      </div>
+
+      <h3>💰 คำเกี่ยวกับเงิน</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="german">der Preis</div>
+          <div class="ipa">[pʁaɪ̯s]</div>
+          <div class="thai-reading">พไรส์</div>
+          <div class="meaning">ราคา</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/preis.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">das Geld</div>
+          <div class="ipa">[ɡɛlt]</div>
+          <div class="thai-reading">เกลท์</div>
+          <div class="meaning">เงิน</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/geld.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">der Euro</div>
+          <div class="ipa">[ˈɔʏ̯ʁo]</div>
+          <div class="thai-reading">ออยโร</div>
+          <div class="meaning">ยูโร</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/euro.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">der Cent</div>
+          <div class="ipa">[sɛnt]</div>
+          <div class="thai-reading">เซนต์</div>
+          <div class="meaning">เซนต์</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/cent.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">bezahlen</div>
+          <div class="ipa">[bəˈt͡saːlən]</div>
+          <div class="thai-reading">เบอทซาเลิน</div>
+          <div class="meaning">จ่ายเงิน</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/bezahlen.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">kosten</div>
+          <div class="ipa">[ˈkɔstn̩]</div>
+          <div class="thai-reading">คอสเทิน</div>
+          <div class="meaning">ราคา, ต้นทุน</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/kosten.mp3')">🔊 ฟัง</button>
+        </div>
+      </div>
+
+      <h3>🛒 กริยาช้อปปิ้ง</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="german">kaufen</div>
+          <div class="ipa">[ˈkaʊ̯fn̩]</div>
+          <div class="thai-reading">เคาเฟิน</div>
+          <div class="meaning">ซื้อ</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/kaufen.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">verkaufen</div>
+          <div class="ipa">[fɛɐ̯ˈkaʊ̯fn̩]</div>
+          <div class="thai-reading">แฟร์เคาเฟิน</div>
+          <div class="meaning">ขาย</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/verkaufen.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">brauchen</div>
+          <div class="ipa">[ˈbʁaʊ̯xn̩]</div>
+          <div class="thai-reading">เบราวเชิน</div>
+          <div class="meaning">ต้องการ</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/brauchen.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">suchen</div>
+          <div class="ipa">[ˈzuːxn̩]</div>
+          <div class="thai-reading">ซูเชิน</div>
+          <div class="meaning">หา, ค้นหา</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/suchen.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">nehmen</div>
+          <div class="ipa">[ˈneːmən]</div>
+          <div class="thai-reading">เนเมิน</div>
+          <div class="meaning">เอา, หยิบ</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/nehmen.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">geben</div>
+          <div class="ipa">[ˈɡeːbn̩]</div>
+          <div class="thai-reading">เกเบิน</div>
+          <div class="meaning">ให้</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/geben.mp3')">🔊 ฟัง</button>
+        </div>
+      </div>
+
+      <h3>👕 สินค้าต่างๆ</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="german">die Kleidung</div>
+          <div class="ipa">[ˈklaɪ̯dʊŋ]</div>
+          <div class="thai-reading">ไคลดุง</div>
+          <div class="meaning">เสื้อผ้า</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/kleidung.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">das Hemd</div>
+          <div class="ipa">[hɛmt]</div>
+          <div class="thai-reading">เฮมท์</div>
+          <div class="meaning">เสื้อเชิ้ต</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/hemd.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">die Hose</div>
+          <div class="ipa">[ˈhoːzə]</div>
+          <div class="thai-reading">โฮเซอ</div>
+          <div class="meaning">กางเกง</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/hose.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">die Schuhe</div>
+          <div class="ipa">[ˈʃuːə]</div>
+          <div class="thai-reading">ชูเออ</div>
+          <div class="meaning">รองเท้า</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/schuhe.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">das Buch</div>
+          <div class="ipa">[buːx]</div>
+          <div class="thai-reading">บุค</div>
+          <div class="meaning">หนังสือ</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/buch.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">die Tasche</div>
+          <div class="ipa">[ˈtaʃə]</div>
+          <div class="thai-reading">ทาเชอ</div>
+          <div class="meaning">กระเป๋า</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/tasche.mp3')">🔊 ฟัง</button>
+        </div>
+      </div>
+
+      <h3>📏 คำคุณศัพท์</h3>
+      <div class="vocab-grid">
+        <div class="vocab-card">
+          <div class="german">teuer</div>
+          <div class="ipa">[ˈtɔʏ̯ɐ]</div>
+          <div class="thai-reading">ทอยเออร์</div>
+          <div class="meaning">แพง</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/teuer.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">billig</div>
+          <div class="ipa">[ˈbɪlɪç]</div>
+          <div class="thai-reading">บิลลิช</div>
+          <div class="meaning">ถูก</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/billig.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">groß</div>
+          <div class="ipa">[ɡʁoːs]</div>
+          <div class="thai-reading">กรอส</div>
+          <div class="meaning">ใหญ่</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/gross.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">klein</div>
+          <div class="ipa">[klaɪ̯n]</div>
+          <div class="thai-reading">ไคลน์</div>
+          <div class="meaning">เล็ก</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/klein.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">neu</div>
+          <div class="ipa">[nɔʏ̯]</div>
+          <div class="thai-reading">นอย</div>
+          <div class="meaning">ใหม่</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/neu.mp3')">🔊 ฟัง</button>
+        </div>
+
+        <div class="vocab-card">
+          <div class="german">alt</div>
+          <div class="ipa">[alt]</div>
+          <div class="thai-reading">อัลท์</div>
+          <div class="meaning">เก่า</div>
+          <button class="audio-btn" onclick="play('../audio/vocab/alt.mp3')">🔊 ฟัง</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="examples-section">
+      <h2>💡 ตัวอย่างประโยค</h2>
+
+      <div class="sentence-card">
+        <div class="german">Wie viel kostet das Buch?</div>
+        <div class="ipa">[viː fiːl ˈkɔstət das buːx]</div>
+        <div class="thai-reading">วี ฟีล คอสเทท ดาส บุค?</div>
+        <div class="meaning">หนังสือเล่มนี้ราคาเท่าไหร่?</div>
+        <button class="audio-btn" onclick="play('../audio/sentences/wie_viel_kostet_buch.mp3')">🔊 ฟัง</button>
+      </div>
+
+      <div class="sentence-card">
+        <div class="german">Das kostet 15 Euro.</div>
+        <div class="ipa">[das ˈkɔstət fʏnft͡seːn ˈɔʏ̯ʁo]</div>
+        <div class="thai-reading">ดาส คอสเทท ฟึนฟ์เทซน์ ออยโร</div>
+        <div class="meaning">ราคา 15 ยูโร</div>
+        <button class="audio-btn" onclick="play('../audio/sentences/kostet_15_euro.mp3')">🔊 ฟัง</button>
+      </div>
+
+      <div class="sentence-card">
+        <div class="german">Ich kaufe zwei Äpfel.</div>
+        <div class="ipa">[ɪç ˈkaʊ̯fə t͡svaɪ̯ ˈɛpfl̩]</div>
+        <div class="thai-reading">อิช เคาเฟอ ทสไว เอปเฟิล</div>
+        <div class="meaning">ฉันซื้อแอปเปิลสองลูก</div>
+        <button class="audio-btn" onclick="play('../audio/sentences/kaufe_zwei_aepfel.mp3')">🔊 ฟัง</button>
+      </div>
+
+      <div class="sentence-card">
+        <div class="german">Ich brauche neue Schuhe.</div>
+        <div class="ipa">[ɪç ˈbʁaʊ̯xə ˈnɔʏ̯ə ˈʃuːə]</div>
+        <div class="thai-reading">อิช เบราวเชอ นอยเออ ชูเออ</div>
+        <div class="meaning">ฉันต้องการรองเท้าใหม่</div>
+        <button class="audio-btn" onclick="play('../audio/sentences/brauche_neue_schuhe.mp3')">🔊 ฟัง</button>
+      </div>
+
+      <div class="sentence-card">
+        <div class="german">Das ist zu teuer!</div>
+        <div class="ipa">[das ɪst t͡suː ˈtɔʏ̯ɐ]</div>
+        <div class="thai-reading">ดาส อิสท์ ทซู ทอยเออร์!</div>
+        <div class="meaning">แพงเกินไป!</div>
+        <button class="audio-btn" onclick="play('../audio/sentences/zu_teuer.mp3')">🔊 ฟัง</button>
+      </div>
+
+      <div class="sentence-card">
+        <div class="german">Wo kann ich bezahlen?</div>
+        <div class="ipa">[voː kan ɪç bəˈt͡saːlən]</div>
+        <div class="thai-reading">โว คัน อิช เบอทซาเลิน?</div>
+        <div class="meaning">ฉันจ่ายเงินที่ไหน?</div>
+        <button class="audio-btn" onclick="play('../audio/sentences/wo_bezahlen.mp3')">🔊 ฟัง</button>
+      </div>
+
+      <div class="sentence-card">
+        <div class="german">Ich nehme das Hemd.</div>
+        <div class="ipa">[ɪç ˈneːmə das hɛmt]</div>
+        <div class="thai-reading">อิช เนเมอ ดาส เฮมท์</div>
+        <div class="meaning">ฉันเอาเสื้อเชิ้ตตัวนี้</div>
+        <button class="audio-btn" onclick="play('../audio/sentences/nehme_hemd.mp3')">🔊 ฟัง</button>
+      </div>
+
+      <div class="sentence-card">
+        <div class="german">Haben Sie das in Größe M?</div>
+        <div class="ipa">[ˈhaːbn̩ ziː das ɪn ˈɡʁøːsə ɛm]</div>
+        <div class="thai-reading">ฮาเบิน ซี ดาส อิน เกรอสเซอ เอ็ม?</div>
+        <div class="meaning">คุณมีไซส์ M ไหมครับ/ค่ะ?</div>
+        <button class="audio-btn" onclick="play('../audio/sentences/groesse_m.mp3')">🔊 ฟัง</button>
+      </div>
+
+      <div class="sentence-card">
+        <div class="german">Der Supermarkt ist geöffnet.</div>
+        <div class="ipa">[deːɐ̯ ˈzuːpɐˌmaʁkt ɪst ɡəˈʔœfnət]</div>
+        <div class="thai-reading">แดร์ ซูเปอร์มาร์คท์ อิสท์ เกอออฟเนท</div>
+        <div class="meaning">ซูเปอร์มาร์เก็ตเปิดอยู่</div>
+        <button class="audio-btn" onclick="play('../audio/sentences/supermarkt_geoeffnet.mp3')">🔊 ฟัง</button>
+      </div>
+
+      <div class="sentence-card">
+        <div class="german">Ich suche eine Tasche.</div>
+        <div class="ipa">[ɪç ˈzuːxə ˈaɪ̯nə ˈtaʃə]</div>
+        <div class="thai-reading">อิช ซูเชอ ไอเนอ ทาเชอ</div>
+        <div class="meaning">ฉันกำลังหากระเป๋า</div>
+        <button class="audio-btn" onclick="play('../audio/sentences/suche_tasche.mp3')">🔊 ฟัง</button>
+      </div>
+    </section>
+
+    <section class="dialogue-section">
+      <h2>💬 บทสนทนา</h2>
+
+      <h3>Dialogue 1: Im Supermarkt (ในซูเปอร์มาร์เก็ต)</h3>
+      <div class="dialogue-box">
+        <div class="dialogue-line">
+          <span class="speaker">Kunde:</span>
+          <div class="content">
+            <div class="german">Entschuldigung, wo finde ich Brot?</div>
+            <div class="ipa">[ɛntˈʃʊldɪɡʊŋ voː ˈfɪndə ɪç bʁoːt]</div>
+            <div class="thai-reading">เอ็นท์ชุลดิกุง โว ฟินเดอ อิช บรอท?</div>
+            <div class="meaning">ขอโทษครับ/ค่ะ ขนมปังอยู่ไหน?</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d6_01.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Verkäufer:</span>
+          <div class="content">
+            <div class="german">Das Brot ist dort hinten links.</div>
+            <div class="ipa">[das bʁoːt ɪst dɔʁt ˈhɪntn̩ lɪŋks]</div>
+            <div class="thai-reading">ดาส บรอท อิสท์ ดอร์ท ฮินเทิน ลิงคส์</div>
+            <div class="meaning">ขนมปังอยู่ด้านหลังซ้ายมือครับ</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d6_02.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Kunde:</span>
+          <div class="content">
+            <div class="german">Danke! Wie viel kostet das Brot?</div>
+            <div class="ipa">[ˈdaŋkə viː fiːl ˈkɔstət das bʁoːt]</div>
+            <div class="thai-reading">ดังเคอ! วี ฟีล คอสเทท ดาส บรอท?</div>
+            <div class="meaning">ขอบคุณครับ! ขนมปังราคาเท่าไหร่ครับ?</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d6_03.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Verkäufer:</span>
+          <div class="content">
+            <div class="german">2 Euro 50.</div>
+            <div class="ipa">[t͡svaɪ̯ ˈɔʏ̯ʁo fʏnft͡sɪç]</div>
+            <div class="thai-reading">ทสไว ออยโร ฟึนฟ์ทสิช</div>
+            <div class="meaning">2 ยูโร 50 เซนต์ครับ</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d6_04.mp3')">🔊</button>
+          </div>
+        </div>
+      </div>
+
+      <h3>Dialogue 2: Kleidung kaufen (ซื้อเสื้อผ้า)</h3>
+      <div class="dialogue-box">
+        <div class="dialogue-line">
+          <span class="speaker">Verkäuferin:</span>
+          <div class="content">
+            <div class="german">Guten Tag! Kann ich Ihnen helfen?</div>
+            <div class="ipa">[ˈɡuːtn̩ taːk kan ɪç ˈiːnən ˈhɛlfn̩]</div>
+            <div class="thai-reading">กูเทิน ทาค! คัน อิช อีเนิน เฮลเฟิน?</div>
+            <div class="meaning">สวัสดีค่ะ! ฉันช่วยอะไรได้ไหมคะ?</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d6_05.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Kundin:</span>
+          <div class="content">
+            <div class="german">Ja, ich suche eine Hose.</div>
+            <div class="ipa">[jaː ɪç ˈzuːxə ˈaɪ̯nə ˈhoːzə]</div>
+            <div class="thai-reading">ยา, อิช ซูเชอ ไอเนอ โฮเซอ</div>
+            <div class="meaning">ค่ะ ฉันกำลังหากางเกงค่ะ</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d6_06.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Verkäuferin:</span>
+          <div class="content">
+            <div class="german">Welche Größe brauchen Sie?</div>
+            <div class="ipa">[ˈvɛlçə ˈɡʁøːsə ˈbʁaʊ̯xn̩ ziː]</div>
+            <div class="thai-reading">เวลเชอ เกรอสเซอ เบราวเชิน ซี?</div>
+            <div class="meaning">คุณต้องการไซส์อะไรคะ?</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d6_07.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Kundin:</span>
+          <div class="content">
+            <div class="german">Größe 38, bitte.</div>
+            <div class="ipa">[ˈɡʁøːsə axtʊntˈdʁaɪ̯sɪç ˈbɪtə]</div>
+            <div class="thai-reading">เกรอสเซอ อัคท์อุนด์ดไรซิช บิตเทอ</div>
+            <div class="meaning">ไซส์ 38 ค่ะ</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d6_08.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Verkäuferin:</span>
+          <div class="content">
+            <div class="german">Hier, bitte. Die Hose kostet 49 Euro.</div>
+            <div class="ipa">[hiːɐ̯ ˈbɪtə diː ˈhoːzə ˈkɔstət nɔʏ̯nʊntˈfiːɐ̯t͡sɪç ˈɔʏ̯ʁo]</div>
+            <div class="thai-reading">ฮีร์ บิตเทอ. ดี โฮเซอ คอสเทท นอยน์อุนด์เฟียร์ทสิช ออยโร</div>
+            <div class="meaning">นี่ค่ะ กางเกงราคา 49 ยูโรค่ะ</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d6_09.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Kundin:</span>
+          <div class="content">
+            <div class="german">Kann ich das anprobieren?</div>
+            <div class="ipa">[kan ɪç das ˈanpʁoˌbiːʁən]</div>
+            <div class="thai-reading">คัน อิช ดาส อันโปรบีเริน?</div>
+            <div class="meaning">ฉันลองได้ไหมคะ?</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d6_10.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Verkäuferin:</span>
+          <div class="content">
+            <div class="german">Natürlich! Die Umkleidekabine ist dort.</div>
+            <div class="ipa">[naˈtyːɐ̯lɪç diː ˈʊmklaɪ̯dəkaˌbiːnə ɪst dɔʁt]</div>
+            <div class="thai-reading">นาเทือร์ลิช! ดี อุมไคลเดอคาบีเนอ อิสท์ ดอร์ท</div>
+            <div class="meaning">แน่นอนค่ะ! ห้องลองอยู่ตรงนั้นค่ะ</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d6_11.mp3')">🔊</button>
+          </div>
+        </div>
+      </div>
+
+      <h3>Dialogue 3: Auf dem Markt (ในตลาด)</h3>
+      <div class="dialogue-box">
+        <div class="dialogue-line">
+          <span class="speaker">Verkäufer:</span>
+          <div class="content">
+            <div class="german">Frisches Obst! Äpfel, Bananen, Orangen!</div>
+            <div class="ipa">[ˈfʁɪʃəs oːpst ˈɛpfl̩ baˈnaːnən oˈʁɑ̃ːʒən]</div>
+            <div class="thai-reading">ฟริเชส โอปสท์! เอปเฟิล บานาเนิน ออรองเจิน!</div>
+            <div class="meaning">ผลไม้สด! แอปเปิล กล้วย ส้ม!</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d6_12.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Kundin:</span>
+          <div class="content">
+            <div class="german">Was kosten die Äpfel?</div>
+            <div class="ipa">[vas ˈkɔstn̩ diː ˈɛpfl̩]</div>
+            <div class="thai-reading">วาส คอสเทิน ดี เอปเฟิล?</div>
+            <div class="meaning">แอปเปิลราคาเท่าไหร่คะ?</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d6_13.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Verkäufer:</span>
+          <div class="content">
+            <div class="german">3 Euro pro Kilo.</div>
+            <div class="ipa">[dʁaɪ̯ ˈɔʏ̯ʁo pʁoː ˈkiːlo]</div>
+            <div class="thai-reading">ดไร ออยโร โปร คีโล</div>
+            <div class="meaning">3 ยูโรต่อกิโลครับ</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d6_14.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Kundin:</span>
+          <div class="content">
+            <div class="german">Ich nehme zwei Kilo, bitte.</div>
+            <div class="ipa">[ɪç ˈneːmə t͡svaɪ̯ ˈkiːlo ˈbɪtə]</div>
+            <div class="thai-reading">อิช เนเมอ ทสไว คีโล บิตเทอ</div>
+            <div class="meaning">ฉันเอาสองกิโลค่ะ</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d6_15.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Verkäufer:</span>
+          <div class="content">
+            <div class="german">Das macht 6 Euro. Sonst noch etwas?</div>
+            <div class="ipa">[das maxt zɛks ˈɔʏ̯ʁo zɔnst nɔx ˈɛtvas]</div>
+            <div class="thai-reading">ดาส มัคท์ เซ็คส์ ออยโร. ซอนสท์ นอค เอทวาส?</div>
+            <div class="meaning">รวม 6 ยูโรครับ ต้องการอย่างอื่นอีกไหมครับ?</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d6_16.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Kundin:</span>
+          <div class="content">
+            <div class="german">Nein, danke. Hier sind 10 Euro.</div>
+            <div class="ipa">[naɪ̯n ˈdaŋkə hiːɐ̯ zɪnt t͡seːn ˈɔʏ̯ʁo]</div>
+            <div class="thai-reading">ไนน์ ดังเคอ. ฮีร์ ซินท์ เทซน์ ออยโร</div>
+            <div class="meaning">ไม่ค่ะ ขอบคุณ นี่ 10 ยูโรค่ะ</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d6_17.mp3')">🔊</button>
+          </div>
+        </div>
+
+        <div class="dialogue-line">
+          <span class="speaker">Verkäufer:</span>
+          <div class="content">
+            <div class="german">Und 4 Euro zurück. Vielen Dank!</div>
+            <div class="ipa">[ʊnt fiːɐ̯ ˈɔʏ̯ʁo t͡suˈʁʏk ˈfiːlən daŋk]</div>
+            <div class="thai-reading">อุนด์ เฟียร์ ออยโร ทซูรึค. ฟีเลิน ดังค์!</div>
+            <div class="meaning">และทอน 4 ยูโรครับ ขอบคุณมากครับ!</div>
+            <button class="audio-btn" onclick="play('../audio/dialogues/d6_18.mp3')">🔊</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="exercises-section">
+      <h2>✍️ แบบฝึกหัด</h2>
+
+      <div class="exercise-block">
+        <h3>Exercise 1: เขียนตัวเลขเป็นภาษาเยอรมัน</h3>
+        <ol class="exercise-list">
+          <li>7 = ______</li>
+          <li>15 = ______</li>
+          <li>23 = ______</li>
+          <li>38 = ______</li>
+          <li>50 = ______</li>
+          <li>67 = ______</li>
+          <li>94 = ______</li>
+          <li>100 = ______</li>
+        </ol>
+      </div>
+
+      <div class="exercise-block">
+        <h3>Exercise 2: แปลเป็นภาษาเยอรมัน</h3>
+        <ol class="exercise-list">
+          <li>อันนี้ราคาเท่าไหร่?</li>
+          <li>ฉันต้องการซื้อหนังสือ</li>
+          <li>ราคา 20 ยูโร</li>
+          <li>แพงเกินไป!</li>
+          <li>คุณมีไซส์ L ไหม?</li>
+          <li>ฉันจ่ายเงินที่ไหน?</li>
+          <li>ซูเปอร์มาร์เก็ตอยู่ไหน?</li>
+          <li>ฉันเอาสองกิโล</li>
+        </ol>
+      </div>
+
+      <div class="exercise-block">
+        <h3>Exercise 3: เติมคำที่ถูกต้อง</h3>
+        <p class="instruction">เติม: kaufen, kosten, brauchen, nehmen</p>
+        <ol class="exercise-list">
+          <li>Ich ______ ein Buch.</li>
+          <li>Was ______ die Schuhe?</li>
+          <li>Wir ______ Brot und Milch.</li>
+          <li>Ich ______ das Hemd.</li>
+        </ol>
+      </div>
+
+      <div class="exercise-block">
+        <h3>Exercise 4: คำนวณราคา</h3>
+        <p class="instruction">เขียนเป็นภาษาเยอรมัน</p>
+        <ol class="exercise-list">
+          <li>2 ยูโร 50 เซนต์</li>
+          <li>15 ยูโร 80 เซนต์</li>
+          <li>7 ยูโร 25 เซนต์</li>
+          <li>30 ยูโร</li>
+        </ol>
+      </div>
+
+      <div class="exercise-block">
+        <h3>Exercise 5: สร้างประโยค</h3>
+        <p class="instruction">เรียงคำให้ถูกต้อง</p>
+        <ol class="exercise-list">
+          <li>kostet / das / wie viel / ?</li>
+          <li>ich / kaufe / Äpfel / drei</li>
+          <li>zu / ist / das / teuer</li>
+          <li>brauche / ich / Schuhe / neue</li>
+          <li>wo / bezahlen / kann / ich / ?</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="answers-section">
+      <h2>✅ เฉลยแบบฝึกหัด</h2>
+
+      <div class="answer-block">
+        <h3>เฉลย Exercise 1:</h3>
+        <ol class="answer-list">
+          <li>7 = <strong>sieben</strong></li>
+          <li>15 = <strong>fünfzehn</strong></li>
+          <li>23 = <strong>dreiundzwanzig</strong></li>
+          <li>38 = <strong>achtunddreißig</strong></li>
+          <li>50 = <strong>fünfzig</strong></li>
+          <li>67 = <strong>siebenundsechzig</strong></li>
+          <li>94 = <strong>vierundneunzig</strong></li>
+          <li>100 = <strong>(ein)hundert</strong></li>
+        </ol>
+      </div>
+
+      <div class="answer-block">
+        <h3>เฉลย Exercise 2:</h3>
+        <ol class="answer-list">
+          <li>Wie viel kostet das?</li>
+          <li>Ich möchte ein Buch kaufen.</li>
+          <li>Das kostet 20 Euro.</li>
+          <li>Das ist zu teuer!</li>
+          <li>Haben Sie das in Größe L?</li>
+          <li>Wo kann ich bezahlen?</li>
+          <li>Wo ist der Supermarkt?</li>
+          <li>Ich nehme zwei Kilo.</li>
+        </ol>
+      </div>
+
+      <div class="answer-block">
+        <h3>เฉลย Exercise 3:</h3>
+        <ol class="answer-list">
+          <li>Ich <strong>kaufe</strong> ein Buch.</li>
+          <li>Was <strong>kosten</strong> die Schuhe?</li>
+          <li>Wir <strong>brauchen</strong> Brot und Milch.</li>
+          <li>Ich <strong>nehme</strong> das Hemd.</li>
+        </ol>
+      </div>
+
+      <div class="answer-block">
+        <h3>เฉลย Exercise 4:</h3>
+        <ol class="answer-list">
+          <li>zwei Euro fünfzig</li>
+          <li>fünfzehn Euro achtzig</li>
+          <li>sieben Euro fünfundzwanzig</li>
+          <li>dreißig Euro</li>
+        </ol>
+      </div>
+
+      <div class="answer-block">
+        <h3>เฉลย Exercise 5:</h3>
+        <ol class="answer-list">
+          <li>Wie viel kostet das?</li>
+          <li>Ich kaufe drei Äpfel.</li>
+          <li>Das ist zu teuer.</li>
+          <li>Ich brauche neue Schuhe.</li>
+          <li>Wo kann ich bezahlen?</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="summary-section">
+      <h2>📌 สรุปบทเรียน</h2>
+      <div class="summary-box">
+        <h3>สิ่งที่เรียนรู้ในบทนี้:</h3>
+        <ul class="summary-list">
+          <li>ตัวเลข 0-100 ภาษาเยอรมัน</li>
+          <li>การพูดราคา: <strong>Das kostet ... Euro</strong></li>
+          <li>การถามราคา: <strong>Wie viel kostet das?</strong></li>
+          <li>เลข 21-99: เลขหน่วย + <strong>und</strong> + เลขสิบ</li>
+          <li>คำศัพท์ร้านค้า สินค้า และการซื้อของ</li>
+          <li>กริยา: kaufen, verkaufen, kosten, bezahlen, brauchen</li>
+          <li>คำคุณศัพท์: teuer, billig, groß, klein, neu, alt</li>
+        </ul>
+      </div>
+
+      <div class="tips-box">
+        <h3>💡 เคล็ดลับ</h3>
+        <ul class="tips-list">
+          <li>จำให้ดี: เลขหน่วยมาก่อนเลขสิบ (23 = drei<strong>und</strong>zwanzig)</li>
+          <li><strong>Euro</strong> ไม่เติม s พหูพจน์: 5 Euro (ไม่ใช่ Euros)</li>
+          <li><strong>Das kostet...</strong> = ใช้กับสิ่งของเพศกลาง (das)</li>
+          <li>30 = drei<strong>ß</strong>ig (ß ไม่ใช่ ss)</li>
+          <li><strong>Wie viel?</strong> = เท่าไหร่? (ถามจำนวน/ราคา)</li>
+          <li><strong>Welche Größe?</strong> = ไซส์อะไร? (ถามขนาด)</li>
+        </ul>
+      </div>
+    </section>
+
+    <nav class="chapter-navigation">
+      <a href="chapter05.html" class="nav-btn prev">← Unit 5: Essen und Trinken</a>
+      <a href="table_of_contents.html" class="nav-btn toc">📚 สารบัญ</a>
+      <a href="chapter07.html" class="nav-btn next">Unit 7: Freizeit →</a>
+    </nav>
+  </div>
+
+  <script src="../script.js"></script>
+    </div>
+    
+    <!-- Notes Panel -->
+    <div class="notes-panel" id="notes-panel">
+        <h3>📝 บันทึกของฉัน</h3>
+        <textarea id="notes-content" placeholder="เขียนบันทึกที่นี่..." 
+                  style="width: 100%; height: 200px; border: 1px solid #ddd; border-radius: 5px; padding: 10px;">
+        </textarea>
+        <button onclick="saveNotes()" style="margin-top: 10px; padding: 8px 16px; background: var(--primary); color: white; border: none; border-radius: 4px;">💾 บันทึก</button>
+        <button onclick="clearNotes()" style="margin-top: 10px; margin-left: 10px; padding: 8px 16px; background: var(--warning); color: white; border: none; border-radius: 4px;">🗑️ ลบ</button>
+    </div>
+    
+    <button class="notes-toggle" onclick="toggleNotes()" title="เปิด/ปิดบันทึก">
+        📝
+    </button>
+    
+    <script src="../script.js"></script>
+    <script>
+        // Notes functionality
+        function toggleNotes() {
+            const panel = document.getElementById('notes-panel');
+            panel.classList.toggle('open');
+            loadNotes();
+        }
+        
+        function saveNotes() {
+            const content = document.getElementById('notes-content').value;
+            localStorage.setItem('notes_chapter06', content);
+            alert('✅ บันทึกแล้ว!');
+        }
+        
+        function loadNotes() {
+            const saved = localStorage.getItem('notes_chapter06');
+            if (saved) {
+                document.getElementById('notes-content').value = saved;
+            }
+        }
+        
+        function clearNotes() {
+            if (confirm('คุณต้องการลบบันทึกใช่หรือไม่?')) {
+                document.getElementById('notes-content').value = '';
+                localStorage.removeItem('notes_chapter06');
+                alert('🗑️ ลบแล้ว!');
+            }
+        }
+        
+        // Update progress
+        function updateProgress() {
+            localStorage.setItem('progress_chapter06', '100');
+        }
+        
+        // Auto-load notes on page load
+        document.addEventListener('DOMContentLoaded', loadNotes);
+        
+        // Mark as visited
+        setTimeout(updateProgress, 5000);
+    </script>
+</body>
+</html>

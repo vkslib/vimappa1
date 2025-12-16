@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2563eb">
+    <title>Unit 9 - VimAPP German A1</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* PWA Chapter Styles */
+        .chapter-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-home {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .nav-controls {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .nav-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .content-wrapper {
+            margin-top: 60px;
+            padding: 20px;
+        }
+        
+        /* Notes feature */
+        .notes-panel {
+            position: fixed;
+            right: -300px;
+            top: 60px;
+            bottom: 0;
+            width: 300px;
+            background: white;
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .notes-panel.open {
+            right: 0;
+        }
+        
+        .notes-toggle {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1001;
+        }
+        
+        @media (max-width: 768px) {
+            .notes-panel {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .content-wrapper {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="chapter-nav">
+        <a href="../index.html" class="nav-home">🏠 VimAPP German A1</a>
+        <div class="nav-controls">
+            <a href="chapter08.html" class="nav-btn">← ก่อนหน้า</a>
+            <a href="chapter10.html" class="nav-btn">ถัดไป →</a>
+        </div>
+    </nav>
+    
+    <div class="content-wrapper"><header>
+        <h1>Unit 9: Wetter und Jahreszeiten</h1>
+        <p class="subtitle">อากาศและฤดูกาล (Weather and Seasons)</p>
+    </header>
+
+    <main>
+        <!-- Grammar Section -->
+        <section class="grammar-section">
+            <h2>📚 ไวยากรณ์ (Grammar)</h2>
+            
+            <div class="grammar-topic">
+                <h3>1. กริยาที่ใช้กับสภาพอากาศ (Weather Verbs)</h3>
+                <div class="explanation">
+                    <p><strong>Es</strong> ใช้เป็นประธานของประโยคที่พูดถึงสภาพอากาศ (It is used as the subject for weather sentences):</p>
+                </div>
+                
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th>คำกริยา (Verb)</th>
+                            <th>ประโยค (Sentence)</th>
+                            <th>ความหมาย (Meaning)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>regnen</td>
+                            <td>Es regnet.</td>
+                            <td>ฝนตก</td>
+                        </tr>
+                        <tr>
+                            <td>schneien</td>
+                            <td>Es schneit.</td>
+                            <td>หิมะตก</td>
+                        </tr>
+                        <tr>
+                            <td>sein (warm/kalt)</td>
+                            <td>Es ist warm./Es ist kalt.</td>
+                            <td>อากาศอบอุ่น/หนาว</td>
+                        </tr>
+                        <tr>
+                            <td>sein (sonnig/wolkig)</td>
+                            <td>Es ist sonnig./Es ist wolkig.</td>
+                            <td>อากาศแดดออก/มีเมฆมาก</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="grammar-topic">
+                <h3>2. Wie ist das Wetter? (อากาศเป็นอย่างไร?)</h3>
+                <div class="explanation">
+                    <p>รูปแบบประโยคที่ใช้บ่อย:</p>
+                    <ul>
+                        <li><strong>Wie ist das Wetter?</strong> = อากาศเป็นอย่างไร?</li>
+                        <li><strong>Das Wetter ist...</strong> = อากาศ... (+ คุณศัพท์)</li>
+                        <li><strong>Heute ist es...</strong> = วันนี้อากาศ...</li>
+                        <li><strong>Es gibt...</strong> = มี... (ใช้กับสภาพอากาศพิเศษ เช่น Gewitter = พายุ)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grammar-topic">
+                <h3>3. Prepositions สำหรับฤดูกาล (Prepositions for Seasons)</h3>
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th>บุรพบท (Preposition)</th>
+                            <th>ตัวอย่าง (Example)</th>
+                            <th>ความหมาย (Meaning)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>im + ฤดูกาล</td>
+                            <td>im Frühling</td>
+                            <td>ในฤดูใบไม้ผลิ</td>
+                        </tr>
+                        <tr>
+                            <td>im + เดือน</td>
+                            <td>im Januar</td>
+                            <td>ในเดือนมกราคม</td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>im Sommer</td>
+                            <td>ในฤดูร้อน</td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>im Herbst</td>
+                            <td>ในฤดูใบไม้ร่วง</td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>im Winter</td>
+                            <td>ในฤดูหนาว</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Vocabulary Section -->
+        <section class="vocabulary-section">
+            <h2>📖 คำศัพท์ (Vocabulary)</h2>
+
+            <h3>Die Jahreszeiten (ฤดูกาล - Seasons)</h3>
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>der Frühling</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_fruehling.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[ˈfʁyːlɪŋ]</span>
+                        <span class="reading">ฟรือ-หลิง</span>
+                        <p class="meaning">ฤดูใบไม้ผลิ (spring)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>der Sommer</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_sommer.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[ˈzɔmɐ]</span>
+                        <span class="reading">ซอม-เมอ</span>
+                        <p class="meaning">ฤดูร้อน (summer)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>der Herbst</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_herbst.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[hɛʁpst]</span>
+                        <span class="reading">แฮร์ปสท์</span>
+                        <p class="meaning">ฤดูใบไม้ร่วง (autumn/fall)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>der Winter</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_winter.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[ˈvɪntɐ]</span>
+                        <span class="reading">วิน-เทอ</span>
+                        <p class="meaning">ฤดูหนาว (winter)</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Das Wetter (สภาพอากาศ - Weather)</h3>
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>die Sonne</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_sonne.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[ˈzɔnə]</span>
+                        <span class="reading">ซอน-เนอ</span>
+                        <p class="meaning">ดวงอาทิตย์, แสงแดด (sun)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>der Regen</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_regen.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[ˈʁeːɡn̩]</span>
+                        <span class="reading">เร-เก้น</span>
+                        <p class="meaning">ฝน (rain)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>der Schnee</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_schnee.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[ʃneː]</span>
+                        <span class="reading">ชเน</span>
+                        <p class="meaning">หิมะ (snow)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>der Wind</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_wind.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[vɪnt]</span>
+                        <span class="reading">วินท์</span>
+                        <p class="meaning">ลม (wind)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>die Wolke</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_wolke.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[ˈvɔlkə]</span>
+                        <span class="reading">โวล-เกอ</span>
+                        <p class="meaning">เมฆ (cloud)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>das Gewitter</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_gewitter.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[ɡəˈvɪtɐ]</span>
+                        <span class="reading">เก-วิท-เทอ</span>
+                        <p class="meaning">พายุฝนฟ้าคะนอง (thunderstorm)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>der Nebel</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_nebel.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[ˈneːbl̩]</span>
+                        <span class="reading">เน-เบิล</span>
+                        <p class="meaning">หมอก (fog)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>das Eis</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_eis.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[aɪs]</span>
+                        <span class="reading">ไอซ์</span>
+                        <p class="meaning">น้ำแข็ง (ice)</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Wetteradjektive (คุณศัพท์อากาศ - Weather Adjectives)</h3>
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>sonnig</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_sonnig.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[ˈzɔnɪç]</span>
+                        <span class="reading">ซอน-นิช</span>
+                        <p class="meaning">แดดออก (sunny)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>wolkig</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_wolkig.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[ˈvɔlkɪç]</span>
+                        <span class="reading">โวล-คิช</span>
+                        <p class="meaning">มีเมฆมาก (cloudy)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>warm</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_warm.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[vaʁm]</span>
+                        <span class="reading">วาร์ม</span>
+                        <p class="meaning">อบอุ่น (warm)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>heiß</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_heiss.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[haɪs]</span>
+                        <span class="reading">ไฮส์</span>
+                        <p class="meaning">ร้อน (hot)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>kalt</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_kalt.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[kalt]</span>
+                        <span class="reading">คาลท์</span>
+                        <p class="meaning">หนาว (cold)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>kühl</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_kuehl.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[kyːl]</span>
+                        <span class="reading">คือล</span>
+                        <p class="meaning">เย็น (cool)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>windig</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_windig.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[ˈvɪndɪç]</span>
+                        <span class="reading">วิน-ดิช</span>
+                        <p class="meaning">ลมแรง (windy)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>regnerisch</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_regnerisch.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[ˈʁeːɡnəʁɪʃ]</span>
+                        <span class="reading">เร้ก-เนอ-ริช</span>
+                        <p class="meaning">ฝนตก (rainy)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>trocken</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_trocken.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[ˈtʁɔkn̩]</span>
+                        <span class="reading">โทร็อก-เค่น</span>
+                        <p class="meaning">แห้ง (dry)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>feucht</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_feucht.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[fɔʏçt]</span>
+                        <span class="reading">ฟอยชท์</span>
+                        <p class="meaning">ชื้น (humid, damp)</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Die Monate (เดือน - Months)</h3>
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>der Januar</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_januar.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[ˈjanuaːɐ]</span>
+                        <span class="reading">ยา-นู-อา</span>
+                        <p class="meaning">มกราคม (January)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>der Februar</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_februar.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[ˈfeːbʁuaːɐ]</span>
+                        <span class="reading">เฟ-บรู-อา</span>
+                        <p class="meaning">กุมภาพันธ์ (February)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>der März</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_maerz.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[mɛʁts]</span>
+                        <span class="reading">แมร์ทซ์</span>
+                        <p class="meaning">มีนาคม (March)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>der April</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_april.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[aˈpʁɪl]</span>
+                        <span class="reading">อา-พริล</span>
+                        <p class="meaning">เมษายน (April)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>der Mai</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_mai.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[maɪ]</span>
+                        <span class="reading">ไม</span>
+                        <p class="meaning">พฤษภาคม (May)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>der Juni</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_juni.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[ˈjuːni]</span>
+                        <span class="reading">ยู-นี</span>
+                        <p class="meaning">มิถุนายน (June)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>der Juli</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_juli.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[ˈjuːli]</span>
+                        <span class="reading">ยู-ลี</span>
+                        <p class="meaning">กรกฎาคม (July)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>der August</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_august.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[aʊˈɡʊst]</span>
+                        <span class="reading">เอา-กุสต์</span>
+                        <p class="meaning">สิงหาคม (August)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>der September</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_september.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[zɛpˈtɛmbɐ]</span>
+                        <span class="reading">เซพ-เทม-เบอ</span>
+                        <p class="meaning">กันยายน (September)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>der Oktober</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_oktober.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[ɔkˈtoːbɐ]</span>
+                        <span class="reading">อ็อก-โท-เบอ</span>
+                        <p class="meaning">ตุลาคม (October)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>der November</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_november.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[noˈvɛmbɐ]</span>
+                        <span class="reading">โน-เวม-เบอ</span>
+                        <p class="meaning">พฤศจิกายน (November)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>der Dezember</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_dezember.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[deˈtsɛmbɐ]</span>
+                        <span class="reading">เด-เซม-เบอ</span>
+                        <p class="meaning">ธันวาคม (December)</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Sonstige Wörter (คำศัพท์อื่นๆ - Other Words)</h3>
+            <div class="vocab-grid">
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>die Temperatur</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_temperatur.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[tɛmpəʁaˈtuːɐ]</span>
+                        <span class="reading">เทม-เพ-รา-ทัวร์</span>
+                        <p class="meaning">อุณหภูมิ (temperature)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>der Grad</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_grad.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[ɡʁaːt]</span>
+                        <span class="reading">กราท</span>
+                        <p class="meaning">องศา (degree)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>der Regenschirm</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_regenschirm.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[ˈʁeːɡn̩ʃɪʁm]</span>
+                        <span class="reading">เร-เก้น-ชิร์ม</span>
+                        <p class="meaning">ร่ม (umbrella)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>die Jacke</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_jacke.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[ˈjakə]</span>
+                        <span class="reading">ยา-เกอ</span>
+                        <p class="meaning">เสื้อแจ็คเก็ต (jacket)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>der Mantel</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_mantel.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[ˈmantl̩]</span>
+                        <span class="reading">มัน-เทิล</span>
+                        <p class="meaning">เสื้อโค้ทยาว (coat)</p>
+                    </div>
+                </div>
+
+                <div class="vocab-card">
+                    <div class="vocab-term">
+                        <strong>der Schal</strong>
+                        <button class="audio-btn" onclick="playAudio('../audio/vocab/unit09_schal.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <span class="ipa">[ʃaːl]</span>
+                        <span class="reading">ชาล</span>
+                        <p class="meaning">ผ้าพันคอ (scarf)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Example Sentences -->
+        <section class="examples-section">
+            <h2>💬 ประโยคตัวอย่าง (Example Sentences)</h2>
+            
+            <div class="example-item">
+                <p class="german-text">
+                    <strong>Wie ist das Wetter heute?</strong>
+                    <button class="audio-btn" onclick="playAudio('../audio/sentences/unit09_sent01.mp3')">🔊</button>
+                </p>
+                <p class="translation">วันนี้อากาศเป็นอย่างไร?</p>
+            </div>
+
+            <div class="example-item">
+                <p class="german-text">
+                    <strong>Heute ist es sonnig und warm.</strong>
+                    <button class="audio-btn" onclick="playAudio('../audio/sentences/unit09_sent02.mp3')">🔊</button>
+                </p>
+                <p class="translation">วันนี้อากาศแดดออกและอบอุ่น</p>
+            </div>
+
+            <div class="example-item">
+                <p class="german-text">
+                    <strong>Es regnet den ganzen Tag.</strong>
+                    <button class="audio-btn" onclick="playAudio('../audio/sentences/unit09_sent03.mp3')">🔊</button>
+                </p>
+                <p class="translation">ฝนตกทั้งวัน</p>
+            </div>
+
+            <div class="example-item">
+                <p class="german-text">
+                    <strong>Im Winter schneit es oft in Deutschland.</strong>
+                    <button class="audio-btn" onclick="playAudio('../audio/sentences/unit09_sent04.mp3')">🔊</button>
+                </p>
+                <p class="translation">ในฤดูหนาวหิมะตกบ่อยในเยอรมนี</p>
+            </div>
+
+            <div class="example-item">
+                <p class="german-text">
+                    <strong>Im Frühling ist das Wetter sehr schön.</strong>
+                    <button class="audio-btn" onclick="playAudio('../audio/sentences/unit09_sent05.mp3')">🔊</button>
+                </p>
+                <p class="translation">ในฤดูใบไม้ผลิอากาศสวยมาก</p>
+            </div>
+
+            <div class="example-item">
+                <p class="german-text">
+                    <strong>Der Sommer ist heiß und trocken.</strong>
+                    <button class="audio-btn" onclick="playAudio('../audio/sentences/unit09_sent06.mp3')">🔊</button>
+                </p>
+                <p class="translation">ฤดูร้อนร้อนและแห้ง</p>
+            </div>
+
+            <div class="example-item">
+                <p class="german-text">
+                    <strong>Im Herbst ist es oft windig und kühl.</strong>
+                    <button class="audio-btn" onclick="playAudio('../audio/sentences/unit09_sent07.mp3')">🔊</button>
+                </p>
+                <p class="translation">ในฤดูใบไม้ร่วงมักจะลมแรงและเย็น</p>
+            </div>
+
+            <div class="example-item">
+                <p class="german-text">
+                    <strong>Die Temperatur ist 20 Grad.</strong>
+                    <button class="audio-btn" onclick="playAudio('../audio/sentences/unit09_sent08.mp3')">🔊</button>
+                </p>
+                <p class="translation">อุณหภูมิ 20 องศา</p>
+            </div>
+
+            <div class="example-item">
+                <p class="german-text">
+                    <strong>Ich brauche einen Regenschirm.</strong>
+                    <button class="audio-btn" onclick="playAudio('../audio/sentences/unit09_sent09.mp3')">🔊</button>
+                </p>
+                <p class="translation">ฉันต้องการร่ม</p>
+            </div>
+
+            <div class="example-item">
+                <p class="german-text">
+                    <strong>Im Januar ist es sehr kalt.</strong>
+                    <button class="audio-btn" onclick="playAudio('../audio/sentences/unit09_sent10.mp3')">🔊</button>
+                </p>
+                <p class="translation">ในเดือนมกราคมหนาวมาก</p>
+            </div>
+
+            <div class="example-item">
+                <p class="german-text">
+                    <strong>Heute gibt es ein Gewitter.</strong>
+                    <button class="audio-btn" onclick="playAudio('../audio/sentences/unit09_sent11.mp3')">🔊</button>
+                </p>
+                <p class="translation">วันนี้มีพายุฝนฟ้าคะนอง</p>
+            </div>
+
+            <div class="example-item">
+                <p class="german-text">
+                    <strong>Es ist neblig am Morgen.</strong>
+                    <button class="audio-btn" onclick="playAudio('../audio/sentences/unit09_sent12.mp3')">🔊</button>
+                </p>
+                <p class="translation">ตอนเช้ามีหมอก</p>
+            </div>
+        </section>
+
+        <!-- Dialogues -->
+        <section class="dialogue-section">
+            <h2>🗣️ บทสนทนา (Dialogues)</h2>
+
+            <div class="dialogue-box">
+                <h3>Dialog 1: Wettervorhersage (พยากรณ์อากาศ - Weather Forecast)
+                    <button class="audio-btn" onclick="playAudio('../audio/dialogues/unit09_dialog01.mp3')">🔊</button>
+                </h3>
+                <div class="dialogue-content">
+                    <p><strong>Anna:</strong> Wie ist das Wetter morgen?</p>
+                    <p class="translation-dialog">พรุ่งนี้อากาศเป็นอย่างไร?</p>
+                    
+                    <p><strong>Tom:</strong> Der Wetterbericht sagt: Es ist wolkig und kühl.</p>
+                    <p class="translation-dialog">รายงานอากาศบอกว่า: อากาศมีเมฆและเย็น</p>
+                    
+                    <p><strong>Anna:</strong> Regnet es?</p>
+                    <p class="translation-dialog">ฝนตกไหม?</p>
+                    
+                    <p><strong>Tom:</strong> Ja, am Nachmittag regnet es wahrscheinlich.</p>
+                    <p class="translation-dialog">ใช่ ตอนบ่ายน่าจะมีฝนตก</p>
+                    
+                    <p><strong>Anna:</strong> Dann brauche ich einen Regenschirm!</p>
+                    <p class="translation-dialog">งั้นฉันต้องการร่ม!</p>
+                    
+                    <p><strong>Tom:</strong> Ja, und eine Jacke. Die Temperatur ist nur 15 Grad.</p>
+                    <p class="translation-dialog">ใช่ และเสื้อแจ็คเก็ต อุณหภูมิเพียง 15 องศาเท่านั้น</p>
+                </div>
+            </div>
+
+            <div class="dialogue-box">
+                <h3>Dialog 2: Jahreszeiten (ฤดูกาล - Seasons)
+                    <button class="audio-btn" onclick="playAudio('../audio/dialogues/unit09_dialog02.mp3')">🔊</button>
+                </h3>
+                <div class="dialogue-content">
+                    <p><strong>Lisa:</strong> Welche Jahreszeit magst du am liebsten?</p>
+                    <p class="translation-dialog">คุณชอบฤดูกาลไหนที่สุด?</p>
+                    
+                    <p><strong>Max:</strong> Ich mag den Frühling. Das Wetter ist schön und warm.</p>
+                    <p class="translation-dialog">ฉันชอบฤดูใบไม้ผลิ อากาศสวยและอบอุ่น</p>
+                    
+                    <p><strong>Lisa:</strong> Ich liebe den Sommer! Im Sommer ist es heiß und sonnig.</p>
+                    <p class="translation-dialog">ฉันรักฤดูร้อน! ในฤดูร้อนอากาศร้อนและแดดจัด</p>
+                    
+                    <p><strong>Max:</strong> Magst du den Winter?</p>
+                    <p class="translation-dialog">คุณชอบฤดูหนาวไหม?</p>
+                    
+                    <p><strong>Lisa:</strong> Nein, der Winter ist zu kalt. Es schneit oft.</p>
+                    <p class="translation-dialog">ไม่ ฤดูหนาวหนาวเกินไป หิมะตกบ่อย</p>
+                    
+                    <p><strong>Max:</strong> Aber Schnee ist schön! Im Winter kann man Ski fahren.</p>
+                    <p class="translation-dialog">แต่หิมะสวยนะ! ในฤดูหนาวสามารถเล่นสกีได้</p>
+                </div>
+            </div>
+
+            <div class="dialogue-box">
+                <h3>Dialog 3: Urlaubspläne (แผนวันหยุด - Vacation Plans)
+                    <button class="audio-btn" onclick="playAudio('../audio/dialogues/unit09_dialog03.mp3')">🔊</button>
+                </h3>
+                <div class="dialogue-content">
+                    <p><strong>Paul:</strong> Wohin fährst du im Sommer?</p>
+                    <p class="translation-dialog">คุณจะไปไหนในฤดูร้อน?</p>
+                    
+                    <p><strong>Sarah:</strong> Ich fahre im Juli nach Spanien.</p>
+                    <p class="translation-dialog">ฉันจะไปสเปนในเดือนกรกฎาคม</p>
+                    
+                    <p><strong>Paul:</strong> Oh, schön! Wie ist das Wetter dort im Juli?</p>
+                    <p class="translation-dialog">โอ้ ดีจัง! อากาศที่นั่นในเดือนกรกฎาคมเป็นอย่างไร?</p>
+                    
+                    <p><strong>Sarah:</strong> Es ist sehr heiß und trocken. Die Temperatur ist oft über 30 Grad.</p>
+                    <p class="translation-dialog">ร้อนและแห้งมาก อุณหภูมิมักจะสูงกว่า 30 องศา</p>
+                    
+                    <p><strong>Paul:</strong> Perfekt für den Strand!</p>
+                    <p class="translation-dialog">เหมาะสำหรับชายหาดมาก!</p>
+                    
+                    <p><strong>Sarah:</strong> Ja, genau! Und du? Bleibst du hier?</p>
+                    <p class="translation-dialog">ใช่ ถูกต้อง! แล้วคุณล่ะ? คุณอยู่ที่นี่เหรอ?</p>
+                    
+                    <p><strong>Paul:</strong> Ja, ich arbeite im August. Aber im Herbst fahre ich in die Berge.</p>
+                    <p class="translation-dialog">ใช่ ฉันทำงานในเดือนสิงหาคม แต่ในฤดูใบไม้ร่วงฉันจะไปเขา</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exercises -->
+        <section class="exercise-section">
+            <h2>✍️ แบบฝึกหัด (Exercises)</h2>
+
+            <div class="exercise-box">
+                <h3>Übung 1: Wähle die richtige Antwort (เลือกคำตอบที่ถูกต้อง)</h3>
+                <ol>
+                    <li>Wie ist das Wetter? - _____ regnet.
+                        <br>a) Er  b) Sie  c) Es  d) Du</li>
+                    <li>Im Winter _____ es oft.
+                        <br>a) schneit  b) schneien  c) schneist  d) schneie</li>
+                    <li>_____ Sommer ist es sehr heiß.
+                        <br>a) In  b) Im  c) Am  d) Zu</li>
+                    <li>Die Temperatur ist 25 _____.
+                        <br>a) Meter  b) Liter  c) Grad  d) Kilo</li>
+                    <li>Das Wetter ist heute _____ und windig.
+                        <br>a) wolkig  b) die Wolke  c) Wolken  d) wolken</li>
+                </ol>
+                
+                <div class="answer-section">
+                    <button class="toggle-answer" onclick="toggleAnswer('answer1')">แสดงเฉลย</button>
+                    <div id="answer1" class="answer-content">
+                        <p><strong>เฉลย:</strong></p>
+                        <ol>
+                            <li>c) Es (ใช้ Es เป็นประธามสำหรับสภาพอากาศ)</li>
+                            <li>a) schneit (schneien ผันตาม es = schneit)</li>
+                            <li>b) Im (ใช้ im + ฤดูกาล/เดือน)</li>
+                            <li>c) Grad (องศา)</li>
+                            <li>a) wolkig (คุณศัพท์ที่แปลว่า "มีเมฆมาก")</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercise-box">
+                <h3>Übung 2: Ergänze die Sätze (เติมคำให้สมบูรณ์)</h3>
+                <p><em>regnet • Frühling • kalt • Grad • sonnig</em></p>
+                <ol>
+                    <li>Es ist 18 _____ warm.</li>
+                    <li>Im _____ ist das Wetter schön.</li>
+                    <li>Heute ist es _____ und warm.</li>
+                    <li>Im Winter ist es sehr _____.</li>
+                    <li>Es _____ den ganzen Tag.</li>
+                </ol>
+                
+                <div class="answer-section">
+                    <button class="toggle-answer" onclick="toggleAnswer('answer2')">แสดงเฉลย</button>
+                    <div id="answer2" class="answer-content">
+                        <p><strong>เฉลย:</strong></p>
+                        <ol>
+                            <li>Es ist 18 <strong>Grad</strong> warm. (อุณหภูมิอบอุ่น 18 องศา)</li>
+                            <li>Im <strong>Frühling</strong> ist das Wetter schön. (ในฤดูใบไม้ผลิอากาศสวย)</li>
+                            <li>Heute ist es <strong>sonnig</strong> und warm. (วันนี้อากาศแดดออกและอบอุ่น)</li>
+                            <li>Im Winter ist es sehr <strong>kalt</strong>. (ในฤดูหนาวหนาวมาก)</li>
+                            <li>Es <strong>regnet</strong> den ganzen Tag. (ฝนตกทั้งวัน)</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercise-box">
+                <h3>Übung 3: Ordne die Jahreszeiten (จัดเรียงฤดูกาล)</h3>
+                <p>จับคู่ฤดูกาลกับเดือนที่ถูกต้อง:</p>
+                <ol>
+                    <li>der Frühling → _____</li>
+                    <li>der Sommer → _____</li>
+                    <li>der Herbst → _____</li>
+                    <li>der Winter → _____</li>
+                </ol>
+                <p><em>a) Dezember, Januar, Februar  b) März, April, Mai  
+                   c) Juni, Juli, August  d) September, Oktober, November</em></p>
+                
+                <div class="answer-section">
+                    <button class="toggle-answer" onclick="toggleAnswer('answer3')">แสดงเฉลย</button>
+                    <div id="answer3" class="answer-content">
+                        <p><strong>เฉลย:</strong></p>
+                        <ol>
+                            <li>der Frühling → <strong>b) März, April, Mai</strong> (ฤดูใบไม้ผลิ: มีนาคม-พฤษภาคม)</li>
+                            <li>der Sommer → <strong>c) Juni, Juli, August</strong> (ฤดูร้อน: มิถุนายน-สิงหาคม)</li>
+                            <li>der Herbst → <strong>d) September, Oktober, November</strong> (ฤดูใบไม้ร่วง: กันยายน-พฤศจิกายน)</li>
+                            <li>der Winter → <strong>a) Dezember, Januar, Februar</strong> (ฤดูหนาว: ธันวาคม-กุมภาพันธ์)</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercise-box">
+                <h3>Übung 4: Was passt nicht? (อันไหนไม่เข้าพวก?)</h3>
+                <p>หาคำที่ไม่เข้าพวกในแต่ละข้อ:</p>
+                <ol>
+                    <li>sonnig - wolkig - windig - <strong>Montag</strong></li>
+                    <li>Frühling - Sommer - <strong>Januar</strong> - Herbst</li>
+                    <li>regnen - schneien - <strong>warm</strong> - sein</li>
+                    <li>Grad - Temperatur - <strong>Jacke</strong> - Celsius</li>
+                    <li>Regen - Schnee - Wind - <strong>heiß</strong></li>
+                </ol>
+                
+                <div class="answer-section">
+                    <button class="toggle-answer" onclick="toggleAnswer('answer4')">แสดงเฉลย</button>
+                    <div id="answer4" class="answer-content">
+                        <p><strong>เฉลย:</strong></p>
+                        <ol>
+                            <li><strong>Montag</strong> - เป็นวัน ไม่ใช่สภาพอากาศ (ที่เหลือเป็นคุณศัพท์อากาศ)</li>
+                            <li><strong>Januar</strong> - เป็นเดือน ไม่ใช่ฤดูกาล (ที่เหลือเป็นฤดูกาล)</li>
+                            <li><strong>warm</strong> - เป็นคุณศัพท์ ไม่ใช่กริยา (ที่เหลือเป็นกริยาอากาศ)</li>
+                            <li><strong>Jacke</strong> - เป็นเสื้อผ้า (ที่เหลือเกี่ยวกับการวัดอุณหภูมิ)</li>
+                            <li><strong>heiß</strong> - เป็นคุณศัพท์ (ที่เหลือเป็นคำนามเกี่ยวกับสภาพอากาศ)</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercise-box">
+                <h3>Übung 5: Schreibe Sätze (เขียนประโยค)</h3>
+                <p>เขียนประโยคเกี่ยวกับอากาศโดยใช้คำที่กำหนดให้:</p>
+                <ol>
+                    <li>Winter / kalt / schneien</li>
+                    <li>Frühling / schön / warm</li>
+                    <li>Heute / Regenschirm / brauchen</li>
+                    <li>Sommer / heiß / sonnig</li>
+                    <li>Temperatur / 22 Grad</li>
+                </ol>
+                
+                <div class="answer-section">
+                    <button class="toggle-answer" onclick="toggleAnswer('answer5')">แสดงเฉลย</button>
+                    <div id="answer5" class="answer-content">
+                        <p><strong>เฉลยตัวอย่าง:</strong></p>
+                        <ol>
+                            <li>Im Winter ist es kalt und es schneit. (ในฤดูหนาวอากาศหนาวและหิมะตก)</li>
+                            <li>Im Frühling ist das Wetter schön und warm. (ในฤดูใบไม้ผลิอากาศสวยและอบอุ่น)</li>
+                            <li>Heute brauche ich einen Regenschirm. (วันนี้ฉันต้องการร่ม)</li>
+                            <li>Im Sommer ist es heiß und sonnig. (ในฤดูร้อนอากาศร้อนและแดดจัด)</li>
+                            <li>Die Temperatur ist 22 Grad. (อุณหภูมิ 22 องศา)</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section class="summary-section">
+            <h2>📝 สรุป (Summary)</h2>
+            <div class="summary-box">
+                <h3>สิ่งที่คุณได้เรียนรู้ในบทนี้:</h3>
+                <ul>
+                    <li>✅ การใช้ <strong>es</strong> กับกริยาสภาพอากาศ (regnen, schneien, sein)</li>
+                    <li>✅ ชื่อฤดูกาล 4 ฤดู: Frühling, Sommer, Herbst, Winter</li>
+                    <li>✅ ชื่อเดือนทั้ง 12 เดือนภาษาเยอรมัน</li>
+                    <li>✅ คุณศัพท์บอกสภาพอากาศ: sonnig, wolkig, warm, kalt, windig เป็นต้น</li>
+                    <li>✅ การใช้ <strong>im</strong> + ฤดูกาล/เดือน</li>
+                    <li>✅ การถามและตอบเกี่ยวกับอากาศ: "Wie ist das Wetter?" / "Es ist..."</li>
+                    <li>✅ คำศัพท์เกี่ยวกับอุณหภูมิและเสื้อผ้าตามฤดูกาล</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <nav class="chapter-nav">
+            <a href="chapter08.html" class="nav-button">← Unit 8: Gesundheit</a>
+            <a href="table_of_contents.html" class="nav-button">📚 สารบัญ</a>
+            <a href="chapter10.html" class="nav-button">Unit 10: Reisen und Verkehr →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>German A1 Interactive Textbook - Unit 9: Wetter und Jahreszeiten</p>
+    </footer>
+
+    <script src="../script.js"></script>
+    </div>
+    
+    <!-- Notes Panel -->
+    <div class="notes-panel" id="notes-panel">
+        <h3>📝 บันทึกของฉัน</h3>
+        <textarea id="notes-content" placeholder="เขียนบันทึกที่นี่..." 
+                  style="width: 100%; height: 200px; border: 1px solid #ddd; border-radius: 5px; padding: 10px;">
+        </textarea>
+        <button onclick="saveNotes()" style="margin-top: 10px; padding: 8px 16px; background: var(--primary); color: white; border: none; border-radius: 4px;">💾 บันทึก</button>
+        <button onclick="clearNotes()" style="margin-top: 10px; margin-left: 10px; padding: 8px 16px; background: var(--warning); color: white; border: none; border-radius: 4px;">🗑️ ลบ</button>
+    </div>
+    
+    <button class="notes-toggle" onclick="toggleNotes()" title="เปิด/ปิดบันทึก">
+        📝
+    </button>
+    
+    <script src="../script.js"></script>
+    <script>
+        // Notes functionality
+        function toggleNotes() {
+            const panel = document.getElementById('notes-panel');
+            panel.classList.toggle('open');
+            loadNotes();
+        }
+        
+        function saveNotes() {
+            const content = document.getElementById('notes-content').value;
+            localStorage.setItem('notes_chapter09', content);
+            alert('✅ บันทึกแล้ว!');
+        }
+        
+        function loadNotes() {
+            const saved = localStorage.getItem('notes_chapter09');
+            if (saved) {
+                document.getElementById('notes-content').value = saved;
+            }
+        }
+        
+        function clearNotes() {
+            if (confirm('คุณต้องการลบบันทึกใช่หรือไม่?')) {
+                document.getElementById('notes-content').value = '';
+                localStorage.removeItem('notes_chapter09');
+                alert('🗑️ ลบแล้ว!');
+            }
+        }
+        
+        // Update progress
+        function updateProgress() {
+            localStorage.setItem('progress_chapter09', '100');
+        }
+        
+        // Auto-load notes on page load
+        document.addEventListener('DOMContentLoaded', loadNotes);
+        
+        // Mark as visited
+        setTimeout(updateProgress, 5000);
+    </script>
+</body>
+</html>

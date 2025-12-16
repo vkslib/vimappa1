@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2563eb">
+    <title>Unit 3 - VimAPP German A1</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* PWA Chapter Styles */
+        .chapter-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-home {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .nav-controls {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .nav-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .content-wrapper {
+            margin-top: 60px;
+            padding: 20px;
+        }
+        
+        /* Notes feature */
+        .notes-panel {
+            position: fixed;
+            right: -300px;
+            top: 60px;
+            bottom: 0;
+            width: 300px;
+            background: white;
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .notes-panel.open {
+            right: 0;
+        }
+        
+        .notes-toggle {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1001;
+        }
+        
+        @media (max-width: 768px) {
+            .notes-panel {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .content-wrapper {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="chapter-nav">
+        <a href="../index.html" class="nav-home">🏠 VimAPP German A1</a>
+        <div class="nav-controls">
+            <a href="chapter02.html" class="nav-btn">← ก่อนหน้า</a>
+            <a href="chapter04.html" class="nav-btn">ถัดไป →</a>
+        </div>
+    </nav>
+    
+    <div class="content-wrapper"><div class="container">
+        <header class="unit-header">
+            <div class="unit-number">Einheit 3</div>
+            <h1>Berufe und Arbeit</h1>
+            <p class="unit-subtitle">อาชีพและการทำงาน | Professions and Work</p>
+        </header>
+
+        <!-- ========== ส่วนที่ 1: ไวยากรณ์ - Verben im Präsens ========== -->
+        <section class="grammar-section">
+            <h2>📖 ไวยากรณ์: Verben im Präsens (คำกริยาในปัจจุบันกาล)</h2>
+            
+            <div class="explanation-box">
+                <h3>🇹🇭 คำอธิบาย</h3>
+                <p><strong>การผันคำกริยา (Konjugation)</strong> ในภาษาเยอรมันคำกริยาจะเปลี่ยนรูปตามประธานของประโยค ต่างจากภาษาไทยที่คำกริยาไม่เปลี่ยนรูป</p>
+                
+                <h4>📌 กฎการผันคำกริยาปกติ:</h4>
+                <p>เอารากศัพท์ (Stamm) + ตัวลงท้าย (Endung) ตามประธาน</p>
+
+                <h4>🔍 ตัวอย่าง: คำกริยา "arbeiten" (ทำงาน)</h4>
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th>Pronomen</th>
+                            <th>Verb</th>
+                            <th>Endung</th>
+                            <th>ความหมาย</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>ich</strong></td>
+                            <td><strong>arbeit-e</strong></td>
+                            <td>-e</td>
+                            <td>ฉันทำงาน</td>
+                        </tr>
+                        <tr>
+                            <td><strong>du</strong></td>
+                            <td><strong>arbeit-est</strong></td>
+                            <td>-est</td>
+                            <td>คุณทำงาน</td>
+                        </tr>
+                        <tr>
+                            <td><strong>er/sie/es</strong></td>
+                            <td><strong>arbeit-et</strong></td>
+                            <td>-et</td>
+                            <td>เขา/เธอ/มันทำงาน</td>
+                        </tr>
+                        <tr>
+                            <td><strong>wir</strong></td>
+                            <td><strong>arbeit-en</strong></td>
+                            <td>-en</td>
+                            <td>พวกเราทำงาน</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ihr</strong></td>
+                            <td><strong>arbeit-et</strong></td>
+                            <td>-et</td>
+                            <td>พวกคุณทำงาน</td>
+                        </tr>
+                        <tr>
+                            <td><strong>sie/Sie</strong></td>
+                            <td><strong>arbeit-en</strong></td>
+                            <td>-en</td>
+                            <td>พวกเขา/คุณ(สุภาพ)ทำงาน</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>⚠️ กฎพิเศษ:</h4>
+                <div class="example-box">
+                    <p><strong>คำกริยาที่ลงท้ายด้วย -t, -d, -n, -m</strong> ต้องเพิ่ม <strong>-e-</strong> ก่อนตัวลงท้าย</p>
+                    <ul>
+                        <li><strong>arbeiten</strong> (ทำงาน) → du arbeit<strong>e</strong>st, er arbeit<strong>e</strong>t</li>
+                        <li><strong>finden</strong> (หา, พบ) → du find<strong>e</strong>st, er find<strong>e</strong>t</li>
+                    </ul>
+
+                    <p class="note">💡 <strong>จำง่ายๆ:</strong> ich (-e), du (-st), er/sie/es (-t), wir (-en), ihr (-t), sie/Sie (-en)</p>
+                </div>
+
+                <h4>🎯 คำกริยาที่ใช้บ่อยในชีวิตประจำวัน:</h4>
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th>Infinitiv</th>
+                            <th>ich</th>
+                            <th>du</th>
+                            <th>er/sie/es</th>
+                            <th>ความหมาย</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>arbeiten</strong></td>
+                            <td>arbeite</td>
+                            <td>arbeitest</td>
+                            <td>arbeitet</td>
+                            <td>ทำงาน</td>
+                        </tr>
+                        <tr>
+                            <td><strong>studieren</strong></td>
+                            <td>studiere</td>
+                            <td>studierst</td>
+                            <td>studiert</td>
+                            <td>เรียน (ม.)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>lernen</strong></td>
+                            <td>lerne</td>
+                            <td>lernst</td>
+                            <td>lernt</td>
+                            <td>เรียนรู้</td>
+                        </tr>
+                        <tr>
+                            <td><strong>wohnen</strong></td>
+                            <td>wohne</td>
+                            <td>wohnst</td>
+                            <td>wohnt</td>
+                            <td>อยู่อาศัย</td>
+                        </tr>
+                        <tr>
+                            <td><strong>leben</strong></td>
+                            <td>lebe</td>
+                            <td>lebst</td>
+                            <td>lebt</td>
+                            <td>ใช้ชีวิต</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ========== ส่วนที่ 2: คำศัพท์ - Berufe ========== -->
+        <section class="vocabulary-section">
+            <h2>📚 คำศัพท์: Berufe (อาชีพ)</h2>
+            
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        <strong>der Beruf</strong>
+                        <button class="audio-btn" onclick="play('../audio/vocab/beruf.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-ipa">[bəˈʁuːf]</div>
+                    <div class="vocab-thai">(เบอรูฟ)</div>
+                    <div class="vocab-meaning">อาชีพ, งาน | profession, job</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        <strong>der Arzt / die Ärztin</strong>
+                        <button class="audio-btn" onclick="play('../audio/vocab/arzt.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-ipa">[aːɐ̯tst] / [ˈɛːɐ̯tstɪn]</div>
+                    <div class="vocab-thai">(อาร์ทซ์ต / แอร์ทซ์ทิน)</div>
+                    <div class="vocab-meaning">หมอ (ชาย/หญิง) | doctor</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        <strong>der Lehrer / die Lehrerin</strong>
+                        <button class="audio-btn" onclick="play('../audio/vocab/lehrer.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-ipa">[ˈleːʁɐ] / [ˈleːʁəʁɪn]</div>
+                    <div class="vocab-thai">(เลห์เรอร์ / เลห์เรอริน)</div>
+                    <div class="vocab-meaning">ครู, อาจารย์ (ชาย/หญิง) | teacher</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        <strong>der Ingenieur / die Ingenieurin</strong>
+                        <button class="audio-btn" onclick="play('../audio/vocab/ingenieur.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-ipa">[ɪnʒeˈni̯øːɐ̯] / [ɪnʒeˈni̯øːʁɪn]</div>
+                    <div class="vocab-thai">(อินเจนเยอร์ / อินเจนเยอริน)</div>
+                    <div class="vocab-meaning">วิศวกร (ชาย/หญิง) | engineer</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        <strong>der Krankenpfleger / die Krankenschwester</strong>
+                        <button class="audio-btn" onclick="play('../audio/vocab/krankenschwester.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-ipa">[ˈkʁaŋkn̩ˌpfleːɡɐ] / [ˈkʁaŋkn̩ˌʃvɛstɐ]</div>
+                    <div class="vocab-thai">(คร้างเคินพฟเลเกอร์ / คร้างเคินชเวสเทอร์)</div>
+                    <div class="vocab-meaning">พยาบาล (ชาย/หญิง) | nurse</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        <strong>der Koch / die Köchin</strong>
+                        <button class="audio-btn" onclick="play('../audio/vocab/koch.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-ipa">[kɔx] / [ˈkœçɪn]</div>
+                    <div class="vocab-thai">(คอค / เคอชิน)</div>
+                    <div class="vocab-meaning">พ่อครัว/แม่ครัว | cook, chef</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        <strong>der Verkäufer / die Verkäuferin</strong>
+                        <button class="audio-btn" onclick="play('../audio/vocab/verkaeufer.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-ipa">[fɛɐ̯ˈkɔʏfɐ] / [fɛɐ̯ˈkɔʏfəʁɪn]</div>
+                    <div class="vocab-thai">(แฟร์คอยเฟอร์ / แฟร์คอยเฟอริน)</div>
+                    <div class="vocab-meaning">พนักงานขาย (ชาย/หญิง) | salesperson</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        <strong>der Kellner / die Kellnerin</strong>
+                        <button class="audio-btn" onclick="play('../audio/vocab/kellner.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-ipa">[ˈkɛlnɐ] / [ˈkɛlnəʁɪn]</div>
+                    <div class="vocab-thai">(เคลล์เนอร์ / เคลล์เนอริน)</div>
+                    <div class="vocab-meaning">บริกร/บริกรหญิง | waiter/waitress</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        <strong>der Mechaniker / die Mechanikerin</strong>
+                        <button class="audio-btn" onclick="play('../audio/vocab/mechaniker.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-ipa">[meˈçaːnɪkɐ] / [meˈçaːnɪkəʁɪn]</div>
+                    <div class="vocab-thai">(เมคานิเกอร์ / เมคานิเกอริน)</div>
+                    <div class="vocab-meaning">ช่างเครื่อง (ชาย/หญิง) | mechanic</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        <strong>der Polizist / die Polizistin</strong>
+                        <button class="audio-btn" onclick="play('../audio/vocab/polizist.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-ipa">[poliˈtsɪst] / [poliˈtsɪstɪn]</div>
+                    <div class="vocab-thai">(โพลิซิสต์ / โพลิซิสทิน)</div>
+                    <div class="vocab-meaning">ตำรวจ (ชาย/หญิง) | police officer</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        <strong>der Friseur / die Friseurin</strong>
+                        <button class="audio-btn" onclick="play('../audio/vocab/friseur.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-ipa">[fʁiˈzøːɐ̯] / [fʁiˈzøːʁɪn]</div>
+                    <div class="vocab-thai">(ฟรีเซอร์ / ฟรีเซอริน)</div>
+                    <div class="vocab-meaning">ช่างทำผม (ชาย/หญิง) | hairdresser</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        <strong>der Student / die Studentin</strong>
+                        <button class="audio-btn" onclick="play('../audio/vocab/student.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-ipa">[ʃtuˈdɛnt] / [ʃtuˈdɛntɪn]</div>
+                    <div class="vocab-thai">(ชตูเดนท์ / ชตูเดนทิน)</div>
+                    <div class="vocab-meaning">นักศึกษา (ชาย/หญิง) | student</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        <strong>der Anwalt / die Anwältin</strong>
+                        <button class="audio-btn" onclick="play('../audio/vocab/anwalt.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-ipa">[ˈanvalt] / [ˈanvɛltɪn]</div>
+                    <div class="vocab-thai">(อันวัลท์ / อันแวลทิน)</div>
+                    <div class="vocab-meaning">ทนายความ (ชาย/หญิง) | lawyer</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        <strong>der Programmierer / die Programmiererin</strong>
+                        <button class="audio-btn" onclick="play('../audio/vocab/programmierer.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-ipa">[pʁoɡʁaˈmiːʁɐ] / [pʁoɡʁaˈmiːʁəʁɪn]</div>
+                    <div class="vocab-thai">(โปรกรามีเรอร์ / โปรกรามีเรอริน)</div>
+                    <div class="vocab-meaning">โปรแกรมเมอร์ (ชาย/หญิง) | programmer</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        <strong>arbeiten</strong>
+                        <button class="audio-btn" onclick="play('../audio/vocab/arbeiten.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-ipa">[ˈaʁbaɪ̯tn̩]</div>
+                    <div class="vocab-thai">(อาร์ไบเทิน)</div>
+                    <div class="vocab-meaning">ทำงาน | to work</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        <strong>studieren</strong>
+                        <button class="audio-btn" onclick="play('../audio/vocab/studieren.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-ipa">[ʃtuˈdiːʁən]</div>
+                    <div class="vocab-thai">(ชตูดีเริน)</div>
+                    <div class="vocab-meaning">เรียนมหาวิทยาลัย | to study (university)</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        <strong>lernen</strong>
+                        <button class="audio-btn" onclick="play('../audio/vocab/lernen.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-ipa">[ˈlɛʁnən]</div>
+                    <div class="vocab-thai">(เลร์เนิน)</div>
+                    <div class="vocab-meaning">เรียนรู้ | to learn</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        <strong>verdienen</strong>
+                        <button class="audio-btn" onclick="play('../audio/vocab/verdienen.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-ipa">[fɛɐ̯ˈdiːnən]</div>
+                    <div class="vocab-thai">(แฟร์ดีเนิน)</div>
+                    <div class="vocab-meaning">หารายได้ | to earn</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        <strong>die Firma</strong>
+                        <button class="audio-btn" onclick="play('../audio/vocab/firma.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-ipa">[ˈfɪʁma]</div>
+                    <div class="vocab-thai">(เฟียร์มา)</div>
+                    <div class="vocab-meaning">บริษัท | company</div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-word">
+                        <strong>das Büro</strong>
+                        <button class="audio-btn" onclick="play('../audio/vocab/buero.mp3')">🔊</button>
+                    </div>
+                    <div class="vocab-ipa">[byˈʁoː]</div>
+                    <div class="vocab-thai">(บือโร)</div>
+                    <div class="vocab-meaning">สำนักงาน | office</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== ส่วนที่ 3: ประโยคตัวอย่าง ========== -->
+        <section class="examples-section">
+            <h2>💬 ประโยคตัวอย่าง (Beispielsätze)</h2>
+            
+            <div class="example-list">
+                <div class="example-item">
+                    <div class="german-sentence">
+                        <strong>1. Was bist du von Beruf?</strong>
+                        <button class="audio-btn" onclick="play('../audio/sentences/was_bist_du_beruf.mp3')">🔊</button>
+                    </div>
+                    <div class="sentence-ipa">[vas bɪst duː fɔn bəˈʁuːf]</div>
+                    <div class="sentence-thai">🇹🇭 คุณทำอาชีพอะไร?</div>
+                    <div class="sentence-english">🇬🇧 What is your profession?</div>
+                </div>
+
+                <div class="example-item">
+                    <div class="german-sentence">
+                        <strong>2. Ich bin Lehrer von Beruf.</strong>
+                        <button class="audio-btn" onclick="play('../audio/sentences/ich_bin_lehrer.mp3')">🔊</button>
+                    </div>
+                    <div class="sentence-ipa">[ɪç bɪn ˈleːʁɐ fɔn bəˈʁuːf]</div>
+                    <div class="sentence-thai">🇹🇭 ผมเป็นครู</div>
+                    <div class="sentence-english">🇬🇧 I am a teacher by profession.</div>
+                </div>
+
+                <div class="example-item">
+                    <div class="german-sentence">
+                        <strong>3. Sie ist Ärztin.</strong>
+                        <button class="audio-btn" onclick="play('../audio/sentences/sie_ist_aerztin.mp3')">🔊</button>
+                    </div>
+                    <div class="sentence-ipa">[ziː ɪst ˈɛːɐ̯tstɪn]</div>
+                    <div class="sentence-thai">🇹🇭 เธอเป็นหมอ</div>
+                    <div class="sentence-english">🇬🇧 She is a doctor.</div>
+                </div>
+
+                <div class="example-item">
+                    <div class="german-sentence">
+                        <strong>4. Ich arbeite bei einer Firma.</strong>
+                        <button class="audio-btn" onclick="play('../audio/sentences/ich_arbeite_firma.mp3')">🔊</button>
+                    </div>
+                    <div class="sentence-ipa">[ɪç ˈaʁbaɪ̯tə baɪ̯ ˈaɪ̯nɐ ˈfɪʁma]</div>
+                    <div class="sentence-thai">🇹🇭 ฉันทำงานที่บริษัทแห่งหนึ่ง</div>
+                    <div class="sentence-english">🇬🇧 I work at a company.</div>
+                </div>
+
+                <div class="example-item">
+                    <div class="german-sentence">
+                        <strong>5. Er studiert Medizin.</strong>
+                        <button class="audio-btn" onclick="play('../audio/sentences/er_studiert_medizin.mp3')">🔊</button>
+                    </div>
+                    <div class="sentence-ipa">[eːɐ̯ ʃtuˈdiːɐ̯t mediˈtsiːn]</div>
+                    <div class="sentence-thai">🇹🇭 เขาเรียนแพทย์</div>
+                    <div class="sentence-english">🇬🇧 He studies medicine.</div>
+                </div>
+
+                <div class="example-item">
+                    <div class="german-sentence">
+                        <strong>6. Wir arbeiten im Büro.</strong>
+                        <button class="audio-btn" onclick="play('../audio/sentences/wir_arbeiten_buero.mp3')">🔊</button>
+                    </div>
+                    <div class="sentence-ipa">[viːɐ̯ ˈaʁbaɪ̯tn̩ ɪm byˈʁoː]</div>
+                    <div class="sentence-thai">🇹🇭 พวกเราทำงานในสำนักงาน</div>
+                    <div class="sentence-english">🇬🇧 We work in the office.</div>
+                </div>
+
+                <div class="example-item">
+                    <div class="german-sentence">
+                        <strong>7. Mein Vater ist Ingenieur.</strong>
+                        <button class="audio-btn" onclick="play('../audio/sentences/vater_ingenieur.mp3')">🔊</button>
+                    </div>
+                    <div class="sentence-ipa">[maɪ̯n ˈfaːtɐ ɪst ɪnʒeˈni̯øːɐ̯]</div>
+                    <div class="sentence-thai">🇹🇭 พ่อของฉันเป็นวิศวกร</div>
+                    <div class="sentence-english">🇬🇧 My father is an engineer.</div>
+                </div>
+
+                <div class="example-item">
+                    <div class="german-sentence">
+                        <strong>8. Sie arbeitet als Krankenschwester.</strong>
+                        <button class="audio-btn" onclick="play('../audio/sentences/krankenschwester.mp3')">🔊</button>
+                    </div>
+                    <div class="sentence-ipa">[ziː ˈaʁbaɪ̯tət als ˈkʁaŋkn̩ˌʃvɛstɐ]</div>
+                    <div class="sentence-thai">🇹🇭 เธอทำงานเป็นพยาบาล</div>
+                    <div class="sentence-english">🇬🇧 She works as a nurse.</div>
+                </div>
+
+                <div class="example-item">
+                    <div class="german-sentence">
+                        <strong>9. Ich studiere Informatik an der Universität.</strong>
+                        <button class="audio-btn" onclick="play('../audio/sentences/studiere_informatik.mp3')">🔊</button>
+                    </div>
+                    <div class="sentence-ipa">[ɪç ʃtuˈdiːʁə ɪnfɔʁˈmaːtɪk an deːɐ̯ ʔunivɛʁziˈtɛːt]</div>
+                    <div class="sentence-thai">🇹🇭 ฉันเรียนคอมพิวเตอร์ที่มหาวิทยาลัย</div>
+                    <div class="sentence-english">🇬🇧 I study computer science at the university.</div>
+                </div>
+
+                <div class="example-item">
+                    <div class="german-sentence">
+                        <strong>10. Was machst du beruflich?</strong>
+                        <button class="audio-btn" onclick="play('../audio/sentences/was_machst_beruflich.mp3')">🔊</button>
+                    </div>
+                    <div class="sentence-ipa">[vas maxst duː bəˈʁuːflɪç]</div>
+                    <div class="sentence-thai">🇹🇭 คุณทำงานอะไร? (อาชีพ)</div>
+                    <div class="sentence-english">🇬🇧 What do you do for work?</div>
+                </div>
+
+                <div class="example-item">
+                    <div class="german-sentence">
+                        <strong>11. Ich lerne Deutsch.</strong>
+                        <button class="audio-btn" onclick="play('../audio/sentences/lerne_deutsch.mp3')">🔊</button>
+                    </div>
+                    <div class="sentence-ipa">[ɪç ˈlɛʁnə dɔʏtʃ]</div>
+                    <div class="sentence-thai">🇹🇭 ฉันเรียนภาษาเยอรมัน</div>
+                    <div class="sentence-english">🇬🇧 I learn German.</div>
+                </div>
+
+                <div class="example-item">
+                    <div class="german-sentence">
+                        <strong>12. Er verdient viel Geld.</strong>
+                        <button class="audio-btn" onclick="play('../audio/sentences/verdient_geld.mp3')">🔊</button>
+                    </div>
+                    <div class="sentence-ipa">[eːɐ̯ fɛɐ̯ˈdiːnt fiːl ɡɛlt]</div>
+                    <div class="sentence-thai">🇹🇭 เขาหาเงินได้เยอะ</div>
+                    <div class="sentence-english">🇬🇧 He earns a lot of money.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== ส่วนที่ 4: บทสนทนา ========== -->
+        <section class="dialogue-section">
+            <h2>🗣️ บทสนทนา (Dialoge)</h2>
+            
+            <!-- บทสนทนาที่ 1 -->
+            <div class="dialogue-box">
+                <h3>Dialog 1: Beim Kennenlernen (การพบกันครั้งแรก)</h3>
+                
+                <div class="dialogue-line">
+                    <strong>Anna:</strong> Hallo! Ich bin Anna. Was machst du beruflich?
+                    <button class="audio-btn" onclick="play('../audio/dialogues/d3_01.mp3')">🔊</button>
+                    <div class="translation">🇹🇭 สวัสดี! ฉันชื่อแอนนา คุณทำงานอะไร?</div>
+                </div>
+
+                <div class="dialogue-line">
+                    <strong>Tom:</strong> Ich bin Arzt. Ich arbeite im Krankenhaus.
+                    <button class="audio-btn" onclick="play('../audio/dialogues/d3_02.mp3')">🔊</button>
+                    <div class="translation">🇹🇭 ผมเป็นหมอ ผมทำงานในโรงพยาบาล</div>
+                </div>
+
+                <div class="dialogue-line">
+                    <strong>Anna:</strong> Interessant! Und wo ist das Krankenhaus?
+                    <button class="audio-btn" onclick="play('../audio/dialogues/d3_03.mp3')">🔊</button>
+                    <div class="translation">🇹🇭 น่าสนใจจัง! แล้วโรงพยาบาลอยู่ที่ไหน?</div>
+                </div>
+
+                <div class="dialogue-line">
+                    <strong>Tom:</strong> In Berlin. Und was bist du von Beruf?
+                    <button class="audio-btn" onclick="play('../audio/dialogues/d3_04.mp3')">🔊</button>
+                    <div class="translation">🇹🇭 ที่เบอร์ลิน แล้วคุณทำอาชีพอะไร?</div>
+                </div>
+
+                <div class="dialogue-line">
+                    <strong>Anna:</strong> Ich bin Lehrerin. Ich unterrichte Englisch.
+                    <button class="audio-btn" onclick="play('../audio/dialogues/d3_05.mp3')">🔊</button>
+                    <div class="translation">🇹🇭 ฉันเป็นครู ฉันสอนภาษาอังกฤษ</div>
+                </div>
+            </div>
+
+            <!-- บทสนทนาที่ 2 -->
+            <div class="dialogue-box">
+                <h3>Dialog 2: Über Studium sprechen (พูดเกี่ยวกับการเรียน)</h3>
+                
+                <div class="dialogue-line">
+                    <strong>Lisa:</strong> Hallo Max! Arbeitest du schon?
+                    <button class="audio-btn" onclick="play('../audio/dialogues/d3_06.mp3')">🔊</button>
+                    <div class="translation">🇹🇭 สวัสดี แม็กซ์! คุณทำงานแล้วหรือยัง?</div>
+                </div>
+
+                <div class="dialogue-line">
+                    <strong>Max:</strong> Nein, ich studiere noch. Ich bin Student.
+                    <button class="audio-btn" onclick="play('../audio/dialogues/d3_07.mp3')">🔊</button>
+                    <div class="translation">🇹🇭 ยังครับ ผมยังเรียนอยู่ ผมเป็นนักศึกษา</div>
+                </div>
+
+                <div class="dialogue-line">
+                    <strong>Lisa:</strong> Was studierst du?
+                    <button class="audio-btn" onclick="play('../audio/dialogues/d3_08.mp3')">🔊</button>
+                    <div class="translation">🇹🇭 คุณเรียนอะไร?</div>
+                </div>
+
+                <div class="dialogue-line">
+                    <strong>Max:</strong> Ich studiere Informatik. Und du?
+                    <button class="audio-btn" onclick="play('../audio/dialogues/d3_09.mp3')">🔊</button>
+                    <div class="translation">🇹🇭 ผมเรียนคอมพิวเตอร์ แล้วคุณล่ะ?</div>
+                </div>
+
+                <div class="dialogue-line">
+                    <strong>Lisa:</strong> Ich arbeite als Programmiererin bei einer IT-Firma.
+                    <button class="audio-btn" onclick="play('../audio/dialogues/d3_10.mp3')">🔊</button>
+                    <div class="translation">🇹🇭 ฉันทำงานเป็นโปรแกรมเมอร์ที่บริษัทไอที</div>
+                </div>
+
+                <div class="dialogue-line">
+                    <strong>Max:</strong> Cool! Gefällt dir die Arbeit?
+                    <button class="audio-btn" onclick="play('../audio/dialogues/d3_11.mp3')">🔊</button>
+                    <div class="translation">🇹🇭 เจ๋งเลย! ชอบงานไหม?</div>
+                </div>
+
+                <div class="dialogue-line">
+                    <strong>Lisa:</strong> Ja, sehr. Die Arbeit ist interessant.
+                    <button class="audio-btn" onclick="play('../audio/dialogues/d3_12.mp3')">🔊</button>
+                    <div class="translation">🇹🇭 ชอบมาก งานน่าสนใจดี</div>
+                </div>
+            </div>
+
+            <!-- บทสนทนาที่ 3 -->
+            <div class="dialogue-box">
+                <h3>Dialog 3: Im Café (ที่คาเฟ่)</h3>
+                
+                <div class="dialogue-line">
+                    <strong>Kunde:</strong> Entschuldigung, arbeiten Sie hier?
+                    <button class="audio-btn" onclick="play('../audio/dialogues/d3_13.mp3')">🔊</button>
+                    <div class="translation">🇹🇭 ขอโทษครับ คุณทำงานที่นี่หรือเปล่า?</div>
+                </div>
+
+                <div class="dialogue-line">
+                    <strong>Kellnerin:</strong> Ja, ich bin Kellnerin. Was möchten Sie?
+                    <button class="audio-btn" onclick="play('../audio/dialogues/d3_14.mp3')">🔊</button>
+                    <div class="translation">🇹🇭 ใช่ค่ะ ฉันเป็นบริกร ต้องการอะไรคะ?</div>
+                </div>
+
+                <div class="dialogue-line">
+                    <strong>Kunde:</strong> Einen Kaffee, bitte.
+                    <button class="audio-btn" onclick="play('../audio/dialogues/d3_15.mp3')">🔊</button>
+                    <div class="translation">🇹🇭 กาแฟหนึ่งแก้วครับ</div>
+                </div>
+
+                <div class="dialogue-line">
+                    <strong>Kellnerin:</strong> Gerne. Einen Moment, bitte.
+                    <button class="audio-btn" onclick="play('../audio/dialogues/d3_16.mp3')">🔊</button>
+                    <div class="translation">🇹🇭 ได้เลยค่ะ รอสักครู่นะคะ</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== ส่วนที่ 5: แบบฝึกหัด ========== -->
+        <section class="exercises-section">
+            <h2>✏️ แบบฝึกหัด (Übungen)</h2>
+
+            <!-- แบบฝึกหัดที่ 1 -->
+            <div class="exercise-box">
+                <h3>Übung 1: ผันคำกริยา</h3>
+                <p class="instruction">ผันคำกริยาในวงเล็บให้ถูกต้อง</p>
+                
+                <ol class="exercise-list">
+                    <li>Ich _________ als Arzt. (arbeiten)</li>
+                    <li>Du _________ Medizin. (studieren)</li>
+                    <li>Er _________ viel Geld. (verdienen)</li>
+                    <li>Wir _________ im Büro. (arbeiten)</li>
+                    <li>Ihr _________ Deutsch. (lernen)</li>
+                    <li>Sie _________ bei einer Firma. (arbeiten)</li>
+                    <li>Meine Mutter _________ als Lehrerin. (arbeiten)</li>
+                    <li>Die Studenten _________ an der Universität. (studieren)</li>
+                </ol>
+            </div>
+
+            <!-- แบบฝึกหัดที่ 2 -->
+            <div class="exercise-box">
+                <h3>Übung 2: จับคู่อาชีพกับคำอธิบาย</h3>
+                <p class="instruction">จับคู่อาชีพกับงานที่ทำ</p>
+                
+                <div class="matching-exercise">
+                    <div class="column">
+                        <p><strong>A. Beruf</strong></p>
+                        <ol>
+                            <li>der Arzt</li>
+                            <li>der Lehrer</li>
+                            <li>der Koch</li>
+                            <li>der Kellner</li>
+                            <li>der Mechaniker</li>
+                            <li>die Krankenschwester</li>
+                            <li>der Programmierer</li>
+                            <li>der Friseur</li>
+                        </ol>
+                    </div>
+                    <div class="column">
+                        <p><strong>B. Tätigkeit (งานที่ทำ)</strong></p>
+                        <ul style="list-style: none;">
+                            <li>a) schneidet Haare (ตัดผม)</li>
+                            <li>b) repariert Autos (ซ่อมรถ)</li>
+                            <li>c) hilft Patienten (ช่วยผู้ป่วย)</li>
+                            <li>d) unterrichtet Schüler (สอนนักเรียน)</li>
+                            <li>e) serviert Essen (เสิร์ฟอาหาร)</li>
+                            <li>f) schreibt Programme (เขียนโปรแกรม)</li>
+                            <li>g) kocht Essen (ทำอาหาร)</li>
+                            <li>h) behandelt Kranke (รักษาคนไข้)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- แบบฝึกหัดที่ 3 -->
+            <div class="exercise-box">
+                <h3>Übung 3: เรียงคำให้ถูกต้อง</h3>
+                <p class="instruction">เรียงคำให้เป็นประโยคที่ถูกต้อง</p>
+                
+                <ol class="exercise-list">
+                    <li>Arzt / ist / er / . → <span class="hint">___________________</span></li>
+                    <li>arbeite / ich / Büro / im / . → <span class="hint">___________________</span></li>
+                    <li>studiert / Medizin / sie / . → <span class="hint">___________________</span></li>
+                    <li>bist / von / was / Beruf / du / ? → <span class="hint">___________________</span></li>
+                    <li>Lehrerin / meine / ist / Mutter / . → <span class="hint">___________________</span></li>
+                </ol>
+            </div>
+
+            <!-- แบบฝึกหัดที่ 4 -->
+            <div class="exercise-box">
+                <h3>Übung 4: ตอบคำถาม</h3>
+                <p class="instruction">ตอบคำถามเกี่ยวกับตัวคุณเอง (ภาษาเยอรมัน)</p>
+                
+                <ol class="exercise-list">
+                    <li>Was bist du von Beruf? → <span class="hint">Ich bin _______.</span></li>
+                    <li>Arbeitest du oder studierst du? → <span class="hint">Ich _______.</span></li>
+                    <li>Wo arbeitest du? → <span class="hint">Ich arbeite _______.</span></li>
+                    <li>Was studierst du? → <span class="hint">Ich studiere _______.</span></li>
+                    <li>Was ist der Beruf deiner Mutter? → <span class="hint">Meine Mutter ist _______.</span></li>
+                </ol>
+            </div>
+
+            <!-- แบบฝึกหัดที่ 5 -->
+            <div class="exercise-box">
+                <h3>Übung 5: เติมคำที่ขาดหาย</h3>
+                <p class="instruction">เติมคำศัพท์ให้เหมาะสม (Beruf, arbeiten, studieren, Firma, Büro)</p>
+                
+                <ol class="exercise-list">
+                    <li>Was bist du von _________?</li>
+                    <li>Ich _________ bei BMW.</li>
+                    <li>Er _________ Informatik an der Universität.</li>
+                    <li>Wir arbeiten in einer großen _________.</li>
+                    <li>Das _________ ist sehr modern.</li>
+                    <li>Sie _________ als Ärztin im Krankenhaus.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ========== ส่วนที่ 6: เฉลยแบบฝึกหัด ========== -->
+        <section class="answers-section">
+            <h2>✅ เฉลยแบบฝึกหัด (Lösungen)</h2>
+
+            <!-- เฉลยที่ 1 -->
+            <div class="answer-box">
+                <h3>Lösung 1: ผันคำกริยา</h3>
+                <ol class="answer-list">
+                    <li><strong>arbeite</strong> (ich + -e)</li>
+                    <li><strong>studierst</strong> (du + -st)</li>
+                    <li><strong>verdient</strong> (er + -t)</li>
+                    <li><strong>arbeiten</strong> (wir + -en)</li>
+                    <li><strong>lernt</strong> (ihr + -t)</li>
+                    <li><strong>arbeiten</strong> (sie/Sie + -en)</li>
+                    <li><strong>arbeitet</strong> (Mutter = sie + -t)</li>
+                    <li><strong>studieren</strong> (die Studenten = sie/Plural + -en)</li>
+                </ol>
+            </div>
+
+            <!-- เฉลยที่ 2 -->
+            <div class="answer-box">
+                <h3>Lösung 2: จับคู่อาชีพกับคำอธิบาย</h3>
+                <ol class="answer-list">
+                    <li>der Arzt → <strong>h)</strong> behandelt Kranke (รักษาคนไข้)</li>
+                    <li>der Lehrer → <strong>d)</strong> unterrichtet Schüler (สอนนักเรียน)</li>
+                    <li>der Koch → <strong>g)</strong> kocht Essen (ทำอาหาร)</li>
+                    <li>der Kellner → <strong>e)</strong> serviert Essen (เสิร์ฟอาหาร)</li>
+                    <li>der Mechaniker → <strong>b)</strong> repariert Autos (ซ่อมรถ)</li>
+                    <li>die Krankenschwester → <strong>c)</strong> hilft Patienten (ช่วยผู้ป่วย)</li>
+                    <li>der Programmierer → <strong>f)</strong> schreibt Programme (เขียนโปรแกรม)</li>
+                    <li>der Friseur → <strong>a)</strong> schneidet Haare (ตัดผม)</li>
+                </ol>
+            </div>
+
+            <!-- เฉลยที่ 3 -->
+            <div class="answer-box">
+                <h3>Lösung 3: เรียงคำให้ถูกต้อง</h3>
+                <ol class="answer-list">
+                    <li><strong>Er ist Arzt.</strong> (เขาเป็นหมอ)</li>
+                    <li><strong>Ich arbeite im Büro.</strong> (ฉันทำงานในสำนักงาน)</li>
+                    <li><strong>Sie studiert Medizin.</strong> (เธอเรียนแพทย์)</li>
+                    <li><strong>Was bist du von Beruf?</strong> (คุณทำอาชีพอะไร?)</li>
+                    <li><strong>Meine Mutter ist Lehrerin.</strong> (แม่ของฉันเป็นครู)</li>
+                </ol>
+            </div>
+
+            <!-- เฉลยที่ 4 -->
+            <div class="answer-box">
+                <h3>Lösung 4: ตอบคำถาม</h3>
+                <p class="note">💡 <strong>หมายเหตุ:</strong> คำตอบจะแตกต่างกันไปตามสถานการณ์จริงของแต่ละคน นี่คือตัวอย่าง:</p>
+                <ol class="answer-list">
+                    <li><strong>Ich bin Lehrer/Lehrerin.</strong> (ฉันเป็นครู) / <strong>Ich bin Student/Studentin.</strong> (ฉันเป็นนักศึกษา)</li>
+                    <li><strong>Ich arbeite.</strong> (ฉันทำงาน) / <strong>Ich studiere.</strong> (ฉันเรียนอยู่)</li>
+                    <li><strong>Ich arbeite bei einer Firma.</strong> (ฉันทำงานที่บริษัท) / <strong>Ich arbeite im Büro.</strong> (ฉันทำงานในสำนักงาน)</li>
+                    <li><strong>Ich studiere Informatik.</strong> (ฉันเรียนคอมพิวเตอร์) / <strong>Ich studiere Medizin.</strong> (ฉันเรียนแพทย์)</li>
+                    <li><strong>Meine Mutter ist Lehrerin.</strong> (แม่ของฉันเป็นครู)</li>
+                </ol>
+            </div>
+
+            <!-- เฉลยที่ 5 -->
+            <div class="answer-box">
+                <h3>Lösung 5: เติมคำที่ขาดหาย</h3>
+                <ol class="answer-list">
+                    <li><strong>Beruf</strong> (Was bist du von Beruf? = คุณทำอาชีพอะไร?)</li>
+                    <li><strong>arbeite</strong> (Ich arbeite bei BMW. = ฉันทำงานที่ BMW)</li>
+                    <li><strong>studiert</strong> (Er studiert Informatik. = เขาเรียนคอมพิวเตอร์)</li>
+                    <li><strong>Firma</strong> (Wir arbeiten in einer großen Firma. = เราทำงานในบริษัทใหญ่)</li>
+                    <li><strong>Büro</strong> (Das Büro ist sehr modern. = สำนักงานทันสมัยมาก)</li>
+                    <li><strong>arbeitet</strong> (Sie arbeitet als Ärztin. = เธอทำงานเป็นหมอ)</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ========== สรุปบทเรียน ========== -->
+        <section class="summary-section">
+            <h2>📌 สรุปบทเรียน (Zusammenfassung)</h2>
+            
+            <div class="summary-box">
+                <h3>สิ่งที่เรียนในบทนี้:</h3>
+                <ul>
+                    <li>✅ <strong>การผันคำกริยา</strong> ในปัจจุบันกาล (ich -e, du -st, er/sie/es -t, wir -en, ihr -t, sie/Sie -en)</li>
+                    <li>✅ คำศัพท์<strong>อาชีพ</strong> 14 อาชีพ พร้อมรูป Maskulin และ Feminin</li>
+                    <li>✅ คำกริยาที่ใช้บ่อย: <strong>arbeiten, studieren, lernen, verdienen</strong></li>
+                    <li>✅ การ<strong>ถามและตอบ</strong>เกี่ยวกับอาชีพ</li>
+                    <li>✅ โครงสร้างประโยค: <strong>"Ich bin ___ von Beruf"</strong> และ <strong>"Ich arbeite als ___"</strong></li>
+                </ul>
+
+                <h3>ประเด็นสำคัญที่ต้องจำ:</h3>
+                <div class="key-points">
+                    <div class="point-item">
+                        <strong>1. รูปแบบคำถามเกี่ยวกับอาชีพ:</strong>
+                        <ul>
+                            <li><strong>Was bist du von Beruf?</strong> = คุณทำอาชีพอะไร?</li>
+                            <li><strong>Was machst du beruflich?</strong> = คุณทำงานอะไร?</li>
+                            <li><strong>Arbeitest du oder studierst du?</strong> = คุณทำงานหรือเรียนอยู่?</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="point-item">
+                        <strong>2. รูปแบบคำตอบ:</strong>
+                        <ul>
+                            <li><strong>Ich bin Lehrer.</strong> (ไม่ใช้ ein/eine)</li>
+                            <li><strong>Ich arbeite als Lehrer.</strong> (ใช้ als)</li>
+                            <li><strong>Ich arbeite bei BMW.</strong> (ใช้ bei + บริษัท)</li>
+                            <li><strong>Ich arbeite im Büro.</strong> (ใช้ im + สถานที่)</li>
+                        </ul>
+                    </div>
+
+                    <div class="point-item">
+                        <strong>3. Maskulin vs Feminin ในอาชีพ:</strong>
+                        <ul>
+                            <li>เพิ่ม <strong>-in</strong> สำหรับรูปผู้หญิง: Lehrer → Lehrerin</li>
+                            <li>บางคำมี Umlaut: Arzt → Ärztin, Koch → Köchin, Anwalt → Anwältin</li>
+                            <li>คำพิเศษ: der Krankenpfleger / die Krankenschwester (พยาบาล)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <nav class="unit-nav">
+            <a href="chapter02.html" class="nav-btn prev">← บทก่อนหน้า: Unit 2</a>
+            <a href="table_of_contents.html" class="nav-btn toc">📚 สารบัญ</a>
+            <a href="chapter04.html" class="nav-btn next">บทถัดไป: Unit 4 →</a>
+        </nav>
+
+    </div>
+    </div>
+    
+    <!-- Notes Panel -->
+    <div class="notes-panel" id="notes-panel">
+        <h3>📝 บันทึกของฉัน</h3>
+        <textarea id="notes-content" placeholder="เขียนบันทึกที่นี่..." 
+                  style="width: 100%; height: 200px; border: 1px solid #ddd; border-radius: 5px; padding: 10px;">
+        </textarea>
+        <button onclick="saveNotes()" style="margin-top: 10px; padding: 8px 16px; background: var(--primary); color: white; border: none; border-radius: 4px;">💾 บันทึก</button>
+        <button onclick="clearNotes()" style="margin-top: 10px; margin-left: 10px; padding: 8px 16px; background: var(--warning); color: white; border: none; border-radius: 4px;">🗑️ ลบ</button>
+    </div>
+    
+    <button class="notes-toggle" onclick="toggleNotes()" title="เปิด/ปิดบันทึก">
+        📝
+    </button>
+    
+    <script src="../script.js"></script>
+    <script>
+        // Notes functionality
+        function toggleNotes() {
+            const panel = document.getElementById('notes-panel');
+            panel.classList.toggle('open');
+            loadNotes();
+        }
+        
+        function saveNotes() {
+            const content = document.getElementById('notes-content').value;
+            localStorage.setItem('notes_chapter03', content);
+            alert('✅ บันทึกแล้ว!');
+        }
+        
+        function loadNotes() {
+            const saved = localStorage.getItem('notes_chapter03');
+            if (saved) {
+                document.getElementById('notes-content').value = saved;
+            }
+        }
+        
+        function clearNotes() {
+            if (confirm('คุณต้องการลบบันทึกใช่หรือไม่?')) {
+                document.getElementById('notes-content').value = '';
+                localStorage.removeItem('notes_chapter03');
+                alert('🗑️ ลบแล้ว!');
+            }
+        }
+        
+        // Update progress
+        function updateProgress() {
+            localStorage.setItem('progress_chapter03', '100');
+        }
+        
+        // Auto-load notes on page load
+        document.addEventListener('DOMContentLoaded', loadNotes);
+        
+        // Mark as visited
+        setTimeout(updateProgress, 5000);
+    </script>
+</body>
+</html>

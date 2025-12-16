@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="VimAPP German A1">
+    
+    <title>VimAPP German A1 - Interactive Learning</title>
+    <meta name="description" content="Learn German A1 level with interactive lessons, audio pronunciation, and exercises. Perfect for beginners!">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="./manifest.json">
+    
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./icons/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./icons/icon-16x16.png">
+    <link rel="apple-touch-icon" href="./icons/icon-152x152.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="./style.css">
+    
+    <style>
+        /* PWA specific styles */
+        .pwa-install {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+            border: none;
+            font-size: 14px;
+        }
+        
+        .pwa-install:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        .offline-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #f59e0b;
+            color: white;
+            text-align: center;
+            padding: 8px;
+            display: none;
+            z-index: 2000;
+        }
+        
+        .chapter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .chapter-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .chapter-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .chapter-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .chapter-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--gray-800);
+        }
+        
+        .chapter-description {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: var(--gray-200);
+            border-radius: 3px;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+        
+        @media (max-width: 768px) {
+            .chapter-grid {
+                grid-template-columns: 1fr;
+                padding: 10px;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Offline Indicator -->
+    <div class="offline-indicator" id="offline-indicator">
+        📶 คุณอยู่ในโหมดออฟไลน์ - บางฟีเจอร์อาจไม่ทำงาน
+    </div>
+
+    <!-- PWA Install Button -->
+    <button class="pwa-install" id="pwa-install-btn">
+        📱 เพิ่มไปหน้าจอหลัก
+    </button>
+
+    <header>
+        <h1>🇩🇪 VimAPP German A1</h1>
+        <p class="subtitle">Interactive German Learning Experience</p>
+    </header>
+
+    <main>
+        <div class="chapter-grid" id="chapter-grid">
+            <!-- Chapters will be loaded here -->
+        </div>
+    </main>
+
+    <script>
+        // Chapter data
+        const chapters = [
+            {
+                id: 'chapter00',
+                number: '0',
+                title: 'Einführung (Introduction)',
+                description: 'German alphabet, pronunciation, and basic sounds',
+                file: './chapters/chapter00.html'
+            },
+            {
+                id: 'chapter01', 
+                number: '1',
+                title: 'Sich vorstellen (Introducing Yourself)',
+                description: 'Personal pronouns, verb "sein", basic introductions',
+                file: './chapters/chapter01.html'
+            },
+            {
+                id: 'chapter02',
+                number: '2', 
+                title: 'Familie und Freunde (Family and Friends)',
+                description: 'Family members, possessive pronouns, relationships',
+                file: './chapters/chapter02.html'
+            },
+            {
+                id: 'chapter03',
+                number: '3',
+                title: 'Berufe (Professions)', 
+                description: 'Jobs, professions, work vocabulary',
+                file: './chapters/chapter03.html'
+            },
+            {
+                id: 'chapter04',
+                number: '4',
+                title: 'Wohnen (Living)',
+                description: 'Home, rooms, furniture, living situations',
+                file: './chapters/chapter04.html'
+            },
+            {
+                id: 'chapter05',
+                number: '5',
+                title: 'Essen und Trinken (Food and Drink)',
+                description: 'Food vocabulary, meals, restaurants',
+                file: './chapters/chapter05.html'
+            },
+            {
+                id: 'chapter06',
+                number: '6',
+                title: 'Einkaufen (Shopping)',
+                description: 'Shopping, prices, clothing, stores',
+                file: './chapters/chapter06.html'
+            },
+            {
+                id: 'chapter07',
+                number: '7',
+                title: 'Freizeit (Leisure Time)',
+                description: 'Hobbies, sports, free time activities',
+                file: './chapters/chapter07.html'
+            },
+            {
+                id: 'chapter08',
+                number: '8',
+                title: 'Gesundheit (Health)',
+                description: 'Body parts, health problems, doctor visits',
+                file: './chapters/chapter08.html'
+            },
+            {
+                id: 'chapter09',
+                number: '9',
+                title: 'Reisen (Travel)',
+                description: 'Transportation, travel vocabulary, directions',
+                file: './chapters/chapter09.html'
+            },
+            {
+                id: 'chapter10',
+                number: '10',
+                title: 'Wetter (Weather)',
+                description: 'Weather conditions, seasons, temperature',
+                file: './chapters/chapter10.html'
+            },
+            {
+                id: 'chapter11',
+                number: '11',
+                title: 'Zeit und Termine (Time and Appointments)',
+                description: 'Time, dates, making appointments',
+                file: './chapters/chapter11.html'
+            },
+            {
+                id: 'chapter12',
+                number: '12',
+                title: 'Arbeit (Work)',
+                description: 'Work environment, job interviews, workplace',
+                file: './chapters/chapter12.html'
+            },
+            {
+                id: 'chapter13',
+                number: '13',
+                title: 'Schule und Bildung (School and Education)',
+                description: 'Education system, school subjects, learning',
+                file: './chapters/chapter13.html'
+            },
+            {
+                id: 'chapter14',
+                number: '14',
+                title: 'Prüfungsvorbereitung (Exam Preparation)',
+                description: 'A1 exam preparation, review, practice tests',
+                file: './chapters/chapter14.html'
+            }
+        ];
+
+        // Render chapters
+        function renderChapters() {
+            const grid = document.getElementById('chapter-grid');
+            
+            chapters.forEach((chapter, index) => {
+                const progress = getChapterProgress(chapter.id);
+                
+                const card = document.createElement('a');
+                card.href = chapter.file;
+                card.className = 'chapter-card';
+                card.innerHTML = `
+                    <div class="chapter-number">${chapter.number}</div>
+                    <div class="chapter-title">${chapter.title}</div>
+                    <div class="chapter-description">${chapter.description}</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: ${progress}%"></div>
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+            });
+        }
+
+        // Get chapter progress (from localStorage)
+        function getChapterProgress(chapterId) {
+            const progress = localStorage.getItem(`progress_${chapterId}`);
+            return progress ? parseInt(progress) : 0;
+        }
+
+        // PWA Installation
+        let deferredPrompt;
+        
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            
+            const installBtn = document.getElementById('pwa-install-btn');
+            installBtn.style.display = 'block';
+            
+            installBtn.addEventListener('click', () => {
+                installBtn.style.display = 'none';
+                deferredPrompt.prompt();
+                
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted PWA installation');
+                    }
+                    deferredPrompt = null;
+                });
+            });
+        });
+
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+
+        // Online/Offline Detection
+        function updateOnlineStatus() {
+            const indicator = document.getElementById('offline-indicator');
+            if (navigator.onLine) {
+                indicator.style.display = 'none';
+            } else {
+                indicator.style.display = 'block';
+            }
+        }
+
+        window.addEventListener('online', updateOnlineStatus);
+        window.addEventListener('offline', updateOnlineStatus);
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderChapters();
+            updateOnlineStatus();
+        });
+    </script>
+</body>
+</html>
